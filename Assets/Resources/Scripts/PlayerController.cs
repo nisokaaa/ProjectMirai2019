@@ -8,19 +8,21 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    // 速度
     [SerializeField, Range(1f, 50f)]
-    float Speed = 25f;
-    float SpeedCurrent = 0.0f;
+    float speed = 50f;
+    float speedCurrent = 0.0f;
 
-    [SerializeField, Range(1f, 100f)]
-    float moveForceMultiplier = 100f;
+    // 減衰率
+    [SerializeField, Range(1f, 5f)]
+    float moveForceMultiplier = 1.5f;
 
+    // アクセル状態
     bool bAccelerator = false;
-
-    Vector3 moveVector = Vector3.zero;
     
     void Update()
     {
+        // アクセルボタンInput
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
         
         // 回転
@@ -28,18 +30,20 @@ public class PlayerController : MonoBehaviour
 
         // forwardのRay
         Ray ray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(ray.origin, ray.direction * 5, Color.yellow);
-        
+        Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
     }
 
     void FixedUpdate()
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
 
-        SpeedCurrent = bAccelerator ? Speed : 0.0f;
-        
-        moveVector = SpeedCurrent * transform.forward;
+        // アクセル押下してたら速度代入
+        speedCurrent = bAccelerator ? speed : 0.0f;
 
+        Vector3 moveVector = Vector3.zero;
+        moveVector = speedCurrent * transform.forward;
+
+        // ボタン非押下で勝手に速度減衰
         rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity));
     }
 }
