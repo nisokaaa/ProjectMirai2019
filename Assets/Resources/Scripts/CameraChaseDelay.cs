@@ -13,7 +13,7 @@ public class CameraChaseDelay : MonoBehaviour {
     private float baseHeight = 3f;
 
     // Targetへの追従速度
-    [SerializeField, Range(1f, 50f)]
+    [SerializeField, Range(1f, 150f)]
     private float chaseSpeed = 10f;
 
     private Transform player;
