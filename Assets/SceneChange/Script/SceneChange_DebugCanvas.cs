@@ -13,12 +13,22 @@ using UnityEngine.SceneManagement;  //シーンの名前取得用
 /// ３．手順
 /// 作成者：志村
 /// </summary>
-public class SceneChange_DebugCanvas : MonoBehaviour {
+public class SceneChange_DebugCanvas : SingletonMonoBehaviour<SceneChange_DebugCanvas>
+{
 
     GameObject gameObjectText;
 
-	// Use this for initialization
-	void Start () {
+    public void Awake()
+    {
+        if (this != Instance)
+        {
+            Destroy(this);
+            return;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         //子要素を取得する
         gameObjectText = gameObject.transform.Find("Text").gameObject;
 	}

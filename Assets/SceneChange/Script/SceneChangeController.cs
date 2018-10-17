@@ -11,7 +11,8 @@ using UnityEngine.SceneManagement;  //非同期処理用
 /// ２．シーンを切り替えたいタイミングでChangeSceneExecution()関数を呼ぶ
 /// 作成者：志村まさき
 /// </summary>
-public class SceneChangeController : MonoBehaviour {
+public class SceneChangeController : SingletonMonoBehaviour<SceneChangeController>
+{
 
     AsyncOperation nextScene;   //非同期読み込み状況の表示
     enum LOAD_STATE
@@ -36,11 +37,22 @@ public class SceneChangeController : MonoBehaviour {
     bool bDebug = false;
     [SerializeField, TooltipAttribute("③：Sceneを切り替える")]
     public bool bChangeSceneFlag = false;
-
+    [Header("ConsoleWindowにDebug情報を表示させる")]
+    [SerializeField, TooltipAttribute("非同期読み込みの％情報、")]
+    bool bDebugLogConsoleDraw = false;
 
     public string nextSceneName{
         get { return _nextSceneName; }
         set { _nextSceneName = nextSceneName; }
+    }
+
+    public void Awake()
+    {
+        if (this != Instance)
+        {
+            Destroy(this);
+            return;
+        }
     }
 
     // Use this for initialization
@@ -59,7 +71,7 @@ public class SceneChangeController : MonoBehaviour {
         if(bDebug == true)
         {
             bDebug = false;
-            ChangeScene(debugSceneName);
+            SetChangeScene(debugSceneName);
         }
 	}
 
@@ -73,7 +85,7 @@ public class SceneChangeController : MonoBehaviour {
     }
 
     //シーンを切り替える
-    public void ChangeScene( string sceneName )
+    public void SetChangeScene( string sceneName )
     {
         //読み込み重複チェック
         if (loadState != LOAD_STATE.NONE)
@@ -97,17 +109,23 @@ public class SceneChangeController : MonoBehaviour {
 
         nextScene.allowSceneActivation = false;
 
-        while(nextScene.progress < 0.9f)
+        while (nextScene.progress < 0.9f)
         {
-            Debug.Log(nextScene.progress * 100 + "%");
+            if (bDebugLogConsoleDraw == true)
+            {
+                Debug.Log(nextScene.progress * 100 + "%");
+            }
             yield return new WaitForSeconds(0);
         }
-        Debug.Log("読み込み完了　100%");
+        if (bDebugLogConsoleDraw == true)
+        {
+            Debug.Log("読み込み完了　100%");
+        }
         loadState = LOAD_STATE.LOAD_COMPLETE;
     }
 
     //シーンを切り替えるフラグを立てる
-    public void ChangeSceneExecution()
+    public void SetChangeSceneExecution()
     {
         bChangeSceneFlag = true;
     }
