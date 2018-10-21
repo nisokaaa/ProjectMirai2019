@@ -48,8 +48,9 @@ public class PlayerModelAnimatorController : MonoBehaviour
     [SerializeField] STATE_ANIM stateLock = STATE_ANIM.STATE_NONE;
     [SerializeField] STATE_ANIM oldStateLock = STATE_ANIM.STATE_NONE;
 
-    bool bDebugMode = false;
-
+    [Header("プレイヤーアニメーション用デバックフラグ<Space:ジャンプ><B:攻撃><N:スライディング>")]
+    [SerializeField] bool bDebugMode = false;
+    
     // Use this for initialization
     void Start()
     {
@@ -181,13 +182,13 @@ public class PlayerModelAnimatorController : MonoBehaviour
 
         
         //アニメーションの設定
-        animator.SetBool("bJump", bJump);
+        animator.SetBool("jump", bJump);
     }
 
     //しゃがむ
     void PlayerClimd()
     {
-        animator.SetBool ("bClimd", bClimd);
+        animator.SetBool ("climd", bClimd);
     }
     void PlayerClimdControl(bool play)
     {
@@ -197,7 +198,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
    //攻撃
     void PlayerAttack()
     {
-        animator.SetBool("bAttack", bAttack);
+        animator.SetBool("attack", bAttack);
     }
     void PlayerAtackControl(bool play)
     {
