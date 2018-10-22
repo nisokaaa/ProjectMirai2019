@@ -32,6 +32,6 @@ public class CameraChaseDelay : MonoBehaviour {
         cam.position = Vector3.Lerp(cam.position, desiredPos, Time.deltaTime * chaseSpeed);
 
         // カメラの向きを設定(別スクリプトにてカメラを回転遅延させるならコメ必須)
-        //cam.LookAt(player);
+        cam.LookAt(player);
     }
 }
