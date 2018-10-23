@@ -5,12 +5,12 @@ using UnityEngine;
 public class CameraChaseDelay : MonoBehaviour {
 
     // TargetとのZ軸オフセット
-    [SerializeField, Range(0f, 25f)]
-    private float baseDistance = 8f;
+    [SerializeField, Range(0f, 100f)]
+    private float baseDistance = 40f;
 
     // TargetとのY軸オフセット
-    [SerializeField, Range(0f, 25f)]
-    private float baseHeight = 3f;
+    [SerializeField, Range(0f, 100f)]
+    private float baseHeight = 20f;
 
     // Targetへの追従速度
     [SerializeField, Range(1f, 150f)]
