@@ -10,8 +10,8 @@ public class ElecBarControl : MonoBehaviour {
     [SerializeField, Range(0f,1f)]
     public float increase = 0.01f;
 
-    public Image elecBarBackground;
-    public Image elecBarFill;
+    private Image elecBarBackground;
+    private Image elecBarFill;
 
     [SerializeField, Range(0f, 1f)]
     public float fadeDuration = 0.5f;
@@ -30,6 +30,14 @@ public class ElecBarControl : MonoBehaviour {
 
     void Update()
     {
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            Increase();
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            Decrease();
+        }
     }
 
     /// <summary>
