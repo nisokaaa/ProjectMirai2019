@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 「放電アクション 加速処理」
+/// 作成者：志村まさき
 public class AcceleratedDischargeAction : MonoBehaviour {
     PlayerModelAnimatorController playerModelAnimatorController;
     public GameObject particleSystem;
@@ -20,6 +23,8 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 	void Update () {
 		if(Input.GetKey(KeyCode.N))
         {
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.AddForce( 2.0f * rb.velocity);
             particleSystem.transform.position = transform.position;
             particleSystem.SetActive(true);
             playerModelAnimatorController.PlayerAtackControl(true);

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 「蓄電、充電スポットゲームオブジェクト用クラス」
+/// 作成者：志村まさき
 public class ChargingGameObject : MonoBehaviour {
 
     [SerializeField] GameObject particleSystem;
