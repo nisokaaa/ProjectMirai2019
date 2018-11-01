@@ -38,7 +38,6 @@ public class AcceleratedDischargeAction : MonoBehaviour {
         {
             elecBarControl.Decrease();
             elecBarControl.Decrease();
-            elecBarControl.Decrease();
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.AddForce( 2.0f * rb.velocity);
             particleSystem.transform.position = transform.position;

@@ -47,6 +47,7 @@ public class ElecBarCharge : MonoBehaviour {
             elecBarControl.Increase();
             elecBarControl.Increase();
             elecBarControl.Increase();
+            elecBarControl.Increase();
         }
         else
         {
