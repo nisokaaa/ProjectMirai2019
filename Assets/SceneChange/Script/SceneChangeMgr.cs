@@ -30,21 +30,20 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
 	
 	// Update is called once per frame
 	void Update () {
-
         //テストコード
-        /*
+        
         //次のシーンの読み込み処理
-		if(Input.GetKeyDown(KeyCode.Q))
+		if(Input.GetKeyDown(KeyCode.F1))
         {
-            SceneChangeController.Instance.SetChangeScene("Title");
+            SceneChangeController.Instance.SetChangeScene("Game");
         }
 
         //シーンの切り替え実行
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.F2))
         {
             SceneChangeController.Instance.SetChangeSceneExecution();
         }
-        */
+        
 	}
     
 }

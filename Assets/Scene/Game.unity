@@ -344,7 +344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1964568917005828, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224718694165704630, guid: c8d5d53aa0d82064abf61d52585c98ed,
         type: 2}
@@ -353,7 +353,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1208191112773818, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1587555821741926, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
       propertyPath: m_IsActive
@@ -691,6 +691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6c4516c373a5d4cba219a99318b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 1940934062685088, guid: 85c4965b30fed97439263424fcef14ef,
+    type: 2}
+  timeCntMax: 30
 --- !u!1 &742564400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1470,7 @@ GameObject:
   - component: {fileID: 1593296001}
   - component: {fileID: 1593296002}
   - component: {fileID: 1593296003}
+  - component: {fileID: 1593296004}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1623,6 +1627,19 @@ MonoBehaviour:
   particleSystem: {fileID: 1857805003835586, guid: 0ccd582356c5912499835a3c8cd60d45,
     type: 2}
   mode: 0
+--- !u!114 &1593296004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1593295993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4175eafb13ff8514daa6dcc5576c9115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 1077811886519672, guid: 5a8d95e65e2a75a498aa3f4a8400a07b,
+    type: 2}
 --- !u!1 &1619275087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,15 +1768,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1866943989584326, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1328050317071922, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1514481650257354, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
@@ -1809,7 +1826,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!136 &1904765767
 CapsuleCollider:
