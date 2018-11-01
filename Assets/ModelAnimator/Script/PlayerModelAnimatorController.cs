@@ -76,14 +76,14 @@ public class PlayerModelAnimatorController : MonoBehaviour
     void Update()
     {
         //攻撃アクションのテストコード
-        if (Input.GetKey(KeyCode.N))
-        {
-            PlayerAtackControl(true);
-        }
-        else
-        {
-            PlayerAtackControl(false);
-        }
+        //if (Input.GetKey(KeyCode.N))
+        //{
+        //    PlayerAtackControl(true);
+        //}
+        //else
+        //{
+        //    PlayerAtackControl(false);
+        //}
 
         if (bDebugMode == true)
         {
@@ -200,7 +200,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
     {
         animator.SetBool("attack", bAttack);
     }
-    void PlayerAtackControl(bool play)
+    public void PlayerAtackControl(bool play)
     {
         bAttack = play;
     }
