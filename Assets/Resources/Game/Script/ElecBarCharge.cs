@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 「現在のシーン情報を表示するCanvas用のクラス」
+/// 引数　 ：解説
+/// 戻り値 ：解説
+/// １．手順
+/// ２．手順
+/// ３．手順
+/// 作成者：志村まさき
+/// </summary>
 public class ElecBarCharge : MonoBehaviour {
 
     ElecBarControl elecBarControl;
@@ -36,7 +45,10 @@ public class ElecBarCharge : MonoBehaviour {
         {
             chargeCnt++;
             elecBarControl.Increase();
-        }else
+            elecBarControl.Increase();
+            elecBarControl.Increase();
+        }
+        else
         {
             chargeCnt = 0;
             bObjectTriggerEnter = false;

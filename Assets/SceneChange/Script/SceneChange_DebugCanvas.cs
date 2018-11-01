@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;  //シーンの名前取得用
 /// １．手順
 /// ２．手順
 /// ３．手順
-/// 作成者：志村
+/// 作成者：志村まさき
 /// </summary>
 public class SceneChange_DebugCanvas : SingletonMonoBehaviour<SceneChange_DebugCanvas>
 {
