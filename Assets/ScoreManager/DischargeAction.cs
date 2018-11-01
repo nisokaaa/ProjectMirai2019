@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DischargeAction : MonoBehaviour {
 
+    [SerializeField]GameObject particleSystem;
     ScoreManager scoreManager;
     ElecBarControl elecBarControl;
 
@@ -19,7 +20,10 @@ public class DischargeAction : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		if(scoreManager == null)
+        particleSystem = Instantiate(particleSystem,transform.position,Quaternion.identity) as GameObject;
+        particleSystem.SetActive(false);
+
+        if (scoreManager == null)
         {
             scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         }
@@ -35,14 +39,22 @@ public class DischargeAction : MonoBehaviour {
         if (elecBarControl.GetGageValue() > 0.0f)
         {
             mode = ELEC_MODE.START;
-        }else
+        }else if(mode == ELEC_MODE.EXECUTION)
         {
+            mode = ELEC_MODE.END;
+        }
+
+        if(mode == ELEC_MODE.END)
+        {
+            particleSystem.SetActive(false);
             mode = ELEC_MODE.NONE;
         }
 
+        //常時放電
         PowerSharing();
     }
 
+    //常時放電
     void PowerSharing()
     {
 
@@ -50,6 +62,10 @@ public class DischargeAction : MonoBehaviour {
         {
             return;
         }
+        //エフェクト表示
+        particleSystem.SetActive(true);
+        particleSystem.transform.position = transform.position;
+
         //ゲージ減少処理
         elecBarControl.Decrease();
 

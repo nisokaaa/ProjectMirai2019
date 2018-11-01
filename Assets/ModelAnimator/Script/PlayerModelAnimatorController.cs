@@ -75,6 +75,16 @@ public class PlayerModelAnimatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //攻撃アクションのテストコード
+        if (Input.GetKey(KeyCode.N))
+        {
+            PlayerAtackControl(true);
+        }
+        else
+        {
+            PlayerAtackControl(false);
+        }
+
         if (bDebugMode == true)
         {
             //テストコード、仮システム
@@ -110,16 +120,6 @@ public class PlayerModelAnimatorController : MonoBehaviour
         }else
         {
             PlayerClimdControl(false);
-        }
-
-        //攻撃アクションのテストコード
-        if (Input.GetKey(KeyCode.N))
-        {
-            PlayerAtackControl(true);
-        }
-        else
-        {
-            PlayerAtackControl(false);
         }
     }
 

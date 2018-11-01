@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bObjectTriggerEnter: 0
-  chargeTimeMax: 120
+  chargeTimeMax: 300
   chargeCnt: 0
 --- !u!114 &1593296003
 MonoBehaviour:
@@ -1620,6 +1620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347ae99e96b027e40a6a035558279a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 1857805003835586, guid: 0ccd582356c5912499835a3c8cd60d45,
+    type: 2}
   mode: 0
 --- !u!1 &1619275087
 GameObject:
