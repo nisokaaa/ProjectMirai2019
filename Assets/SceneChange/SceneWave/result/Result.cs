@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;  //シーンの名前取得用
 
 /// <summary>
-/// 「タイトル処理」
-/// 流れ
-/// １．タイトル開始演出
-/// ２．通常タイトル表示
-/// ３．タイトル終了演出
+/// 「」
+/// 引数　 ：解説
+/// 戻り値 ：解説
+/// １．手順
+/// ２．手順
+/// ３．手順
 /// 作成者：志村まさき
 /// </summary>
-public class Title : MonoBehaviour {
-    
+public class Result : MonoBehaviour {
+
     enum WAVE
     {
         NONE = 0,
@@ -22,36 +23,37 @@ public class Title : MonoBehaviour {
         MAX
     };
 
-    [SerializeField] WAVE title = WAVE.NONE;
+    [SerializeField] WAVE result = WAVE.NONE;
 
     // Use this for initialization
     void Start () {
-        title = WAVE.START;
+        result = WAVE.START;
     }
 	
 	// Update is called once per frame
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
-        if(text != "Title")
+        if (text != "Result")
         {
             return;
         }
 
-        switch (title)
+        switch (result)
         {
             case WAVE.START:
-                title = WAVE.PLAY;
+                result = WAVE.PLAY;
                 break;
             case WAVE.PLAY:
-                if(Input.anyKey)
+                if (Input.anyKey)
                 {
-                    SceneChangeController.Instance.SetChangeScene("Game");
-                    title = WAVE.END;
+                    //Debug.Log("まじで？");
+                    SceneChangeController.Instance.SetChangeScene("Title");
+                    result = WAVE.END;
                 }
                 break;
             case WAVE.END:
                 SceneChangeController.Instance.SetChangeSceneExecution();
-                title = WAVE.NONE;
+                result = WAVE.NONE;
                 break;
         }
     }

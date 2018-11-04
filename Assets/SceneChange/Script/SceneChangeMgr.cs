@@ -26,12 +26,21 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
 
     //制御用スクリプト
     Title titleScript;
-
+    Result resultScript;
+    Game gameScript;
     // Use this for initialization
     void Start () {
 		if(titleScript == null)
         {
             titleScript = GetComponent<Title>();
+        }
+        if(resultScript == null)
+        {
+            resultScript = GetComponent<Result>();
+        }
+        if(gameScript == null)
+        {
+            gameScript = GetComponent<Game>();
         }
 	}
 	
@@ -42,14 +51,20 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
         if(text == "Title")
         {
             titleScript.enabled = true;
+            gameScript.enabled = false;
+            resultScript.enabled = false;
         }
         if(text == "Game")
         {
             titleScript.enabled = false;
+            gameScript.enabled = true;
+            resultScript.enabled = false;
         }
         if(text == "Result")
         {
-
+            titleScript.enabled = false;
+            gameScript.enabled = false;
+            resultScript.enabled = true;
         }
         //テストコード
         /*

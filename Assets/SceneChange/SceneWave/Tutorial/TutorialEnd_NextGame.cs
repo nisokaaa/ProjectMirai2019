@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 「」
+/// 引数　 ：解説
+/// 戻り値 ：解説
+/// １．手順
+/// ２．手順
+/// ３．手順
+/// 作成者：志村まさき
+/// </summary>
 public class TutorialEnd_NextGame : MonoBehaviour
 {
 

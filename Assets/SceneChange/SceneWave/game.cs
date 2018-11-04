@@ -14,8 +14,6 @@ using UnityEngine.SceneManagement;  //シーンの名前取得用
 /// </summary>
 public class Game : MonoBehaviour
 {
-    [SerializeField] GameObject TutorialObject;
-
     enum WAVE
     {
         NONE = 0,
@@ -33,7 +31,7 @@ public class Game : MonoBehaviour
     };
 
     WAVE game = WAVE.NONE;
-    BossBattleEnd bossBattleEnd;
+    BossBattleEnd bossBattleEnd = null;
 
     // Use this for initialization
     void Start () {
@@ -50,6 +48,12 @@ public class Game : MonoBehaviour
         {
             return;
         }
+
+        if(bossBattleEnd == null)
+        {
+            return;
+        }
+
         if (bossBattleEnd.GetBossBattleFlag() == false)
         {
             return;

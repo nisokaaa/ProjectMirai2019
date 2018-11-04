@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1208191112773818
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1587555821741926
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 4219355827710252}
   - component: {fileID: 114929463320409150}
   - component: {fileID: 114854753840394446}
+  - component: {fileID: 114945579255777226}
+  - component: {fileID: 114656458589566136}
   m_Layer: 0
   m_Name: SceneChangeMgr
   m_TagString: Untagged
@@ -267,6 +269,18 @@ MonoBehaviour:
   bDebug: 0
   bChangeSceneFlag: 0
   bDebugLogConsoleDraw: 0
+--- !u!114 &114656458589566136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964568917005828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b393fbc878c99004b883c821441f47be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  result: 0
 --- !u!114 &114854753840394446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,6 +302,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56796e55943a584799ef79ee19479ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114945579255777226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964568917005828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ef3388a9b175c499718014ceda8f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &222001841260721776
@@ -352,6 +377,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 224.45, y: -22.6}
+  m_AnchoredPosition: {x: 224.45, y: -22.599976}
   m_SizeDelta: {x: 1497, y: 150.6}
   m_Pivot: {x: 0.5, y: 0.5}
