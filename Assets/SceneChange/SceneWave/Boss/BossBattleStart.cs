@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialEnd : MonoBehaviour {
+public class BossBattleStart : MonoBehaviour {
 
-    [SerializeField] GameObject TutorialObject;
-    
+    [SerializeField] Animator BossState;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,9 +18,9 @@ public class TutorialEnd : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            TutorialObject.SetActive(false);
+            BossState.SetBool("BossBattleStart", true);
         }
     }
 }

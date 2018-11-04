@@ -33,14 +33,32 @@ public class Game : MonoBehaviour
     };
 
     WAVE game = WAVE.NONE;
+    BossBattleEnd bossBattleEnd;
 
     // Use this for initialization
     void Start () {
-		
+		if(bossBattleEnd == null)
+        {
+            bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        string text = SceneManager.GetActiveScene().name;
+        if (text != "Game")
+        {
+            return;
+        }
+        if (bossBattleEnd.GetBossBattleFlag() == false)
+        {
+            return;
+        }
+
+        if(Input.anyKeyDown)
+        {
+            SceneChangeController.Instance.SetChangeScene("Result");
+            SceneChangeController.Instance.SetChangeSceneExecution();
+        }
 	}
 }

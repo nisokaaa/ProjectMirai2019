@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;  //シーンの名前取得用
 /// 作成者：志村まさき
 /// </summary>
 public class Title : MonoBehaviour {
-
+    
     enum WAVE
     {
         NONE = 0,
