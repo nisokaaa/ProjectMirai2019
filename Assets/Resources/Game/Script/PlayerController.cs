@@ -49,6 +49,6 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity));
 
         // Rayが地面にあたってないときは速度減衰をやわらげよう・・・・
-        Debug.Log(rb.velocity);
+        //Debug.Log(rb.velocity);
     }
 }

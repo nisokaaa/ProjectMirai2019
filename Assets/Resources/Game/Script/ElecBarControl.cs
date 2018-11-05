@@ -79,4 +79,9 @@ public class ElecBarControl : MonoBehaviour {
         elecBarBackground.CrossFadeAlpha(0, fadeDuration, true);
         elecBarFill.CrossFadeAlpha(0, fadeDuration, true);
     }
+
+    public float GetGageValue()
+    {
+        return slider.value;
+    }
 }
