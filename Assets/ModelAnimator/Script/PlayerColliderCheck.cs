@@ -50,8 +50,11 @@ public class PlayerColliderCheck : MonoBehaviour {
     }
 
     //振れている間
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    
-    //}
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Plane")
+        {
+            tagPlane_CollisionEnter = true;
+        }
+    }
 }

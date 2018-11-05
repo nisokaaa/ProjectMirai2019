@@ -1,15 +1,15 @@
-?�using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;  //シーンの名前取得用
 
 /// <summary>
-/// 「SceneChange関係�?�??タを保持して�?��ゲー�?オブジェクト用のクラス�?
-/// 引数�? ??
-/// 戻り�?� ??
-/// ?��?
-/// ?��?
-/// 作�?�?��志村まさき
+/// 「SceneChange関係のデータを保持しているゲームオブジェクト用のクラス」
+/// 引数　 ：
+/// 戻り値 ：
+/// １．
+/// ２．
+/// 作成者：志村まさき
 /// </summary>
 public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
 {
@@ -46,6 +46,8 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
+=======
         string text = SceneManager.GetActiveScene().name;
 
         if(text == "Title")
@@ -66,19 +68,26 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
             gameScript.enabled = false;
             resultScript.enabled = true;
         }
-        //�?��トコー�?
+>>>>>>> origin/feature/SceneChangeDevLayer
+        //テストコード
         
-        //次のシーンの読み込み処�?
+        //次のシーンの読み込み処理
 		if(Input.GetKeyDown(KeyCode.F1))
         {
             SceneChangeController.Instance.SetChangeScene("Game");
         }
 
-        //シーンの�?��替え実�?
+        //シーンの切り替え実行
         if(Input.GetKeyDown(KeyCode.F2))
         {
             SceneChangeController.Instance.SetChangeSceneExecution();
         }
+<<<<<<< HEAD
+        
+	}
+=======
+        */
     }
+>>>>>>> origin/feature/SceneChangeDevLayer
     
 }

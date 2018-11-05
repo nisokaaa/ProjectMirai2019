@@ -430,11 +430,39 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 1964568917005828, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224718694165704630, guid: c8d5d53aa0d82064abf61d52585c98ed,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.599976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208191112773818, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587555821741926, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309341583813282, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198927884129702, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+=======
     - target: {fileID: 114945579255777226, guid: c8d5d53aa0d82064abf61d52585c98ed,
         type: 2}
       propertyPath: TutorialObject
       value: 
       objectReference: {fileID: 793964746}
+>>>>>>> origin/feature/SceneChangeDevLayer
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d5d53aa0d82064abf61d52585c98ed, type: 2}
   m_IsPrefabAsset: 0
@@ -1100,26 +1128,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1036218034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1775202001709540, guid: f900a46d2f4eb3641af363b922836f25,
-    type: 2}
-  m_PrefabInternal: {fileID: 675715249}
---- !u!114 &1036218038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1036218034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f78269e9472ae14096ec1f81665d294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TutorialObject: {fileID: 793964746}
-  GameStartUI: {fileID: 1713823955}
-  fade: 0
-  endTutorialTime: 500
+<<<<<<< HEAD
 --- !u!1001 &1145646274
 Prefab:
   m_ObjectHideFlags: 0
@@ -1166,6 +1175,28 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafddb0c7bc028e459a59730bd6fe4c4, type: 2}
   m_IsPrefabAsset: 0
+=======
+--- !u!1 &1036218034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1775202001709540, guid: f900a46d2f4eb3641af363b922836f25,
+    type: 2}
+  m_PrefabInternal: {fileID: 675715249}
+--- !u!114 &1036218038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036218034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f78269e9472ae14096ec1f81665d294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialObject: {fileID: 793964746}
+  GameStartUI: {fileID: 1713823955}
+  fade: 0
+  endTutorialTime: 500
+>>>>>>> origin/feature/SceneChangeDevLayer
 --- !u!1001 &1242491984
 Prefab:
   m_ObjectHideFlags: 0
@@ -1431,6 +1462,7 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1318742684}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 --- !u!1001 &1397508504
 Prefab:
   m_ObjectHideFlags: 0
@@ -1542,86 +1574,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1414160440}
   m_CullTransparentMesh: 0
---- !u!1 &1428283381
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1428283384}
-  - component: {fileID: 1428283383}
-  - component: {fileID: 1428283382}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1428283382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1428283381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1428283383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1428283381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1428283384
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1428283381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460026541
+=======
+--- !u!1 &1428283381
+>>>>>>> origin/feature/SceneChangeDevLayer
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1460026542}
   - component: {fileID: 1460026545}
   - component: {fileID: 1460026544}
   - component: {fileID: 1460026543}
   m_Layer: 0
   m_Name: Canvas
+=======
+  - component: {fileID: 1428283384}
+  - component: {fileID: 1428283383}
+  - component: {fileID: 1428283382}
+  m_Layer: 0
+  m_Name: EventSystem
+>>>>>>> origin/feature/SceneChangeDevLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &1460026542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1643,10 +1625,14 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1460026543
+=======
+--- !u!114 &1428283382
+>>>>>>> origin/feature/SceneChangeDevLayer
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1460026541}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1659,10 +1645,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &1460026544
+=======
+  m_GameObject: {fileID: 1428283381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1428283383
+>>>>>>> origin/feature/SceneChangeDevLayer
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1460026541}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1745,6 +1748,30 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafddb0c7bc028e459a59730bd6fe4c4, type: 2}
   m_IsPrefabAsset: 0
+=======
+  m_GameObject: {fileID: 1428283381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1428283384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428283381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> origin/feature/SceneChangeDevLayer
 --- !u!1 &1569441899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,11 +2112,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1713823955 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1112634901850974, guid: f900a46d2f4eb3641af363b922836f25,
-    type: 2}
-  m_PrefabInternal: {fileID: 675715249}
+<<<<<<< HEAD
 --- !u!1001 &1759103745
 Prefab:
   m_ObjectHideFlags: 0
@@ -2136,6 +2159,13 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafddb0c7bc028e459a59730bd6fe4c4, type: 2}
   m_IsPrefabAsset: 0
+=======
+--- !u!1 &1713823955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1112634901850974, guid: f900a46d2f4eb3641af363b922836f25,
+    type: 2}
+  m_PrefabInternal: {fileID: 675715249}
+>>>>>>> origin/feature/SceneChangeDevLayer
 --- !u!1001 &1832057120
 Prefab:
   m_ObjectHideFlags: 0
@@ -2190,29 +2220,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1951794841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1348907116966160, guid: f900a46d2f4eb3641af363b922836f25,
-    type: 2}
-  m_PrefabInternal: {fileID: 675715249}
---- !u!95 &1951794843
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1951794841}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1026cf742d6234945b16ebc4c9ace8ca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
 --- !u!1001 &1839729002
 Prefab:
   m_ObjectHideFlags: 0
@@ -2259,6 +2267,31 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafddb0c7bc028e459a59730bd6fe4c4, type: 2}
   m_IsPrefabAsset: 0
+=======
+--- !u!1 &1951794841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1348907116966160, guid: f900a46d2f4eb3641af363b922836f25,
+    type: 2}
+  m_PrefabInternal: {fileID: 675715249}
+--- !u!95 &1951794843
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951794841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1026cf742d6234945b16ebc4c9ace8ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> origin/feature/SceneChangeDevLayer
 --- !u!1 &2003951657
 GameObject:
   m_ObjectHideFlags: 0
