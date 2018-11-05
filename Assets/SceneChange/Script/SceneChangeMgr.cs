@@ -1,15 +1,15 @@
-?ｿusing System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;  //繧ｷ繝ｼ繝ｳ縺ｮ蜷榊燕蜿門ｾ礼畑
 
 /// <summary>
-/// 縲郡ceneChange髢｢菫ゅ?繝??繧ｿ繧剃ｿ晄戟縺励※縺?ｋ繧ｲ繝ｼ繝?繧ｪ繝悶ず繧ｧ繧ｯ繝育畑縺ｮ繧ｯ繝ｩ繧ｹ縲?
-/// 蠑墓焚縲? ??
-/// 謌ｻ繧雁?､ ??
-/// ?托ｼ?
-/// ?抵ｼ?
-/// 菴懈?閠?ｼ壼ｿ玲搗縺ｾ縺輔″
+/// 「SceneChange関係のデータを保持しているゲームオブジェクト用のクラス」
+/// 引数　 ：
+/// 戻り値 ：
+/// １．
+/// ２．
+/// 作成者：志村まさき
 /// </summary>
 public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
 {
@@ -24,10 +24,11 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
         DontDestroyOnLoad(this.gameObject);
     }
 
-    //蛻ｶ蠕｡逕ｨ繧ｹ繧ｯ繝ｪ繝励ヨ
+    //制御用スクリプト
     Title titleScript;
     Result resultScript;
     Game gameScript;
+
     // Use this for initialization
     void Start () {
 		if(titleScript == null)
@@ -66,19 +67,16 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
             gameScript.enabled = false;
             resultScript.enabled = true;
         }
-        //繝?せ繝医さ繝ｼ繝?
-        
-        //谺｡縺ｮ繧ｷ繝ｼ繝ｳ縺ｮ隱ｭ縺ｿ霎ｼ縺ｿ蜃ｦ逅?
+        /*サンプルコード
 		if(Input.GetKeyDown(KeyCode.F1))
         {
             SceneChangeController.Instance.SetChangeScene("Game");
         }
-
-        //繧ｷ繝ｼ繝ｳ縺ｮ蛻?ｊ譖ｿ縺亥ｮ溯｡?
         if(Input.GetKeyDown(KeyCode.F2))
         {
             SceneChangeController.Instance.SetChangeSceneExecution();
         }
+        */
     }
     
 }
