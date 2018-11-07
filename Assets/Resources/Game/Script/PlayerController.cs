@@ -20,11 +20,15 @@ public class PlayerController : MonoBehaviour
     // アクセル状態
     bool bAccelerator = false;
 
+    // デバッグ用
+    bool bBack = false;
+
     void Update()
     {
         // アクセルボタンInput
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
         bAccelerator = Input.GetKey(KeyCode.W) ? true : false;
+        bBack = Input.GetKey(KeyCode.S) ? true : false;
 
         // 回転
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("L_Stick_H"));
@@ -41,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
         // アクセル押下してたら速度代入
         speedCurrent = bAccelerator ? speed : 0.0f;
+        if(!bAccelerator) speedCurrent = bBack ? -speed : 0.0f;
 
         Vector3 moveVector = Vector3.zero;
         moveVector = speedCurrent * transform.forward;
