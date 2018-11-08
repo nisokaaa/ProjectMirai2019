@@ -28,7 +28,7 @@ public class BossController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         bossBattleStartScript = GameObject.Find("BossBattleStart").GetComponent<BossBattleStart>();
-        timeCnt = 0;
+        state = STATE.NONE;
     }
 	
 	// Update is called once per frame
@@ -42,16 +42,16 @@ public class BossController : MonoBehaviour {
                 }
                 break;
             case STATE.START:
-                m_speed = 10;
                 FollowingPlayer();
-                
                 timeCnt--;
                 if(timeCnt <= 0)
                 {
                     state = STATE.BATTLE;
+                    timeCnt = 0;
                 }
                 break;
             case STATE.BATTLE:
+                m_speed = 10;
                 FollowingPlayer();
                 break;
             case STATE.END:

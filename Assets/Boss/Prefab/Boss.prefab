@@ -215,5 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerGameObject: {fileID: 0}
-  state: 0
-  SeekPos: {x: 0, y: 0, z: 0}
+  m_target: {fileID: 0}
+  m_speed: 5
+  m_attenuation: 0.5
+  SeecPos: {x: 0, y: -65, z: -220}
+  timeCnt: 300
