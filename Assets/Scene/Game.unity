@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,8 +148,8 @@ RectTransform:
   m_Father: {fileID: 967174032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -224,7 +224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4312987148439812, guid: fafddb0c7bc028e459a59730bd6fe4c4, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafddb0c7bc028e459a59730bd6fe4c4, type: 2}
@@ -2537,7 +2537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4528034850329060, guid: 7463c753018b3cc469ce505e7075db37, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7463c753018b3cc469ce505e7075db37, type: 2}
@@ -3198,6 +3198,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1651226999048204, guid: f900a46d2f4eb3641af363b922836f25,
     type: 2}
   m_PrefabInternal: {fileID: 675715249}
+--- !u!1 &856374673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1964568917005828, guid: c8d5d53aa0d82064abf61d52585c98ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 185725742}
+--- !u!114 &856374675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856374673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ef3388a9b175c499718014ceda8f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &857110806
 Mesh:
   m_ObjectHideFlags: 0
@@ -3353,22 +3369,6 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
---- !u!1 &856374673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1964568917005828, guid: c8d5d53aa0d82064abf61d52585c98ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 185725742}
---- !u!114 &856374675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 856374673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ef3388a9b175c499718014ceda8f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &950172768
 GameObject:
   m_ObjectHideFlags: 0
@@ -7681,7 +7681,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11246,117 +11246,6 @@ MonoBehaviour:
   roadShapeDistanceMax: 1
   perpDir: {x: -0.9999966, y: 0, z: 0.0025985476}
   perpDirRotated: {x: -0.99999666, y: 0, z: 0.0025976563}
---- !u!1 &1951794841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1348907116966160, guid: f900a46d2f4eb3641af363b922836f25,
-    type: 2}
-  m_PrefabInternal: {fileID: 675715249}
---- !u!95 &1951794843
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1951794841}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1026cf742d6234945b16ebc4c9ace8ca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1977541552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1475867795, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeSplineNode: 1
-  leftIndent: 5
-  leftIndentAlignment: 0
-  rightIndent: 5
-  rightIndentAlignment: 0
-  leftSurrounding: 5
-  rightSurrounding: 5
-  bridgeObject: 0
-  bridgeStartLevelDistance: 0
-  bridgeEndLevelDistance: 0
-  rotation: 0
-  position: {x: -14.408226, y: 0, z: 3657.7424}
-  oldPosition: {x: -14.408226, y: 0, z: 3657.7424}
-  positionTmp: {x: 0, y: 0, z: 0}
-  controlType: 0
-  controlTypeTmp: 0
-  rotations: 0
-  circularRadius: 1
-  circularAngle: 90
-  circularSegments: 10
-  splineStrength: 0.5
-  direction: {x: 0.49496686, y: 0, z: 0.8689118}
-  direction1: {x: 0.4949669, y: 0, z: 0.86891186}
-  rl: {x: -58.72273, y: 0, z: 3682.9856}
-  rr: {x: 29.906277, y: 0, z: 3632.4993}
-  followTerrainContours: 0
-  startSplinePoint: 23
-  startDistance: 436.01086
-  startUVY: 0
-  totalDistance: 0
-  totalDistanceString: 0
-  angleString: 
-  gradeString: 
-  rotationCenter: 0.5
-  soData: []
-  controllerType: 0
-  randomYPosition: 0
-  randomMinYPosition: 0
-  randomMaxYPosition: 0
-  minRandomYPositionDistance: 0
-  maxRandomYPositionDistance: 0
-  randomMinRotation: 0
-  randomMaxRotation: 0
-  minRandomRotationDistance: 0
-  maxRandomRotationDistance: 0
-  prevLeftIndent: 0
-  prevRightIndent: 0
-  prevLeftSurrounding: 0
-  prevRightSurrounding: 0
-  prevControlType: 0
-  attachExit: 0
-  exitType: 0
-  exitGeometryType: 0
-  startExitInt: 0
-  endExitInt: 0
-  startExitOffset: 0
-  extrusionDistance: 10
-  extrusionType: 0
-  fixedDistance: 10
-  connectionAngle: 10
-  connectionRadius: 5
-  exitMaterial: {fileID: 0}
-  connectionMaterial: {fileID: 0}
-  exitRoadType: 0
-  connectionRoadType: 0
-  exitInnerVertices: []
-  customColor: {r: 1, g: 0, b: 0, a: 1}
-  roadShape:
-  - {x: 50, y: 0}
-  - {x: -50, y: 0}
-  roadShapeVecsGlobal:
-  - {x: -57.853817, y: 0, z: 3682.4907}
-  - {x: 29.037365, y: 0, z: 3632.9941}
-  roadShapeDistanceMin: 0
-  roadShapeDistanceMax: 1
-  perpDir: {x: -0.8689118, y: 0, z: 0.49496686}
-  perpDirRotated: {x: -0.8689123, y: 0, z: 0.4949661}
 --- !u!1001 &1839729002
 Prefab:
   m_ObjectHideFlags: 0
@@ -11558,6 +11447,117 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1 &1951794841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1348907116966160, guid: f900a46d2f4eb3641af363b922836f25,
+    type: 2}
+  m_PrefabInternal: {fileID: 675715249}
+--- !u!95 &1951794843
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951794841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1026cf742d6234945b16ebc4c9ace8ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1977541552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1475867795, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSplineNode: 1
+  leftIndent: 5
+  leftIndentAlignment: 0
+  rightIndent: 5
+  rightIndentAlignment: 0
+  leftSurrounding: 5
+  rightSurrounding: 5
+  bridgeObject: 0
+  bridgeStartLevelDistance: 0
+  bridgeEndLevelDistance: 0
+  rotation: 0
+  position: {x: -14.408226, y: 0, z: 3657.7424}
+  oldPosition: {x: -14.408226, y: 0, z: 3657.7424}
+  positionTmp: {x: 0, y: 0, z: 0}
+  controlType: 0
+  controlTypeTmp: 0
+  rotations: 0
+  circularRadius: 1
+  circularAngle: 90
+  circularSegments: 10
+  splineStrength: 0.5
+  direction: {x: 0.49496686, y: 0, z: 0.8689118}
+  direction1: {x: 0.4949669, y: 0, z: 0.86891186}
+  rl: {x: -58.72273, y: 0, z: 3682.9856}
+  rr: {x: 29.906277, y: 0, z: 3632.4993}
+  followTerrainContours: 0
+  startSplinePoint: 23
+  startDistance: 436.01086
+  startUVY: 0
+  totalDistance: 0
+  totalDistanceString: 0
+  angleString: 
+  gradeString: 
+  rotationCenter: 0.5
+  soData: []
+  controllerType: 0
+  randomYPosition: 0
+  randomMinYPosition: 0
+  randomMaxYPosition: 0
+  minRandomYPositionDistance: 0
+  maxRandomYPositionDistance: 0
+  randomMinRotation: 0
+  randomMaxRotation: 0
+  minRandomRotationDistance: 0
+  maxRandomRotationDistance: 0
+  prevLeftIndent: 0
+  prevRightIndent: 0
+  prevLeftSurrounding: 0
+  prevRightSurrounding: 0
+  prevControlType: 0
+  attachExit: 0
+  exitType: 0
+  exitGeometryType: 0
+  startExitInt: 0
+  endExitInt: 0
+  startExitOffset: 0
+  extrusionDistance: 10
+  extrusionType: 0
+  fixedDistance: 10
+  connectionAngle: 10
+  connectionRadius: 5
+  exitMaterial: {fileID: 0}
+  connectionMaterial: {fileID: 0}
+  exitRoadType: 0
+  connectionRoadType: 0
+  exitInnerVertices: []
+  customColor: {r: 1, g: 0, b: 0, a: 1}
+  roadShape:
+  - {x: 50, y: 0}
+  - {x: -50, y: 0}
+  roadShapeVecsGlobal:
+  - {x: -57.853817, y: 0, z: 3682.4907}
+  - {x: 29.037365, y: 0, z: 3632.9941}
+  roadShapeDistanceMin: 0
+  roadShapeDistanceMax: 1
+  perpDir: {x: -0.8689118, y: 0, z: 0.49496686}
+  perpDirRotated: {x: -0.8689123, y: 0, z: 0.4949661}
 --- !u!1 &2003951657
 GameObject:
   m_ObjectHideFlags: 0
