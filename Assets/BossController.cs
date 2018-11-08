@@ -21,15 +21,47 @@ public class BossController : MonoBehaviour {
 
     private Vector3 m_velocity;
 
+    STATE state;
 
-
+    BossBattleStart bossBattleStartScript;
+    [SerializeField] int timeCnt;
     // Use this for initialization
     void Start () {
-        
-	}
+        bossBattleStartScript = GameObject.Find("BossBattleStart").GetComponent<BossBattleStart>();
+        timeCnt = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        switch(state)
+        {
+            case STATE.NONE:
+                if(bossBattleStartScript.GetBossBattleStartTime() == 0)
+                {
+                    state = STATE.START;
+                }
+                break;
+            case STATE.START:
+                m_speed = 10;
+                FollowingPlayer();
+                
+                timeCnt--;
+                if(timeCnt <= 0)
+                {
+                    state = STATE.BATTLE;
+                }
+                break;
+            case STATE.BATTLE:
+                FollowingPlayer();
+                break;
+            case STATE.END:
+                break;
+        }
+    }
+
+    //プレイヤーに追従する
+    void FollowingPlayer()
+    {
         m_velocity += ((m_target.position - SeecPos) - transform.position) * m_speed;
         m_velocity *= m_attenuation;
         transform.position += m_velocity *= Time.deltaTime;
