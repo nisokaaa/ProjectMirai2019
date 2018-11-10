@@ -39,7 +39,16 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             elecBarControl.Decrease();
             elecBarControl.Decrease();
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+
+            //if (Input.GetKey(KeyCode.Space))
+            //{
+            //    rb.up *= 2.0f;
+            //}
+
             rb.AddForce( 2.0f * rb.velocity);
+
+
+            //演出
             particleSystem.transform.position = transform.position;
             particleSystem.SetActive(true);
             playerModelAnimatorController.PlayerAtackControl(true);
