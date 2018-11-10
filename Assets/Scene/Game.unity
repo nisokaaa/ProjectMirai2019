@@ -1832,13 +1832,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 511333865}
-  m_LocalRotation: {x: -0.10400767, y: 0, z: 0, w: 0.9945765}
+  m_LocalRotation: {x: -0.0025307287, y: 0, z: 0, w: 0.99999684}
   m_LocalPosition: {x: 0, y: 20, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -11.94, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.29, y: 0, z: 0}
 --- !u!114 &511333870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1887,8 +1887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a1d843d5c68124fb98626131d07109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDistance: 52
-  baseHeight: 14.4
+  baseDistance: 22.1
+  baseHeight: 0
   chaseSpeed: 26.5
 --- !u!114 &511333874
 MonoBehaviour:
