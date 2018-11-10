@@ -28,11 +28,14 @@ public class PlayerController : MonoBehaviour
         // アクセルボタンInput
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
         bAccelerator = Input.GetKey(KeyCode.W) ? true : false;
+        bAccelerator = Input.GetKey(KeyCode.Joystick1Button0) ? true : false;
+
         bBack = Input.GetKey(KeyCode.S) ? true : false;
 
         // 回転
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("L_Stick_H"));
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal"));
+        transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal 1"));
 
         // forwardのRay
         Ray ray = new Ray(transform.position, transform.forward);
