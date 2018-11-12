@@ -19,6 +19,11 @@ public class CameraChaseDelay : MonoBehaviour {
     private Transform player;
     private Transform cam;
 
+    [SerializeField, Range(1f, 150f)]
+    private int ScalarCamera = 1;
+
+    public float HeightM = 1.2f;            // 注視点の高さ[m]
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -29,9 +34,14 @@ public class CameraChaseDelay : MonoBehaviour {
     {
         // カメラの位置を設定
         var desiredPos = player.position - player.forward * baseDistance + Vector3.up * baseHeight;
+        
         cam.position = Vector3.Lerp(cam.position, desiredPos, Time.deltaTime * chaseSpeed);
 
+
+        var lookAt = player.position + Vector3.up * HeightM;
+
         // カメラの向きを設定(別スクリプトにてカメラを回転遅延させるならコメ必須)
-        cam.LookAt(player);
+        //cam.LookAt(player - player.forward);
+        cam.LookAt(lookAt);
     }
 }

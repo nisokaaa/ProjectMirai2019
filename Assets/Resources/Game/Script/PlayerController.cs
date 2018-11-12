@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(1f, 200f)]
     float moveForceMultiplier = 20f;
 
+    public float gravity = 20.0F;   //重力の強さ
+
     // アクセル状態
     bool bAccelerator = false;
 
@@ -52,6 +54,9 @@ public class PlayerController : MonoBehaviour
 
         Vector3 moveVector = Vector3.zero;
         moveVector = speedCurrent * transform.forward;
+
+        //重力処理
+        moveVector.y -= gravity * Time.deltaTime; //マイナスのY方向（下向き）に重力を与える
 
         // ボタン非押下で勝手に速度減衰
         rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity));

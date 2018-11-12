@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossController : MonoBehaviour {
-
-    [SerializeField] GameObject PlayerGameObject;
-
     enum STATE
     {
         NONE = 0,
@@ -27,12 +24,21 @@ public class BossController : MonoBehaviour {
     [SerializeField] int timeCnt;
     // Use this for initialization
     void Start () {
+        if(m_target == null)
+        {
+            m_target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+
         bossBattleStartScript = GameObject.Find("BossBattleStart").GetComponent<BossBattleStart>();
         state = STATE.NONE;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if(bossBattleStartScript == null)
+        {
+            return;
+        }
         switch(state)
         {
             case STATE.NONE:
@@ -62,6 +68,10 @@ public class BossController : MonoBehaviour {
     //プレイヤーに追従する
     void FollowingPlayer()
     {
+        if(m_target == null)
+        {
+            return;
+        }
         m_velocity += ((m_target.position - SeecPos) - transform.position) * m_speed;
         m_velocity *= m_attenuation;
         transform.position += m_velocity *= Time.deltaTime;

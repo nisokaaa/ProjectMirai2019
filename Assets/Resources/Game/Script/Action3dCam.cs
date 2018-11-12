@@ -18,13 +18,13 @@ public class Action3dCam : MonoBehaviour
     private LayerMask lineOfSightMask = -1;
 
     // カメラが追従する対象からのオフセット：キャラの中心は足元にあるため1.5m上に調整している
-    private Vector3 targetOffset = new Vector3(0.0f, 1.5f, 0.0f);
+    public Vector3 targetOffset = new Vector3(0.0f, 1.5f, 0.0f);
 
     // ターゲットとカメラの現在の距離：遮るものがあるとこの距離は縮まる
-    private float currentDistance = 3.0f;
+    public float currentDistance = 3.0f;
 
     // ターゲットとカメラの距離：遮るものがない時の距離
-    private float distance = 3.0f;
+    public float distance = 3.0f;
 
     // カメラの視点の角度
     private float x = 0.0f;
