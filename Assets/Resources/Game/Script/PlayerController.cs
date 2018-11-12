@@ -23,9 +23,24 @@ public class PlayerController : MonoBehaviour
     bool bAccelerator = false;
 
     // デバッグ用
+    [SerializeField]
     bool bBack = false;
 
-    void Update()
+    [SerializeField, Range(0f, 5000f)]
+    int jumpPower = 100;
+    bool jump = false;
+
+    PlayerColliderCheck playerColliderCheck;            //bJumpアニメーション用スクリプト
+
+    void Start()
+    {
+        if (playerColliderCheck == null)
+        {
+            playerColliderCheck = GetComponent<PlayerColliderCheck>();
+        }
+    }
+
+        void Update()
     {
         // アクセルボタンInput
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
@@ -34,11 +49,26 @@ public class PlayerController : MonoBehaviour
 
         bBack = Input.GetKey(KeyCode.S) ? true : false;
 
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jump = true;
+        }
+        if (playerColliderCheck.GetCollisionEnterExit() == false)
+        {
+            jump = false;
+        }
+
+
         // 回転
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("L_Stick_H"));
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal"));
         //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal 1"));
 
+        if (bBack == false)
+        {
+            return;
+        }
         // forwardのRay
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
@@ -57,6 +87,12 @@ public class PlayerController : MonoBehaviour
 
         //重力処理
         moveVector.y -= gravity * Time.deltaTime; //マイナスのY方向（下向き）に重力を与える
+
+        if (jump == true)
+        {
+            jump = false;
+            rb.AddForce(Vector3.up * jumpPower);
+        }
 
         // ボタン非押下で勝手に速度減衰
         rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity));

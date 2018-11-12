@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ 常時放電
+     */
 public class DischargeAction : MonoBehaviour {
 
     [SerializeField]GameObject particleSystem;

@@ -108,10 +108,10 @@ public class PlayerModelAnimatorController : MonoBehaviour
     void DebugTestController()
     {
         //仮ジャンプ実装
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerRigidbody.AddForce(Vector3.up * 5000);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    playerRigidbody.AddForce(Vector3.up * 5000);
+        //}
 
         //しゃがみアクションのテストコード
         if (Input.GetKey(KeyCode.B))
