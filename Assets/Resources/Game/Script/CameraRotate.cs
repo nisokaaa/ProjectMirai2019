@@ -13,13 +13,47 @@ public class CameraRotate : MonoBehaviour {
     private Vector2 prePosition;
     private Vector2 newAngle;
 
-	// Use this for initialization
-	void Start () {
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
+    private Vector2 m_joyconAngle;
+    public bool debug = false;
+    // Use this for initialization
+    void Start () {
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debug == true) {
+            if (!(m_joycons.Count <= 0 || m_joycons == null))
+            {
+                m_joyconAngle *= 0.88f;
+                m_joyconAngle.x -= m_joyconR.GetStick()[1] * (rotationSpeedX * 10);
+                m_joyconAngle.y += m_joyconR.GetStick()[0] * (rotationSpeedY * 10);
+                transform.localEulerAngles = new Vector3(m_joyconAngle.x, m_joyconAngle.y, 0f);
+            }
+        }
+
+        //if (m_joyconR.GetStick()[0] > 0.1f)
+        //{
+        //    m_joyconAngle.x += m_joyconR.GetStick()[0];
+        //    // カメラに回転量代入
+        //    transform.localEulerAngles = new Vector3(m_joyconAngle.x , m_joyconAngle.y, 0f);
+        //}
+        //if ()
+        //{
+        //    newAngle.x += m_joyconR.GetStick()[0];
+        //    // カメラに回転量代入
+        //    transform.localEulerAngles = new Vector3(m_joyconAngle.x, m_joyconAngle.y, 0f);
+        //}
+
         // 右クリックした時
         if (Input.GetMouseButtonDown(1))
         {

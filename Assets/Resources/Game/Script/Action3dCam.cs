@@ -8,6 +8,7 @@
 */
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Action3dCam : MonoBehaviour
 {
@@ -33,12 +34,24 @@ public class Action3dCam : MonoBehaviour
     // ターゲットとカメラの距離が変更されるスピード（メソッドが返す値を格納する変数）
     private float distanceVelocity = 0.0f;
 
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
+
     void Start()
     {
         // 配置されたカメラの視点の角度（初期値）を問い合わせる
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
+
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 
     // カメラの更新は他の更新よりも後に行うべきであるため、LateUpdate() を使う
@@ -51,6 +64,8 @@ public class Action3dCam : MonoBehaviour
         }
         //x += Input.GetAxis("Stick X"); // コントローラのスティックX軸の角度：名称はInput Managerに設定が必要
         //y += Input.GetAxis("Stick Y"); // コントローラのスティックY軸の角度：名称はInput Managerに設定が必要
+        y -= m_joyconR.GetStick()[1]; // マウスのX軸の移動：補正を加えている
+        x += m_joyconR.GetStick()[0]; // マウスのY軸の移動：補正を加えている
 
         // カメラのY方向に制限を加える
         y = Mathf.Clamp(y, -20, 80);

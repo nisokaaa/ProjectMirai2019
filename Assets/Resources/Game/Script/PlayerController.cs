@@ -66,8 +66,16 @@ public class PlayerController : MonoBehaviour
 
         bBack = Input.GetKey(KeyCode.S) ? true : false;
 
+        if (!(m_joycons.Count <= 0 || m_joycons == null))
+        {
+            if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_DOWN))
+            {
+                jump = true;
+            }
+            transform.Rotate(new Vector3(0, 1, 0), m_joyconL.GetStick()[0]);
+        }
         
-        if (Input.GetKeyDown(KeyCode.Space) || m_joyconR.GetButtonDown(Joycon.Button.DPAD_DOWN))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
         }
@@ -77,11 +85,12 @@ public class PlayerController : MonoBehaviour
             jump = false;
         }
 
-        Debug.Log(m_joyconR.GetStick());
+        
         // 回転
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("L_Stick_H"));
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal"));
-        transform.Rotate(new Vector3(0, 1, 0), m_joyconL.GetStick()[0]);
+
+        
         //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal 1"));
 
         if (bBack == false)
@@ -100,9 +109,12 @@ public class PlayerController : MonoBehaviour
         // アクセル押下してたら速度代入
         speedCurrent = bAccelerator ? speed : 0.0f;
         if(!bAccelerator) speedCurrent = bBack ? -speed : 0.0f;     //アクセルが押されてないとき
-        if (m_joyconL.GetStick()[1] > 0.3f)
+        if(!(m_joycons.Count <= 0 || m_joycons== null))
         {
-            speedCurrent = speed * m_joyconL.GetStick()[1];
+            if (m_joyconL.GetStick()[1] > 0.3f)
+            {
+                speedCurrent = speed * m_joyconL.GetStick()[1];
+            }
         }
 
         Vector3 moveVector = Vector3.zero;

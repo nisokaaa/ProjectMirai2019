@@ -35,15 +35,25 @@ public class Game : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-		if(bossBattleEnd == null)
+        string text = SceneManager.GetActiveScene().name;
+
+        if (text != "Game")
+        {
+            return;
+        }
+
+        if (bossBattleEnd == null)
         {
             bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
+
+        
+
         if (text != "Game")
         {
             return;
