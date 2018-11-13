@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         // 回転
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("L_Stick_H"));
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal"));
-        transform.Rotate(new Vector3(0, 1, 0), m_joyconR.GetStick()[0]);
+        transform.Rotate(new Vector3(0, 1, 0), m_joyconL.GetStick()[0]);
         //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal 1"));
 
         if (bBack == false)
@@ -100,9 +100,9 @@ public class PlayerController : MonoBehaviour
         // アクセル押下してたら速度代入
         speedCurrent = bAccelerator ? speed : 0.0f;
         if(!bAccelerator) speedCurrent = bBack ? -speed : 0.0f;     //アクセルが押されてないとき
-        if (m_joyconR.GetStick()[1] > 0.3f)
+        if (m_joyconL.GetStick()[1] > 0.3f)
         {
-            speedCurrent = speed * m_joyconR.GetStick()[1];
+            speedCurrent = speed * m_joyconL.GetStick()[1];
         }
 
         Vector3 moveVector = Vector3.zero;
