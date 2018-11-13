@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // 減衰率
     [SerializeField, Range(1f, 200f)]
     float moveForceMultiplier = 20f;
-
+    
     public float gravity = 20.0F;   //重力の強さ
 
     // アクセル状態
@@ -32,12 +33,25 @@ public class PlayerController : MonoBehaviour
 
     PlayerColliderCheck playerColliderCheck;            //bJumpアニメーション用スクリプト
 
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
+    
     void Start()
     {
         if (playerColliderCheck == null)
         {
             playerColliderCheck = GetComponent<PlayerColliderCheck>();
         }
+
+        //joycon
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 
         void Update()
@@ -46,23 +60,28 @@ public class PlayerController : MonoBehaviour
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
         bAccelerator = Input.GetKey(KeyCode.W) ? true : false;
         //bAccelerator = Input.GetKey(KeyCode.Joystick1Button0) ? true : false;
+        
+        
+         
 
         bBack = Input.GetKey(KeyCode.S) ? true : false;
 
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || m_joyconR.GetButtonDown(Joycon.Button.DPAD_DOWN))
         {
             jump = true;
         }
         if (playerColliderCheck.GetCollisionEnterExit() == false)
         {
+            
             jump = false;
         }
 
-
+        Debug.Log(m_joyconR.GetStick());
         // 回転
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("L_Stick_H"));
         transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal"));
+        transform.Rotate(new Vector3(0, 1, 0), m_joyconR.GetStick()[0]);
         //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal 1"));
 
         if (bBack == false)
@@ -80,7 +99,11 @@ public class PlayerController : MonoBehaviour
 
         // アクセル押下してたら速度代入
         speedCurrent = bAccelerator ? speed : 0.0f;
-        if(!bAccelerator) speedCurrent = bBack ? -speed : 0.0f;
+        if(!bAccelerator) speedCurrent = bBack ? -speed : 0.0f;     //アクセルが押されてないとき
+        if (m_joyconR.GetStick()[1] > 0.3f)
+        {
+            speedCurrent = speed * m_joyconR.GetStick()[1];
+        }
 
         Vector3 moveVector = Vector3.zero;
         moveVector = speedCurrent * transform.forward;

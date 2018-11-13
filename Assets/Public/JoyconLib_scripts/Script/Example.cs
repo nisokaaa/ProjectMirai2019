@@ -35,14 +35,17 @@ public class Example : MonoBehaviour
 
         if (m_joycons == null || m_joycons.Count <= 0) return;
 
+        //ボタンの数だけ繰り返す
         foreach (var button in m_buttons)
         {
+            //左側のボタンが押されたとき
             if (m_joyconL.GetButton(button))
-            {
+            {//押されているボタン情報を格納する
                 m_pressedButtonL = button;
             }
+            //右側のボタンが押されたとき
             if (m_joyconR.GetButton(button))
-            {
+            {//押されているボタン情報を格納する
                 m_pressedButtonR = button;
             }
         }

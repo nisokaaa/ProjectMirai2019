@@ -3344,6 +3344,11 @@ Prefab:
       propertyPath: bBack
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 54531042360055736, guid: cae44817be6c00741927d32944ff9361,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135348751626242694, guid: cae44817be6c00741927d32944ff9361, type: 2}
     - {fileID: 65277359011396392, guid: cae44817be6c00741927d32944ff9361, type: 2}
@@ -8408,7 +8413,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1843956253018864, guid: 26d136933b1e1be44b6fed7b9cbe62c2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d136933b1e1be44b6fed7b9cbe62c2, type: 2}
