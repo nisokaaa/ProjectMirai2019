@@ -50,7 +50,11 @@ public class PlayerModelAnimatorController : MonoBehaviour
 
     [Header("プレイヤーアニメーション用デバックフラグ<Space:ジャンプ><B:攻撃><N:スライディング>")]
     [SerializeField] bool bDebugMode = false;
-    
+
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
+
     // Use this for initialization
     void Start()
     {
@@ -70,6 +74,13 @@ public class PlayerModelAnimatorController : MonoBehaviour
         {
             playerColliderCheck = player.GetComponent<PlayerColliderCheck>();
         }
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 
     // Update is called once per frame
@@ -112,15 +123,30 @@ public class PlayerModelAnimatorController : MonoBehaviour
         //{
         //    playerRigidbody.AddForce(Vector3.up * 5000);
         //}
-
-        //しゃがみアクションのテストコード
-        if (Input.GetKey(KeyCode.B))
+        if (m_joycons == null || m_joycons.Count <= 0)
         {
-            PlayerClimdControl(true);
+            //しゃがみアクションのテストコード
+            if (Input.GetKey(KeyCode.B))
+            {
+                PlayerClimdControl(true);
+            }
+            else
+            {
+                PlayerClimdControl(false);
+            }
         }else
         {
-            PlayerClimdControl(false);
+            //しゃがみアクションのテストコード
+            if (Input.GetKey(KeyCode.B) || m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+            {
+                PlayerClimdControl(true);
+            }
+            else
+            {
+                PlayerClimdControl(false);
+            }
         }
+        
     }
 
     //再生中のアニメーション以外はtrueを返す

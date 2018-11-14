@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerElecJump : MonoBehaviour {
 
     [SerializeField] bool bDebug;
+    PlayerElecMode playerElecMode;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

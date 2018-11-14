@@ -64,9 +64,11 @@ public class Action3dCam : MonoBehaviour
         }
         //x += Input.GetAxis("Stick X"); // コントローラのスティックX軸の角度：名称はInput Managerに設定が必要
         //y += Input.GetAxis("Stick Y"); // コントローラのスティックY軸の角度：名称はInput Managerに設定が必要
-        y -= m_joyconR.GetStick()[1]; // マウスのX軸の移動：補正を加えている
-        x += m_joyconR.GetStick()[0]; // マウスのY軸の移動：補正を加えている
-
+        if (!(m_joycons.Count <= 0 || m_joycons == null))
+        {
+            y -= m_joyconR.GetStick()[1]; // マウスのX軸の移動：補正を加えている
+            x += m_joyconR.GetStick()[0]; // マウスのY軸の移動：補正を加えている
+        }
         // カメラのY方向に制限を加える
         y = Mathf.Clamp(y, -20, 80);
 

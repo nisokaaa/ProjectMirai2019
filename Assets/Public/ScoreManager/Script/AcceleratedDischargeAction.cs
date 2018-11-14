@@ -8,9 +8,16 @@ using UnityEngine;
 public class AcceleratedDischargeAction : MonoBehaviour {
     PlayerModelAnimatorController playerModelAnimatorController;
     ElecBarControl elecBarControl;
+    PlayerElecMode playerElecMode;
     public GameObject particleSystem;
-    
 
+    [SerializeField] Vector3 AcceleratedSpeed;
+    [SerializeField, Range(1f, 2f)] float AcceleratorSpeed=1.1f;
+    [SerializeField, Range(0f, 1f)] float AcceleratorLimit = 0.8f;
+
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
     // Use this for initialization
     void Start () {
         if(playerModelAnimatorController == null)
@@ -21,9 +28,20 @@ public class AcceleratedDischargeAction : MonoBehaviour {
         {
             elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
         }
-
+        if(playerElecMode == null)
+        {
+            playerElecMode = GetComponent<PlayerElecMode>();
+        }
         particleSystem = Instantiate(particleSystem, transform.position, Quaternion.identity)as GameObject;
         particleSystem.SetActive(false);
+
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 	
 	// Update is called once per frame
@@ -34,7 +52,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             return;
         }
 
-		if(Input.GetKey(KeyCode.N))
+		if(Input.GetKey(KeyCode.N)|| playerElecMode.GetMode() == true)
         {
             elecBarControl.Decrease();
             elecBarControl.Decrease();
@@ -45,9 +63,10 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             //    rb.up *= 2.0f;
             //}
 
-            rb.AddForce( 2.0f * rb.velocity);
+            AcceleratedSpeed = rb.velocity * AcceleratorSpeed;
+            rb.AddForce(AcceleratedSpeed);
 
-
+            AcceleratedSpeed *= AcceleratorLimit;
             //演出
             particleSystem.transform.position = transform.position;
             particleSystem.SetActive(true);
@@ -58,7 +77,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             particleSystem.SetActive(false);
             playerModelAnimatorController.PlayerAtackControl(false);
         }
-	}
+    }
 
     //加速アクション
 }
