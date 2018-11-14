@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 4219355827710252}
   - component: {fileID: 114929463320409150}
   - component: {fileID: 114854753840394446}
-  - component: {fileID: 114945579255777226}
   - component: {fileID: 114656458589566136}
   m_Layer: 0
   m_Name: SceneChangeMgr
@@ -302,17 +301,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56796e55943a584799ef79ee19479ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114945579255777226
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1964568917005828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ef3388a9b175c499718014ceda8f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &222001841260721776

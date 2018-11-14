@@ -14,15 +14,26 @@ using UnityEngine;
 public class BossBattleStart : MonoBehaviour {
 
     [SerializeField] Animator BossState;
+    [SerializeField] int time;
+    bool bossBattle = false;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        bossBattle = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(bossBattle == true)
+        {
+            time--;
+
+            if(time <= 0)
+            {
+                time = 0;
+                bossBattle = false;
+            }
+        }
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -30,6 +41,17 @@ public class BossBattleStart : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             BossState.SetBool("BossBattleStart", true);
+            bossBattle = true;
         }
+    }
+
+    public bool GetBossBattleTime()
+    {
+        return bossBattle;
+    }
+
+    public int GetBossBattleStartTime()
+    {
+        return time;
     }
 }
