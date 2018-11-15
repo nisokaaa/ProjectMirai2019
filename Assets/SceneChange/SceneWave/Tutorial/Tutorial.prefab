@@ -57,12 +57,12 @@ GameObject:
   - component: {fileID: 114665392143806898}
   - component: {fileID: 114923169533568734}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Canvas_GameStartUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1118648994643478
 GameObject:
   m_ObjectHideFlags: 1
@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 224005697753882490}
   - component: {fileID: 222401546894851546}
   - component: {fileID: 114276253255269672}
+  - component: {fileID: 95221122577656362}
   m_Layer: 0
   m_Name: Text_GAMESTART
   m_TagString: Untagged
@@ -260,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4258258401580674}
   - component: {fileID: 65092012676819992}
-  - component: {fileID: 114767037329914942}
+  - component: {fileID: 114050543317015480}
   m_Layer: 0
   m_Name: TutorialEnd
   m_TagString: Untagged
@@ -831,6 +832,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 34.82, y: 20.79, z: 21.73}
   m_Center: {x: 0, y: 15.63, z: 0}
+--- !u!95 &95221122577656362
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1348907116966160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1026cf742d6234945b16ebc4c9ace8ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95254164692382496
 Animator:
   serializedVersion: 3
@@ -987,6 +1006,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TutorialObject: {fileID: 1039775406726482}
+--- !u!114 &114050543317015480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775202001709540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f78269e9472ae14096ec1f81665d294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialObject: {fileID: 1651226999048204}
+  GameStartUI: {fileID: 1112634901850974}
+  fade: 0
+  endTutorialTime: 500
 --- !u!114 &114130399145023594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1216,18 +1250,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114767037329914942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1775202001709540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3852f67dcbb874bb1a4118a0069d39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TutorialObject: {fileID: 1651226999048204}
 --- !u!114 &114923169533568734
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 114929463320409150}
   - component: {fileID: 114854753840394446}
   - component: {fileID: 114656458589566136}
+  - component: {fileID: 114637549368063702}
   m_Layer: 0
   m_Name: SceneChangeMgr
   m_TagString: Untagged
@@ -104,7 +105,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964568917005828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 224.5, y: 120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -268,6 +269,17 @@ MonoBehaviour:
   bDebug: 0
   bChangeSceneFlag: 0
   bDebugLogConsoleDraw: 0
+--- !u!114 &114637549368063702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964568917005828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ef3388a9b175c499718014ceda8f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114656458589566136
 MonoBehaviour:
   m_ObjectHideFlags: 1
