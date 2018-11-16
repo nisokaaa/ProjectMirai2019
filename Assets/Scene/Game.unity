@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16047636, g: 0.19491118, b: 0.1404961, a: 1}
+  m_IndirectSpecularColor: {r: 0.32369348, g: 0.39217415, b: 0.28437382, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,14 +239,6 @@ Prefab:
     - target: {fileID: 4968550130480522, guid: 1b3fef0f00b8ac14fb12da50871fd8a2, type: 2}
       propertyPath: m_RootOrder
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059890013867348, guid: 1b3fef0f00b8ac14fb12da50871fd8a2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455323945528224, guid: 1b3fef0f00b8ac14fb12da50871fd8a2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3fef0f00b8ac14fb12da50871fd8a2, type: 2}
@@ -537,48 +529,6 @@ Transform:
   m_Father: {fileID: 1763605820}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &133303328
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940653466880226, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 979e231c90fb2f747aec0ebc5843f9fd, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!43 &142778571
 Mesh:
   m_ObjectHideFlags: 0
@@ -1625,7 +1575,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4654116032695690, guid: cae44817be6c00741927d32944ff9361, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7259748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4654116032695690, guid: cae44817be6c00741927d32944ff9361, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1633,7 +1583,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4654116032695690, guid: cae44817be6c00741927d32944ff9361, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.6877213
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4654116032695690, guid: cae44817be6c00741927d32944ff9361, type: 2}
       propertyPath: m_RootOrder
@@ -1651,7 +1601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4654116032695690, guid: cae44817be6c00741927d32944ff9361, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 93.1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae44817be6c00741927d32944ff9361, type: 2}

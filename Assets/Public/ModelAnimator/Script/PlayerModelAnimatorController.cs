@@ -126,7 +126,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
         if (m_joycons == null || m_joycons.Count <= 0)
         {
             //しゃがみアクションのテストコード
-            if (Input.GetKey(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.B))
             {
                 PlayerClimdControl(true);
             }
@@ -137,7 +137,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
         }else
         {
             //しゃがみアクションのテストコード
-            if (Input.GetKey(KeyCode.B) || m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+            if (Input.GetKeyDown(KeyCode.B) || m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
             {
                 PlayerClimdControl(true);
             }

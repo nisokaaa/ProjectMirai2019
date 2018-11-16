@@ -23,10 +23,25 @@ public class Title : MonoBehaviour {
     };
 
     [SerializeField] WAVE title = WAVE.NONE;
+    CanvasSelect canvasSelect;
+
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
 
     // Use this for initialization
     void Start () {
         title = WAVE.START;
+        if (canvasSelect == null)
+            canvasSelect = GameObject.Find("CanvasSelect").GetComponent<CanvasSelect>();
+
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 	
 	// Update is called once per frame
@@ -43,10 +58,24 @@ public class Title : MonoBehaviour {
                 title = WAVE.PLAY;
                 break;
             case WAVE.PLAY:
-                if(Input.anyKey)
+                if(canvasSelect.GetSelect() == false)
+                {
+                    return;
+                }
+
+                if(Input.GetKeyDown(KeyCode.Space))
                 {
                     SceneChangeController.Instance.SetChangeScene("Game");
                     title = WAVE.END;
+                }
+
+                if (!(m_joycons.Count <= 0 || m_joycons == null))
+                {
+                    if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+                    {
+                        SceneChangeController.Instance.SetChangeScene("Game");
+                        title = WAVE.END;
+                    }
                 }
                 break;
             case WAVE.END:
