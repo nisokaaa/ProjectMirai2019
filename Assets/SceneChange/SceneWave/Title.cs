@@ -31,7 +31,14 @@ public class Title : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        string text = SceneManager.GetActiveScene().name;
+        if (text != "Title")
+        {
+            return;
+        }
+
         title = WAVE.START;
+
         if (canvasSelect == null)
             canvasSelect = GameObject.Find("CanvasSelect").GetComponent<CanvasSelect>();
 

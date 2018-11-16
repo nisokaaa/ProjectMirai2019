@@ -10,11 +10,25 @@ public class CanvasSelect : MonoBehaviour {
     private Joycon m_joyconL;
     private Joycon m_joyconR;
 
+    [SerializeField]
     bool GameSelect = true;
 
+    [SerializeField]
+    GameObject _GameStartON;
+    [SerializeField]
+    GameObject _GameStartOFF;
+    [SerializeField]
+    GameObject _CreditON;
+    [SerializeField]
+    GameObject _CreditOFF;
     // Use this for initialization
     void Start () {
         GameSelect = false;
+
+        _CreditOFF.SetActive(true);
+        _CreditON.SetActive(false);
+        _GameStartOFF.SetActive(false);
+        _GameStartON.SetActive(true);
 
         if (animator == null)
         animator = GetComponent<Animator>();
@@ -50,16 +64,26 @@ public class CanvasSelect : MonoBehaviour {
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             GameSelect = true;
+            //animator.SetTrigger("GameStart");
+            _CreditOFF.SetActive(false);
+            _CreditON.SetActive(true);
+            _GameStartOFF.SetActive(true);
+            _GameStartON.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
+            //animator.SetTrigger("Credit");
             GameSelect = false;
+            _CreditOFF.SetActive(true);
+            _CreditON.SetActive(false);
+            _GameStartOFF.SetActive(false);
+            _GameStartON.SetActive(true);
         }
-        animator.SetBool("Select", GameSelect);
-        
+        //animator.SetBool("Select", GameSelect);
+
     }
 
     public bool GetSelect()
