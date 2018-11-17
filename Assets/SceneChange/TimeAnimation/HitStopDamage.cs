@@ -10,7 +10,7 @@ public class HitStopDamage : MonoBehaviour {
     [SerializeField]
     private TimeManager timeManager;
 
-    CapsuleCollider _capsuleCollider;
+    
 
     bool bStop = false;
     int Timecnt;
@@ -18,7 +18,7 @@ public class HitStopDamage : MonoBehaviour {
     private void Start()
     {
         bStop = false;
-        _capsuleCollider = GetComponent<CapsuleCollider>();
+        
     }
 
     private void Update()
