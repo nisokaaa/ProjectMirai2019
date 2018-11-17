@@ -31,27 +31,49 @@ public class Game : MonoBehaviour
     };
 
     WAVE game = WAVE.NONE;
-    BossBattleEnd bossBattleEnd = null;
+
+    [SerializeField]
+    BossBattleEnd bossBattleEnd;
 
     // Use this for initialization
     void Start () {
-		if(bossBattleEnd == null)
+        string text = SceneManager.GetActiveScene().name;
+
+        if (text != "Game" || text != "GameSim")
+        {
+            return;
+        }
+
+        if (bossBattleEnd == null)
         {
             bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
         }
-	}
+        SceneChangeController.Instance.FadeOut();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
+
+        Debug.Log(text);
+        Debug.Log("やばいで！" + text);
+
         if (text != "Game")
         {
             return;
         }
 
+        
         if(bossBattleEnd == null)
         {
             return;
+        }
+        Debug.Log("test");
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            SceneChangeController.Instance.SetChangeScene("Result");
+            SceneChangeController.Instance.SetChangeSceneExecution();
+            SceneChangeController.Instance.FadeIn();
         }
 
         if (bossBattleEnd.GetBossBattleFlag() == false)
@@ -63,6 +85,7 @@ public class Game : MonoBehaviour
         {
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();
+            SceneChangeController.Instance.FadeIn();
         }
 	}
 }

@@ -607,7 +607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28eef50c7db2414a8037654a705215e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerGameObject: {fileID: 0}
   m_target: {fileID: 0}
   m_speed: 5
   m_attenuation: 0.5

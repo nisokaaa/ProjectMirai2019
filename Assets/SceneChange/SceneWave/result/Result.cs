@@ -28,6 +28,7 @@ public class Result : MonoBehaviour {
     // Use this for initialization
     void Start () {
         result = WAVE.START;
+        SceneChangeController.Instance.FadeOut();
     }
 	
 	// Update is called once per frame
@@ -53,6 +54,7 @@ public class Result : MonoBehaviour {
                 break;
             case WAVE.END:
                 SceneChangeController.Instance.SetChangeSceneExecution();
+                //SceneChangeController.Instance.FadeIn();
                 result = WAVE.NONE;
                 break;
         }

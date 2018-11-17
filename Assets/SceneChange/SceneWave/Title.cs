@@ -23,10 +23,33 @@ public class Title : MonoBehaviour {
     };
 
     [SerializeField] WAVE title = WAVE.NONE;
+    CanvasSelect canvasSelect;
+
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
 
     // Use this for initialization
     void Start () {
+        string text = SceneManager.GetActiveScene().name;
+        if (text != "Title")
+        {
+            return;
+        }
+
         title = WAVE.START;
+
+        if (canvasSelect == null)
+            canvasSelect = GameObject.Find("CanvasSelect").GetComponent<CanvasSelect>();
+
+
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 	
 	// Update is called once per frame
@@ -40,17 +63,34 @@ public class Title : MonoBehaviour {
         switch (title)
         {
             case WAVE.START:
+                //SceneChangeController.Instance.FadeOut();
                 title = WAVE.PLAY;
+                Debug.Log("テストスタート");
                 break;
             case WAVE.PLAY:
-                if(Input.anyKey)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    Debug.Log("ゲーム読み込み開始");
                     SceneChangeController.Instance.SetChangeScene("Game");
                     title = WAVE.END;
+                }
+                //if (canvasSelect.GetSelect() == false)
+                //{
+                //    return;
+                //}
+                //Debug.Log("テスト");
+                if (!(m_joycons.Count <= 0 || m_joycons == null))
+                {
+                    if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+                    {
+                        SceneChangeController.Instance.SetChangeScene("Game");
+                        title = WAVE.END;
+                    }
                 }
                 break;
             case WAVE.END:
                 SceneChangeController.Instance.SetChangeSceneExecution();
+                SceneChangeController.Instance.FadeIn();
                 title = WAVE.NONE;
                 break;
         }

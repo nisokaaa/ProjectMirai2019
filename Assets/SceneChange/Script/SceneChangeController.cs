@@ -41,6 +41,23 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
     [SerializeField, TooltipAttribute("非同期読み込みの％情報、")]
     bool bDebugLogConsoleDraw = false;
 
+    [SerializeField]
+    Fade _fade;
+
+    [SerializeField, Range(0, 5)]
+    private float _fadeTime = 3.0f;
+
+    [SerializeField]
+    GameObject FadeCanvas;
+
+    [SerializeField]
+    int _SceneChangeTimeStop = 10;
+    [SerializeField]
+    int _SceneChangeTimeCnt = 0;
+
+    [SerializeField]
+    GameObject _loadObject;
+
     public string nextSceneName{
         get { return _nextSceneName; }
         set { _nextSceneName = nextSceneName; }
@@ -53,17 +70,34 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
             Destroy(this);
             return;
         }
+
+        
     }
 
     // Use this for initialization
     void Start () {
         initParameter();
+
+        //if(_fade == null)
+        //_fade = FadeCanvas.GetComponent<Fade>();
+
+        _SceneChangeTimeCnt = 0;
+        _loadObject.SetActive(false);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if(bChangeSceneFlag == true && loadState == LOAD_STATE.LOAD_COMPLETE)
         {
+            _SceneChangeTimeCnt++;
+            _loadObject.SetActive(true);
+            if (_SceneChangeTimeStop > _SceneChangeTimeCnt)
+            {
+                return;
+            }
+            _loadObject.SetActive(false);
+            _SceneChangeTimeCnt = 0;
+
             nextScene.allowSceneActivation = true;
             initParameter();
         }
@@ -92,7 +126,7 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
         {
             return;
         }
-        
+
         _nextSceneName = "";
         _nextSceneName = sceneName;
         StartCoroutine("LoadNextScene");
@@ -127,6 +161,16 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
     //シーンを切り替えるフラグを立てる
     public void SetChangeSceneExecution()
     {
+        
         bChangeSceneFlag = true;
+    }
+
+    public void FadeIn()
+    {
+        _fade.FadeIn(_fadeTime);
+    }
+    public void FadeOut()
+    {
+        _fade.FadeOut(_fadeTime);
     }
 }
