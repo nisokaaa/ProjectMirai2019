@@ -15,6 +15,9 @@ public class TimeManager : MonoBehaviour {
     //　時間を遅くしているかどうか
     private bool isSlowDown = false;
 
+    [SerializeField]
+    Rigidbody _player;
+
     void Update()
     {
         //　スローダウンフラグがtrueの時は時間計測
@@ -33,11 +36,13 @@ public class TimeManager : MonoBehaviour {
         elapsedTime = 0f;
         Time.timeScale = timeScale;
         isSlowDown = true;
+        _player.interpolation = RigidbodyInterpolation.Extrapolate;
     }
     //　時間を元に戻す処理
     public void SetNormalTime()
     {
         Time.timeScale = 1f;
         isSlowDown = false;
+        _player.interpolation = RigidbodyInterpolation.None;
     }
 }
