@@ -42,6 +42,7 @@ public class Title : MonoBehaviour {
         if (canvasSelect == null)
             canvasSelect = GameObject.Find("CanvasSelect").GetComponent<CanvasSelect>();
 
+
         //ジョイコンのインスタンスを取得する
         m_joycons = JoyconManager.Instance.j;
 
@@ -62,20 +63,22 @@ public class Title : MonoBehaviour {
         switch (title)
         {
             case WAVE.START:
+                //SceneChangeController.Instance.FadeOut();
                 title = WAVE.PLAY;
+                Debug.Log("テストスタート");
                 break;
             case WAVE.PLAY:
-                if(canvasSelect.GetSelect() == false)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    return;
-                }
-
-                if(Input.GetKeyDown(KeyCode.Space))
-                {
+                    Debug.Log("ゲーム読み込み開始");
                     SceneChangeController.Instance.SetChangeScene("Game");
                     title = WAVE.END;
                 }
-
+                //if (canvasSelect.GetSelect() == false)
+                //{
+                //    return;
+                //}
+                //Debug.Log("テスト");
                 if (!(m_joycons.Count <= 0 || m_joycons == null))
                 {
                     if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
@@ -87,6 +90,7 @@ public class Title : MonoBehaviour {
                 break;
             case WAVE.END:
                 SceneChangeController.Instance.SetChangeSceneExecution();
+                SceneChangeController.Instance.FadeIn();
                 title = WAVE.NONE;
                 break;
         }

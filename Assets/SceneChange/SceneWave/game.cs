@@ -46,6 +46,7 @@ public class Game : MonoBehaviour
         {
             bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
         }
+        SceneChangeController.Instance.FadeOut();
     }
 	
 	// Update is called once per frame
@@ -64,6 +65,13 @@ public class Game : MonoBehaviour
             return;
         }
 
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            SceneChangeController.Instance.SetChangeScene("Result");
+            SceneChangeController.Instance.SetChangeSceneExecution();
+            SceneChangeController.Instance.FadeIn();
+        }
+
         if (bossBattleEnd.GetBossBattleFlag() == false)
         {
             return;
@@ -73,6 +81,7 @@ public class Game : MonoBehaviour
         {
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();
+            SceneChangeController.Instance.FadeIn();
         }
 	}
 }
