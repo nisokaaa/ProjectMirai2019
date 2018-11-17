@@ -18,6 +18,12 @@ public class TimeManager : MonoBehaviour {
     [SerializeField]
     Rigidbody _player;
 
+    [SerializeField]
+    CapsuleCollider _playerCollider;
+
+    private void Start()
+    {
+    }
     void Update()
     {
         //　スローダウンフラグがtrueの時は時間計測
@@ -36,7 +42,8 @@ public class TimeManager : MonoBehaviour {
         elapsedTime = 0f;
         Time.timeScale = timeScale;
         isSlowDown = true;
-        _player.interpolation = RigidbodyInterpolation.Extrapolate;
+        _player.interpolation = RigidbodyInterpolation.Interpolate;
+        _playerCollider.enabled = false;
     }
     //　時間を元に戻す処理
     public void SetNormalTime()
@@ -44,5 +51,6 @@ public class TimeManager : MonoBehaviour {
         Time.timeScale = 1f;
         isSlowDown = false;
         _player.interpolation = RigidbodyInterpolation.None;
+        _playerCollider.enabled = true;
     }
 }

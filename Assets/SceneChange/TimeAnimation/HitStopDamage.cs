@@ -10,6 +10,32 @@ public class HitStopDamage : MonoBehaviour {
     [SerializeField]
     private TimeManager timeManager;
 
+    CapsuleCollider _capsuleCollider;
+
+    bool bStop = false;
+    int Timecnt;
+
+    private void Start()
+    {
+        bStop = false;
+        _capsuleCollider = GetComponent<CapsuleCollider>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            timeManager.SlowDown();
+        }
+
+        //if(bStop == true)
+        //{
+        //    var damageParticle = GameObject.Instantiate(damagePrefab, transform.position, Quaternion.identity) as GameObject;
+        //    //　全体のタイムスケールを変更する
+        //    timeManager.SlowDown();
+        //}
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Obstacle")

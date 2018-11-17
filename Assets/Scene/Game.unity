@@ -1411,7 +1411,7 @@ Prefab:
     - target: {fileID: 114546010044656576, guid: 04b5ac4d106cfeb4aadb15970842866b,
         type: 2}
       propertyPath: timeScale
-      value: 0.1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 114546010044656576, guid: 04b5ac4d106cfeb4aadb15970842866b,
         type: 2}
@@ -1448,6 +1448,11 @@ Prefab:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1121736588}
+    - target: {fileID: 114546010044656576, guid: 04b5ac4d106cfeb4aadb15970842866b,
+        type: 2}
+      propertyPath: _playerCollider
+      value: 
+      objectReference: {fileID: 1121736590}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b5ac4d106cfeb4aadb15970842866b, type: 2}
   m_IsPrefabAsset: 0
@@ -1751,6 +1756,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.003
       objectReference: {fileID: 0}
+    - target: {fileID: 23651759785962836, guid: cae44817be6c00741927d32944ff9361,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d34c50e9e02ddbe4baf58b4ccb192698, type: 2}
+    - target: {fileID: 137542495077906826, guid: cae44817be6c00741927d32944ff9361,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d34c50e9e02ddbe4baf58b4ccb192698, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae44817be6c00741927d32944ff9361, type: 2}
   m_IsPrefabAsset: 0
@@ -4802,6 +4817,11 @@ MonoBehaviour:
 --- !u!54 &1121736588 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 54152768854947484, guid: cae44817be6c00741927d32944ff9361,
+    type: 2}
+  m_PrefabInternal: {fileID: 462795761}
+--- !u!136 &1121736590 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 136796656601761626, guid: cae44817be6c00741927d32944ff9361,
     type: 2}
   m_PrefabInternal: {fileID: 462795761}
 --- !u!1 &1201845237
