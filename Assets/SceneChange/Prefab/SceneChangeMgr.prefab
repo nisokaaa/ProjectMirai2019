@@ -379,6 +379,7 @@ MonoBehaviour:
   bDebug: 0
   bChangeSceneFlag: 0
   bDebugLogConsoleDraw: 0
+  _fade: {fileID: 114529552206615730}
   _fadeTime: 0.51
   FadeCanvas: {fileID: 1647081522110754}
   _SceneChangeTimeStop: 400
@@ -395,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ef3388a9b175c499718014ceda8f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossBattleEnd: {fileID: 0}
 --- !u!114 &114656458589566136
 MonoBehaviour:
   m_ObjectHideFlags: 1

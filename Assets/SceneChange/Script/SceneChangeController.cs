@@ -41,6 +41,7 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
     [SerializeField, TooltipAttribute("非同期読み込みの％情報、")]
     bool bDebugLogConsoleDraw = false;
 
+    [SerializeField]
     Fade _fade;
 
     [SerializeField, Range(0, 5)]
@@ -77,8 +78,8 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
     void Start () {
         initParameter();
 
-        if(_fade == null)
-        _fade = FadeCanvas.GetComponent<Fade>();
+        //if(_fade == null)
+        //_fade = FadeCanvas.GetComponent<Fade>();
 
         _SceneChangeTimeCnt = 0;
         _loadObject.SetActive(false);

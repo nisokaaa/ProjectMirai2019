@@ -31,13 +31,15 @@ public class Game : MonoBehaviour
     };
 
     WAVE game = WAVE.NONE;
-    BossBattleEnd bossBattleEnd = null;
+
+    [SerializeField]
+    BossBattleEnd bossBattleEnd;
 
     // Use this for initialization
     void Start () {
         string text = SceneManager.GetActiveScene().name;
 
-        if (text != "Game")
+        if (text != "Game" || text != "GameSim")
         {
             return;
         }
@@ -53,19 +55,21 @@ public class Game : MonoBehaviour
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
 
-        
+        Debug.Log(text);
+        Debug.Log("やばいで！" + text);
 
         if (text != "Game")
         {
             return;
         }
 
+        
         if(bossBattleEnd == null)
         {
             return;
         }
-
-        if(Input.GetKeyDown(KeyCode.F1))
+        Debug.Log("test");
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();

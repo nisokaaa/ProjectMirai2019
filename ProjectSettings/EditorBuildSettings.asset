@@ -10,7 +10,11 @@ EditorBuildSettings:
     guid: dff67e8134fd6b6458f82b73293eaa05
   - enabled: 1
     path: Assets/Scene/Game.unity
-    guid: 70c90d9f337d64244928da2214854a85
+    guid: b724969c6344fb44eb2b1cffb3c46e05
   - enabled: 1
     path: Assets/Scene/Result.unity
     guid: cfe64d95c4fac8a499b0d4acb85c891d
+  - enabled: 0
+    path: Assets/Scene/GameField.unity
+    guid: 70c90d9f337d64244928da2214854a85
+  m_configObjects: {}
