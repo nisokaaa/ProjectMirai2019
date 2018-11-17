@@ -1823,17 +1823,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114607326113496398, guid: c8d5d53aa0d82064abf61d52585c98ed,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114607326113496398, guid: c8d5d53aa0d82064abf61d52585c98ed,
-        type: 2}
-      propertyPath: cutoutRange
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114637549368063702, guid: c8d5d53aa0d82064abf61d52585c98ed,
+    - target: {fileID: 114363505381064244, guid: c8d5d53aa0d82064abf61d52585c98ed,
         type: 2}
       propertyPath: bossBattleEnd
       value: 
