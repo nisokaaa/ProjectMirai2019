@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plane
   - ChargeObject
+  - Obstacle
   layers:
   - Default
   - TransparentFX

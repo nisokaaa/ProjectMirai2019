@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114735809134847488}
   - component: {fileID: 124407654950087924}
   - component: {fileID: 81935522316019358}
+  - component: {fileID: 114546010044656576}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -124,6 +125,19 @@ MonoBehaviour:
   chaseSpeed: 26.5
   ScalarCamera: 1
   HeightM: 5
+--- !u!114 &114546010044656576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1129232619301392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9007735e756369458b8edea791f2271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 0.1
+  slowTime: 1
 --- !u!114 &114552242817027140
 MonoBehaviour:
   m_ObjectHideFlags: 1
