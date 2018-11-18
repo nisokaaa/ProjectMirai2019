@@ -27,27 +27,27 @@ public class TeleportPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(_bTeleport1 == true)
+		if(_bTeleport1 == true || Input.GetKeyDown(KeyCode.F5))
         {
             _player.transform.position = _teleportPoint.position;
             _bTeleport1 = false;
         }
-        if (_bTeleport2 == true)
+        if (_bTeleport2 == true || Input.GetKeyDown(KeyCode.F6))
         {
             _player.transform.position = _teleportPoint2.position;
             _bTeleport2 = false;
         }
-        if (_bTeleport3 == true)
+        if (_bTeleport3 == true || Input.GetKeyDown(KeyCode.F7))
         {
             _player.transform.position = _teleportPoint3.position;
             _bTeleport3 = false;
         }
-        if (_bTeleport4 == true)
+        if (_bTeleport4 == true || Input.GetKeyDown(KeyCode.F8))
         {
             _player.transform.position = _teleportPoint4.position;
             _bTeleport4 = false;
         }
-        if (_bTeleport5 == true)
+        if (_bTeleport5 == true || Input.GetKeyDown(KeyCode.F9))
         {
             _player.transform.position = _teleportPoint5.position;
             _bTeleport5 = false;
