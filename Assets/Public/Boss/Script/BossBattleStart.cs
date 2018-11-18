@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 /// <summary>
 /// 「」
 /// 引数　 ：解説
@@ -14,6 +14,9 @@ using UnityEngine;
 public class BossBattleStart : MonoBehaviour {
 
     [SerializeField] Animator BossState;
+    [SerializeField] Animator BossPhase;
+    [SerializeField] Animation UIAnimation;
+    [SerializeField] GameObject UIGameObject;
     [SerializeField] int time;
     bool bossBattle = false;
 
@@ -28,14 +31,24 @@ public class BossBattleStart : MonoBehaviour {
         {
             time--;
 
-            if(time <= 0)
+            if (time <= 0)
             {
                 time = 0;
                 bossBattle = false;
             }
+            
         }
-	}
 
+        
+        if (BossState.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9)
+        {
+            //BossPhase.SetTrigger("Start2");
+            //BossPhase.SetTrigger("Start");
+            //BossPhase.SetTrigger("Start0");
+            //BossPhase.SetTrigger("BossBattle");
+        }
+    }
+ 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

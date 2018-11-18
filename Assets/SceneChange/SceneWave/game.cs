@@ -68,7 +68,7 @@ public class Game : MonoBehaviour
         {
             return;
         }
-        //Debug.Log("test");
+        //  Debug.Log("test");
         if (Input.GetKeyDown(KeyCode.F1))
         {
             SceneChangeController.Instance.SetChangeScene("Result");

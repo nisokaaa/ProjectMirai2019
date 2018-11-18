@@ -17,15 +17,28 @@ public class CharacterVecRotation : MonoBehaviour {
     [SerializeField] GameObject player;
     [SerializeField] Vector3 playerVecCharacterPos;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField] bool bVecMoveRotation=true;
+
+    [SerializeField]
+    bool bActive = false;
+
+    // Use this for initialization
+    void Start () {
         //ベクトルの起点
         playerVecCharacterPos = player.transform.position;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (bActive == false)
+        {
+            return;
+        }
 
+        if (bVecMoveRotation == true)
+        {
+            VecMoveRotation();
+        }
 	}
 
     public void VecMoveRotation()
