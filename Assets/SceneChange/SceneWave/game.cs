@@ -36,7 +36,8 @@ public class Game : MonoBehaviour
     BossBattleEnd bossBattleEnd;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         string text = SceneManager.GetActiveScene().name;
 
         if (text != "Game" || text != "GameSim")
@@ -50,9 +51,10 @@ public class Game : MonoBehaviour
         }
         SceneChangeController.Instance.FadeOut();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         string text = SceneManager.GetActiveScene().name;
 
         //Debug.Log(text);
@@ -63,8 +65,8 @@ public class Game : MonoBehaviour
             return;
         }
 
-        
-        if(bossBattleEnd == null)
+
+        if (bossBattleEnd == null)
         {
             return;
         }
@@ -81,11 +83,11 @@ public class Game : MonoBehaviour
             return;
         }
 
-        if(Input.anyKeyDown)
+        if (Input.anyKeyDown)
         {
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
         }
-	}
+    }
 }
