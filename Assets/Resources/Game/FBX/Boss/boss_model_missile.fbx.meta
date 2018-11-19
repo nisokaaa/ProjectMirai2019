@@ -1,0 +1,385 @@
+fileFormatVersion: 2
+guid: 3eadb1f7efb5a4b4bb33c69df9666132
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: body
+    100002: //RootNode
+    100004: eye_g
+    100006: eye_g1
+    100008: f_m_g
+    100010: face
+    100012: face_g
+    100014: finger
+    100016: finger 1
+    100018: finger1
+    100020: finger1 1
+    100022: finger2
+    100024: finger2 1
+    100026: finger3
+    100028: finger3 1
+    100030: hand
+    100032: hand 1
+    100034: hand 2
+    100036: hand1
+    100038: joint1
+    100040: joint10
+    100042: joint11
+    100044: joint12
+    100046: joint12 1
+    100048: joint13
+    100050: joint13 1
+    100052: joint13 2
+    100054: joint13 3
+    100056: joint13 4
+    100058: joint13 5
+    100060: joint13 6
+    100062: joint13 7
+    100064: joint14
+    100066: joint14 1
+    100068: joint14 2
+    100070: joint14 3
+    100072: joint14 4
+    100074: joint14 5
+    100076: joint14 6
+    100078: joint14 7
+    100080: joint15
+    100082: joint15 1
+    100084: joint15 2
+    100086: joint15 3
+    100088: joint15 4
+    100090: joint15 5
+    100092: joint15 6
+    100094: joint15 7
+    100096: joint16
+    100098: joint16 1
+    100100: joint16 2
+    100102: joint16 3
+    100104: joint16 4
+    100106: joint16 5
+    100108: joint16 6
+    100110: joint16 7
+    100112: joint17
+    100114: joint17 1
+    100116: joint17 2
+    100118: joint17 3
+    100120: joint17 4
+    100122: joint17 5
+    100124: joint17 6
+    100126: joint17 7
+    100128: joint18
+    100130: joint18 1
+    100132: joint19
+    100134: joint19 1
+    100136: joint2
+    100138: joint20
+    100140: joint20 1
+    100142: joint21
+    100144: joint22
+    100146: joint22 1
+    100148: joint23
+    100150: joint23 1
+    100152: joint3
+    100154: joint4
+    100156: joint5
+    100158: joint52
+    100160: joint53
+    100162: joint6
+    100164: joint7
+    100166: joint8
+    100168: joint82
+    100170: joint9
+    100172: missile_g_1
+    100174: missile_g_2
+    100176: missile_g_3
+    100178: missile_g_4
+    100180: model
+    100182: mouse
+    100184: pCylinder1
+    100186: pCylinder1 1
+    100188: pCylinder2
+    100190: pCylinder2 1
+    100192: pCylinder3
+    100194: pCylinder3 1
+    100196: pCylinder4
+    100198: pCylinder4 1
+    100200: pSphere1
+    100202: pSphere1 1
+    100204: pSphere2
+    100206: pSphere2 1
+    100208: pSphere3
+    100210: tale
+    400000: body
+    400002: //RootNode
+    400004: eye_g
+    400006: eye_g1
+    400008: f_m_g
+    400010: face
+    400012: face_g
+    400014: finger
+    400016: finger 1
+    400018: finger1
+    400020: finger1 1
+    400022: finger2
+    400024: finger2 1
+    400026: finger3
+    400028: finger3 1
+    400030: hand
+    400032: hand 1
+    400034: hand 2
+    400036: hand1
+    400038: joint1
+    400040: joint10
+    400042: joint11
+    400044: joint12
+    400046: joint12 1
+    400048: joint13
+    400050: joint13 1
+    400052: joint13 2
+    400054: joint13 3
+    400056: joint13 4
+    400058: joint13 5
+    400060: joint13 6
+    400062: joint13 7
+    400064: joint14
+    400066: joint14 1
+    400068: joint14 2
+    400070: joint14 3
+    400072: joint14 4
+    400074: joint14 5
+    400076: joint14 6
+    400078: joint14 7
+    400080: joint15
+    400082: joint15 1
+    400084: joint15 2
+    400086: joint15 3
+    400088: joint15 4
+    400090: joint15 5
+    400092: joint15 6
+    400094: joint15 7
+    400096: joint16
+    400098: joint16 1
+    400100: joint16 2
+    400102: joint16 3
+    400104: joint16 4
+    400106: joint16 5
+    400108: joint16 6
+    400110: joint16 7
+    400112: joint17
+    400114: joint17 1
+    400116: joint17 2
+    400118: joint17 3
+    400120: joint17 4
+    400122: joint17 5
+    400124: joint17 6
+    400126: joint17 7
+    400128: joint18
+    400130: joint18 1
+    400132: joint19
+    400134: joint19 1
+    400136: joint2
+    400138: joint20
+    400140: joint20 1
+    400142: joint21
+    400144: joint22
+    400146: joint22 1
+    400148: joint23
+    400150: joint23 1
+    400152: joint3
+    400154: joint4
+    400156: joint5
+    400158: joint52
+    400160: joint53
+    400162: joint6
+    400164: joint7
+    400166: joint8
+    400168: joint82
+    400170: joint9
+    400172: missile_g_1
+    400174: missile_g_2
+    400176: missile_g_3
+    400178: missile_g_4
+    400180: model
+    400182: mouse
+    400184: pCylinder1
+    400186: pCylinder1 1
+    400188: pCylinder2
+    400190: pCylinder2 1
+    400192: pCylinder3
+    400194: pCylinder3 1
+    400196: pCylinder4
+    400198: pCylinder4 1
+    400200: pSphere1
+    400202: pSphere1 1
+    400204: pSphere2
+    400206: pSphere2 1
+    400208: pSphere3
+    400210: tale
+    2100000: lambert1
+    2100002: color_lam
+    4300000: tale
+    4300002: hand
+    4300004: finger
+    4300006: finger1
+    4300008: finger2
+    4300010: finger3
+    4300012: hand
+    4300014: finger
+    4300016: finger1
+    4300018: finger2
+    4300020: finger3
+    4300022: pCylinder1
+    4300024: pCylinder3
+    4300026: pCylinder2
+    4300028: pCylinder4
+    4300030: pCylinder1
+    4300032: pCylinder3
+    4300034: pCylinder2
+    4300036: pCylinder4
+    4300038: pSphere1
+    4300040: pSphere2
+    4300042: pSphere1
+    4300044: pSphere2
+    4300046: face
+    4300048: mouse
+    4300050: pSphere3
+    4300052: body
+    7400000: Boss Missile
+    9500000: //RootNode
+    13700000: body
+    13700002: face
+    13700004: finger
+    13700006: finger 1
+    13700008: finger1
+    13700010: finger1 1
+    13700012: finger2
+    13700014: finger2 1
+    13700016: finger3
+    13700018: finger3 1
+    13700020: hand 1
+    13700022: hand 2
+    13700024: mouse
+    13700026: pCylinder1
+    13700028: pCylinder1 1
+    13700030: pCylinder2
+    13700032: pCylinder2 1
+    13700034: pCylinder3
+    13700036: pCylinder3 1
+    13700038: pCylinder4
+    13700040: pCylinder4 1
+    13700042: pSphere1
+    13700044: pSphere1 1
+    13700046: pSphere2
+    13700048: pSphere2 1
+    13700050: pSphere3
+    13700052: tale
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Boss Missile
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -55,8 +55,8 @@ public class Game : MonoBehaviour
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
 
-        Debug.Log(text);
-        Debug.Log("やばいで！" + text);
+        //Debug.Log(text);
+        //Debug.Log("やばいで！" + text);
 
         if (text != "Game")
         {
@@ -68,7 +68,7 @@ public class Game : MonoBehaviour
         {
             return;
         }
-        Debug.Log("test");
+        //  Debug.Log("test");
         if (Input.GetKeyDown(KeyCode.F1))
         {
             SceneChangeController.Instance.SetChangeScene("Result");

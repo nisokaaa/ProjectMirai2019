@@ -13,6 +13,8 @@ public class BossController : MonoBehaviour {
 
     public Transform m_target = null;
     public float m_speed = 5;
+    public float m_StartSpeed = 10;
+    public float m_BattleSpeed = 20;
     public float m_attenuation = 0.5f;
     [SerializeField] Vector3 SeecPos;
 
@@ -50,7 +52,8 @@ public class BossController : MonoBehaviour {
             case STATE.START:
                 FollowingPlayer();
                 timeCnt--;
-                if(timeCnt <= 0)
+                m_speed = m_StartSpeed;
+                if (timeCnt <= 0)
                 {
                     state = STATE.BATTLE;
                     timeCnt = 0;
@@ -58,6 +61,7 @@ public class BossController : MonoBehaviour {
                 break;
             case STATE.BATTLE:
                 m_speed = 10;
+                m_speed = m_BattleSpeed;
                 FollowingPlayer();
                 break;
             case STATE.END:
