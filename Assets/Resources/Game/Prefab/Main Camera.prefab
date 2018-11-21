@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 124407654950087924}
   - component: {fileID: 81935522316019358}
   - component: {fileID: 114546010044656576}
+  - component: {fileID: 114736131588937644}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -42,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129232619301392}
   m_LocalRotation: {x: 0, y: 0.03777483, z: 0, w: 0.9992863}
-  m_LocalPosition: {x: 0, y: 6, z: -10.2}
+  m_LocalPosition: {x: 0, y: 1.9, z: -4.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,9 +83,9 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -120,11 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a1d843d5c68124fb98626131d07109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDistance: 9
-  baseHeight: 5
-  chaseSpeed: 26.5
-  ScalarCamera: 1
-  HeightM: 5
+  baseDistance: 3.4
+  baseHeight: 1.8
+  chaseSpeed: 57
+  ScalarCamera: 6
+  HeightM: 1.82
 --- !u!114 &114546010044656576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,8 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9007735e756369458b8edea791f2271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 0.1
+  timeScale: 0.7
   slowTime: 1
+  _player: {fileID: 0}
+  _playerCollider: {fileID: 0}
 --- !u!114 &114552242817027140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +165,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 3
+--- !u!114 &114736131588937644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1129232619301392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 4838682021724156}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!114 &114835331592492506
 MonoBehaviour:
   m_ObjectHideFlags: 1
