@@ -6,11 +6,14 @@ public class BeamStart : StateMachineBehaviour {
 
     public ParticleSystem _Beam;
     public ParticleSystem _BeamCircle;
+    BeamMoveObj _beamMoveObj;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         _Beam = GameObject.Find("Particle System Beam").GetComponent<ParticleSystem>();
         _BeamCircle = GameObject.Find("Particle System Beam Circle").GetComponent<ParticleSystem>();
+        _beamMoveObj = GameObject.Find("BeamMoveObj").GetComponent<BeamMoveObj>();
+        _beamMoveObj.SetStart();
         _BeamCircle.Play();
         _Beam.Play();
     }
@@ -22,8 +25,7 @@ public class BeamStart : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        _Beam.Stop();
-        _BeamCircle.Stop();
+
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BossMovie : StateMachineBehaviour {
 
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //ステートに入った時
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //  
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //ステートから出た時

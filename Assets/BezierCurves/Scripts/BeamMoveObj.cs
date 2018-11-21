@@ -22,8 +22,15 @@ public class BeamMoveObj : MonoBehaviour {
     [SerializeField]
     bool bActive = false;
 
+    public ParticleSystem _Beam;
+    public ParticleSystem _BeamCircle;
+    public Animator _BossAnimator;
+
     void Start()
     {
+        _Beam = GameObject.Find("Particle System Beam").GetComponent<ParticleSystem>();
+        _BeamCircle = GameObject.Find("Particle System Beam Circle").GetComponent<ParticleSystem>();
+        
         nowTime = 0;
     }
 
@@ -43,7 +50,13 @@ public class BeamMoveObj : MonoBehaviour {
 
                 nowTime += Time.deltaTime;
 
-                if (nowTime > moveTime) nowTime = 0;
+                if (nowTime > moveTime)
+                {
+                    _BeamCircle.Stop();
+                    _Beam.Stop();
+                    _BossAnimator.SetTrigger("Default");
+                    nowTime = 0;
+                }
             }
             else
             {
@@ -55,6 +68,9 @@ public class BeamMoveObj : MonoBehaviour {
 
                 if (nowTime > moveTime)
                 {
+                    _BeamCircle.Stop();
+                    _Beam.Stop();
+                    _BossAnimator.SetTrigger("Default");
                     nowTime = buf;
                 }
             }
@@ -67,8 +83,22 @@ public class BeamMoveObj : MonoBehaviour {
                 return;
             Vector3 currentPoint = BezierCurve.GetPoint(p1, p2, timePointValue / moveTime);
             transform.position = currentPoint;
-
-
         }
+    }
+
+    private void init()
+    {
+        nowTime = 0;
+        bActive = false;
+    }
+
+    public void SetStart()
+    {
+        nowTime = 0;
+        bActive = true;
+    }
+    public void SetStop()
+    {
+        bActive = false;
     }
 }
