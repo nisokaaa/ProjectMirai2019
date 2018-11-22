@@ -26,6 +26,10 @@ public class JumpPointStart : MonoBehaviour {
             JumpPoint jumpPoint = _parent.GetComponent<JumpPoint>();
             jumpPoint.SetJump();
 
+            var rigidbody = other.GetComponent<Rigidbody>();
+            //GetComponent<CharacterController>().enabled = false;
+            other.GetComponent<PlayerController>().enabled = false;
+            rigidbody.velocity = Vector3.zero;
             //other.gameObject.GetComponent<CapsuleCollider>().enabled = true;
         }
     }

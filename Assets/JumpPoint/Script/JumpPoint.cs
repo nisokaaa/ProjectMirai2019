@@ -314,7 +314,6 @@ public class JumpPoint : MonoBehaviour {
         var rigidbody = m_shootObject.GetComponent<Rigidbody>();
         //GetComponent<CharacterController>().enabled = false;
         m_shootObject.GetComponent<PlayerController>().enabled = false;
-
         rigidbody.velocity = Vector3.zero;
         if (rigidbody == null)
         {
