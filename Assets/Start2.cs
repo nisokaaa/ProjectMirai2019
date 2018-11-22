@@ -5,12 +5,14 @@ using UnityEngine;
 public class Start2 : StateMachineBehaviour {
     Animator animator;
     BossBattlePlayerStartPosition bossBattlePlayerStartPosition;
+    CharacterVecRotation _characterVecRotation;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         animator = GameObject.Find("Boss").GetComponent<Animator>();
         bossBattlePlayerStartPosition = GameObject.Find("BossBattlePlayerStartPosition").GetComponent<BossBattlePlayerStartPosition>();
-        
+        _characterVecRotation = GameObject.Find("BossModelAnimatorController").GetComponent<CharacterVecRotation>();
+        _characterVecRotation.SetCharRot_Target();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
