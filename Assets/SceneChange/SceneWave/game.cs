@@ -35,6 +35,9 @@ public class Game : MonoBehaviour
     [SerializeField]
     BossBattleEnd bossBattleEnd;
 
+    [SerializeField]
+    Pausable _pausable;
+
     // Use this for initialization
     void Start () {
         string text = SceneManager.GetActiveScene().name;
@@ -68,6 +71,7 @@ public class Game : MonoBehaviour
         {
             return;
         }
+
         //  Debug.Log("test");
         if (Input.GetKeyDown(KeyCode.F1))
         {
