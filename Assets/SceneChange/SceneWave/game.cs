@@ -73,13 +73,10 @@ public class Game : MonoBehaviour
         {
             return;
         }
-
-        bool _se = false;
         
         //  Debug.Log("test");
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            _se = true;
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
@@ -92,21 +89,10 @@ public class Game : MonoBehaviour
 
         if(Input.anyKeyDown)
         {
-            _se = true;
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
         }
-        if (!(Input.anyKey))
-        {
-            _check = false;
-        }
-
-        if (_se == true && _check == false)
-        {
-            _se = false;
-            _check = true;
-            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BUTTONPUSH);
-        }
+        
     }
 }

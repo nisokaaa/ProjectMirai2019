@@ -18,6 +18,8 @@ public class ElecBarCharge : MonoBehaviour {
     [SerializeField] int chargeTimeMax;
     [SerializeField] int chargeCnt;
 
+    bool _se;
+
     // Use this for initialization
     void Start () {
         chargeCnt = 0;
@@ -53,6 +55,7 @@ public class ElecBarCharge : MonoBehaviour {
         {
             chargeCnt = 0;
             bObjectTriggerEnter = false;
+            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_GAUGE);
         }
     }
 

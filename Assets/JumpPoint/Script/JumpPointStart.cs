@@ -23,6 +23,7 @@ public class JumpPointStart : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
+            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_JUMPPOINT);
             JumpPoint jumpPoint = _parent.GetComponent<JumpPoint>();
             jumpPoint.SetJump();
 

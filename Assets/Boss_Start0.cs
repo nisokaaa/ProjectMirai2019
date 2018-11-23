@@ -10,6 +10,7 @@ public class Boss_Start0 : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         animator = GameObject.Find("Boss").GetComponent<Animator>();
         bossBattlePlayerStartPosition = GameObject.Find("BossBattlePlayerStartPosition").GetComponent<BossBattlePlayerStartPosition>();
+        AudioManager.Instance.PlayBGM(AUDIO.BGM_GAME_BOSS);
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

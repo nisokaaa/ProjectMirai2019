@@ -8,6 +8,7 @@ public class BossMovie : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //ステートに入った時
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        AudioManager.Instance.PlaySE(AUDIO.SE_GAME_WARNING);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
