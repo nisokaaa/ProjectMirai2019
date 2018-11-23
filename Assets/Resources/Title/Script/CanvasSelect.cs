@@ -21,6 +21,9 @@ public class CanvasSelect : MonoBehaviour {
     GameObject _CreditON;
     [SerializeField]
     GameObject _CreditOFF;
+
+    bool _check = false;
+
     // Use this for initialization
     void Start () {
         GameSelect = false;
@@ -44,6 +47,8 @@ public class CanvasSelect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        bool _se = false;
+
         if (!(m_joycons.Count <= 0 || m_joycons == null))
         {
             if(m_joyconR.GetStick()[0] > 0.5f)
@@ -64,7 +69,7 @@ public class CanvasSelect : MonoBehaviour {
             }
         }
 
-        if(Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKeyDown(KeyCode.RightArrow))
         {
             GameSelect = true;
             //animator.SetTrigger("GameStart");
@@ -72,9 +77,11 @@ public class CanvasSelect : MonoBehaviour {
             _CreditON.SetActive(true);
             _GameStartOFF.SetActive(true);
             _GameStartON.SetActive(false);
+            _se = true;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            _se = true;
             //animator.SetTrigger("Credit");
             GameSelect = false;
             _CreditOFF.SetActive(true);
@@ -83,7 +90,17 @@ public class CanvasSelect : MonoBehaviour {
             _GameStartON.SetActive(true);
         }
         //animator.SetBool("Select", GameSelect);
+        if(!(Input.anyKey))
+        {
+            _check = false;
+        }
 
+        if (_se == true && _check == false)
+        {
+            _se = false;
+            _check = true;
+            AudioManager.Instance.PlaySE(AUDIO.SE_TITLE_SELECTION);
+        }
     }
 
     public bool GetSelect()
