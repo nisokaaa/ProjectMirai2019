@@ -18,7 +18,6 @@ public class PauseCanvas : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         //現在の状況と過去の状況を比較して違う場合のみ処理を通す。
         if (_pausable.GetPauseFlag() == true && _pauseAnimation == false)
         {
