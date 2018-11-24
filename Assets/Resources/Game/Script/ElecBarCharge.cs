@@ -55,7 +55,7 @@ public class ElecBarCharge : MonoBehaviour {
         {
             chargeCnt = 0;
             bObjectTriggerEnter = false;
-            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_GAUGE);
+            //AudioManager.Instance.PlaySE(AUDIO.SE_GAME_GAUGE);
         }
     }
 

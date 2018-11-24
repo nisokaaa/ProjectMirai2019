@@ -124,7 +124,6 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
         m_bgmchange = true;
-
     }
 
 
@@ -236,6 +235,8 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
                 PlayBGM(_nextBGMName);
             }
         }
+
+        
     }
 
     //=================================================================================
@@ -298,7 +299,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
             }
             else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Fade")
             {
-                FadeOutBGM();
+                //FadeOutBGM();
             }
             m_bgmchange = false;
         }
