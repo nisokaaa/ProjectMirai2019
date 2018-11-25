@@ -15,6 +15,7 @@ public class BeamStart : StateMachineBehaviour {
         _beamMoveObj = GameObject.Find("BeamMoveObj").GetComponent<BeamMoveObj>();
         _beamMoveObj.SetStart();
         _BeamCircle.Play();
+        AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BOSS_BEAM);
         _Beam.Play();
     }
 

@@ -13,6 +13,9 @@ public static class AUDIO
 	  public const string BGM_TITLE = "BGM_TITLE";
 	
 	  public const string SE_ELECTRICAL = "SE_ELECTRICAL";
+	  public const string SE_GAME_BOSS = "SE_GAME_BOSS";
+	  public const string SE_GAME_BOSS_BEAM = "SE_GAME_BOSS_BEAM";
+	  public const string SE_GAME_BOSS_MISSILE = "SE_GAME_BOSS_MISSILE";
 	  public const string SE_GAME_BUTTONPUSH = "SE_GAME_BUTTONPUSH";
 	  public const string SE_GAME_ELECTRICAL_JUMP = "SE_GAME_ELECTRICAL_JUMP";
 	  public const string SE_GAME_GAUGE = "SE_GAME_GAUGE";

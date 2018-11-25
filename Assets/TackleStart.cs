@@ -8,6 +8,7 @@ public class TackleStart : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         GameObject.Find("BossModelAnimatorController").GetComponent<TackleMoveObj>().SetStart();
         GameObject.Find("Boss").GetComponent<BossController>().SetBossControllerOff();
+        //AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BOSS);
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

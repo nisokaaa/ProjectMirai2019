@@ -13,6 +13,7 @@ public class Start2 : StateMachineBehaviour {
         bossBattlePlayerStartPosition = GameObject.Find("BossBattlePlayerStartPosition").GetComponent<BossBattlePlayerStartPosition>();
         _characterVecRotation = GameObject.Find("BossModelAnimatorController").GetComponent<CharacterVecRotation>();
         _characterVecRotation.SetCharRot_Target();
+        AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BOSS);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

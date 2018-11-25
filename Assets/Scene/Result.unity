@@ -635,7 +635,7 @@ MonoBehaviour:
     \u6C5F(\u30B3\u30A6)\u83EF\u9F0E(\u30AB\u30C6\u30A4)\r\n* \u67F3\u7530\u4F38\u592A\u90CE\r\n\r\n###
     \u30C7\u30B6\u30A4\u30CA\u30FC\r\n* \u9152\u4E95\u7F8E\u6C99\u6A39\n\n###\u7D20\u6750\u63D0\u4F9B\n*
     Music is VFR\n* \u7121\u6599\u52B9\u679C\u97F3\u3067\u904A\u307C\u3046\uFF01\nTaira
-    Komori \nTaira Komori "
+    Komori \n* \u52B9\u679C\u97F3\u30E9\u30DC"
 --- !u!222 &818130032
 CanvasRenderer:
   m_ObjectHideFlags: 0
