@@ -25,6 +25,8 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 
     PlayerColliderCheck _playerColliderCheck;
 
+    bool _Acceleration = false;
+
     // Use this for initialization
     void Start () {
         if(_playerColliderCheck == null)
@@ -61,7 +63,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(elecBarControl.GetGageValue() <= 0.0f)
+        if (elecBarControl.GetGageValue() <= 0.0f)
         {
             particleSystem.SetActive(false);
             return;
@@ -69,6 +71,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.N)|| playerElecMode.GetMode() == true)
         {
+            _Acceleration = true;
             elecBarControl.Decrease();
             elecBarControl.Decrease();
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
@@ -107,10 +110,14 @@ public class AcceleratedDischargeAction : MonoBehaviour {
         }
         else
         {
+            _Acceleration = false;
             particleSystem.SetActive(false);
             playerModelAnimatorController.PlayerAtackControl(false);
         }
     }
 
-    //加速アクション
+    public bool GetAcceleration()
+    {
+        return _Acceleration;
+    }
 }

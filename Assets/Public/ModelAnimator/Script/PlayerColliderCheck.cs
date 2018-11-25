@@ -14,6 +14,7 @@ using UnityEngine;
 public class PlayerColliderCheck : MonoBehaviour {
 
     [SerializeField] bool tagPlane_CollisionEnter;
+    bool _SE = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +23,13 @@ public class PlayerColliderCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if(_SE == true)
+        {
+            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_JUMP_000);
+            _SE = false;
+        }
+
+    }
 
     /// <summary>
     /// オブジェクトが当たっているかちぇっくする
@@ -39,6 +45,7 @@ public class PlayerColliderCheck : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Plane")
         {
+            _SE = true;
             tagPlane_CollisionEnter = true;
         }
     }

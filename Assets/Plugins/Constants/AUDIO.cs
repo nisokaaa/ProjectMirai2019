@@ -16,6 +16,8 @@ public static class AUDIO
 	  public const string SE_GAME_BUTTONPUSH = "SE_GAME_BUTTONPUSH";
 	  public const string SE_GAME_ELECTRICAL_JUMP = "SE_GAME_ELECTRICAL_JUMP";
 	  public const string SE_GAME_GAUGE = "SE_GAME_GAUGE";
+	  public const string SE_GAME_JUMP_000 = "SE_GAME_JUMP_000";
+	  public const string SE_GAME_JUMP_001 = "SE_GAME_JUMP_001";
 	  public const string SE_GAME_JUMPPOINT = "SE_GAME_JUMPPOINT";
 	  public const string SE_GAME_WARNING = "SE_GAME_WARNING";
 	  public const string SE_TITLE_SELECTION = "SE_TITLE_SELECTION";
