@@ -1,0 +1,85 @@
+﻿--------------------------------------------------------------------------------
+Changelog for Procedural Lightning for Unity:
+--------------------------------------------------------------------------------
+2.4.4 (2018-09-05)	-	Improve LOD calculations and fix bugs.
+2.4.3 (2018-08-07)	-	Improve GC for spline lightning. Add LOD option for lightning script.
+2.4.2 (2018-07-20)	-	Add separate elapsed time, delta time and time scale static fields to lightning bolt script. Set LightningBoltScript.TimeScale if you need to change lightning time speed.
+2.4.1 (2018-05-08)	-	Fix WebGL compile error.
+2.4.0 (2018-04-04)	-	Add intensity flicker properties to lightning bolt script. Great for flickering the lightning rapidly using a noise texture.
+2.3.4 (2018-03-24)	-	Fix lightning path demos. If your path lightning is not working, double check that Unity didn't delete all your path points.
+2.3.3 (2018-02-27)	-	Fix re-orderable lists.
+2.3.2 (2018-02-14)	-	Added AutomaticModeSeconds to lightning bolt prefab and Trigger function. This allows lightning to Trigger automatically until n seconds have passed.
+2.3.1 (2017-11-17)	-	Fix multi-threaded exceptions.
+2.3.0 (2017-11-06)	-	Added CustomTransform callback property to LightningBoltParameters object. This allows you to control the transform of the lightning mesh if it needs to manually rotate, scale or translate based on other transforms. See DemoSceneCustomTransform.
+2.2.1 (2017-07-19)	-	Added lightning bolt parameters Color property. This allows setting the color per bolt, allowing variation of color on bolts from the same script / material.
+					-	Added chaos factor forks property. This allows a separate chaos factor for the forks.
+2.2.0 (2017-07-01)  -   Add orthographic offset and fade in/fully lit/fade out multiplier to light parameters.
+                    -   Added fade in, fully lit and fade out multiplier to lightning bolt prefab script and lightning bolt parameters.
+2.1.6 (2017-06-13)	-	Simplify caching and cleanup.
+2.1.5 (2017-05-01)	-	Fix WebGL compile errors.
+2.1.4 (2017-04-16)	-	Added RandomOverride property to lightning bolt script. See LightningBoltPrefabScript.cs for more details.
+2.1.3 (2017-02-16)	-	Added LightningStartedCallback and LightningEndedCallback to lightning bolt script. Use these to be notified when bolts are started and ended.
+2.1.2 (2017-01-15)	-	Expose soft particles factor in lightning bolt script.
+					-	Update lightning mesh demo to use a scale of 1. To make the mesh larger, you should be able to scale all the various parameters accordingly.
+2.1.1 (2017-01-09)	-	Added better HDR support, made an example scene showing HDR optimized lightning appearance.
+					-	Fix bug in trunk width and duration ranges for lightning bolt prefab. Random value is now correctly within the range specified. You may need to slightly increase these values if your lightning is too thin or doesn't show up for long enough now.
+					-	Add intensity property for HDR. For non-HDR leave it as 1 (the default).
+					-	Lightning field demo looks better.
+2.1.0 (2017-01-01)	-	Added multi threaded generation to the lightning bolt script. Turn this on to generate bolts on a background thread, freeing the main thread CPU to do other tasks. This is somewhat experimental, so let me know if you see problems with it and turn it off if you have crashes.
+2.0.2 (2016-11-17)	-	Fix for HDR and Deferred rendering
+2.0.1 (2016-06-30)	-	Fix for some spells that had the wrong initial direction sometimes
+2.0.0 (2016-06-21)	-	For path lightning, any game object that is null or not active in hierarchy will not be part of the path
+1.7.9 (2016-05-25)	-	Reduce memory allocations by caching parameters internally
+					-	Improve performance by using shader int id's instead of strings
+					-	An error is logged if two lightning scripts are attached to one game object, as this is not supported
+1.7.8 (2016-04-26)	-	Add lightsabre prefab and demo scene
+					-	Add lightning glow texture property to script
+1.7.7 (2016-04-24)	-	Add start and end position overload functions for call lightning in ThunderAndLightning script
+1.7.6 (2016-04-19)	-	Fix start and end variance with particle system emission
+					-	Improve cache cleanup of lightning bolts and renderers
+1.7.5 (2016-04-18)	-	Added count range probability to reduce the chance that additional bolts are emitted.
+1.7.4 (2016-04-10)	-	Tweak ThunderAndLightning script to use the standard prefab and add a Y value parameter. Other code refactoring.
+1.7.3 (2016-03-24)	-	Added 'CompensateForParentTransform' to the lightning bolt script. Use this if your positions, scaling or rotation messes up the lightning.
+					-	Added CameraMode parameter to LightningBoltScript. This replaces the "AllowOrthographicMode" parameter.
+
+// change log of unknown dates
+1.7.2	-	Added demo scene to show how to trigger lightning manually with a list of points
+1.7.1	-	Fixed crash when deploying path lightning to a build
+		-	Multiple bug fixes for ThunderAndLightning script (null reference errors, cloud only lightning not working, etc.)
+		-	Add Unity 4 and Unity 5.0-5.2.X support
+1.7		-	Added mesh lightning. Lightning tries to follow the shape of a mesh using the triangles.
+1.6		-	Added 5 spells for 3D mode - force lightning, lightning beam, lightning ball, charged bolt and lightning whip
+		-	Make the lightning mesh bounds more accurate to help eliminate culling errors
+1.5.1	-	Added source and destination blend modes to lightning bolt script
+1.5		-	Added spline lightning prefab. Great for curving lightning through points.
+		-	Added lightning whip prefab to show using spline lightning with physics.
+		-	Refactored lightning generation code. LightningBoltParameters now has a Generator property that can be set to a specific generator for ease of creating specialized lightning. There are two generators built in now, one for regular lightning and one for path/spline. You can easily add your own too.
+		-	The number of forks created more closely matches the forkedness parameter, where a value of 1.0 means every segment forks
+		-	Add fork length parameters to script to adjust how long forks can be
+		-	Removed square billboard glow shader and legacy shader
+1.4.10	-	Lighting works in 2D mode by setting the Z position of lights to the camera z position
+1.4.9	-	Added sort layer and order in sort layer properties to lightning bolt script
+		-	Use new mesh calls that take Lists to greatly reduce garbage collection
+		-	Glow width multiplier and intensity are now stored in z and w of texcoord, eliminating the need for a separate list for those values
+1.4.8	-	Added manual / automatic property to lightning bolt prefab script. Set ManualMode to true and call the Trigger method if you want to trigger the lightning yourself, rather than using the interval property. In this case, interval is ignored.
+1.4.7	-   Added a camera property to lightning bolt script. Default is current, or main camera if current is null. You are still responsible for setting the culling mask appropriately on your cameras.
+1.4.6	-	Added render queue parameter to lightning bolt script
+1.4.5	-	Added a turbulence parameters to the lightning bolt script. See DemoSceneLightningField for an example.
+1.4.4	-	Added world space vs. local space option in LightningBoltScript.cs. Default is world space. If you switch to local space, the start and end of the lightning bolt are assumed to be relative to the parent game object.
+1.4.3	-	Fixed issues when reloading or changing levels. Sometimes lightning wouldn't render and disposed objects left over from the previous level would get accessed. This should be fixed.
+1.4.2	-	Added parameter to LightningBoltScript that allows lightning to be limited in appearance by the current quality setting.
+1.4.1	-	At the top of LightningBoltScript.cs is an option to turn on "unsafe" mode. This allows assigning the lightning bolt geometry to the mesh without having to copy the array. This setting only works in deployed builds and not in the player.
+1.4		-	Bug fixes.
+		-	You can specify point light intervals for your path lightning - useful for great lighting indoors.
+1.3		-	Added a bunch of prefabs for shape lightning, chain / path lightning and more with demo scenes.
+		-	Improved lightning bolt batching. Use CreateLightningBolts (plural) on LightningBoltScript to batch all bolts into one draw call.
+		-	Lightning bolt script allows easily changing the glow and tint color, as well as texture without fussing with materials.
+		-	10 new lightning bolt textures.
+		-	Scene view shows gizmos for building lightning paths for better visualization - see DemoScenePath.
+		-	Disabled legacy line renderer. It is still there, but #if'd out. I would suggest avoiding using this as I will probably delete
+			it in a future version. The CPU usage and draw calls are terrible for this mode.
+1.2		-	Bug fixes.
+1.1		-	Added an option to render lightning with a mesh that cuts down on the number of draw calls and CPU usage significantly.
+1.0.2	-	Fixed a display glitch with multiple bolts and very short duration.
+1.0.1	-	Added web player link.
+1.0		-	Initial release.
