@@ -1,20 +1,22 @@
 fileFormatVersion: 2
-guid: 1401e92d7eba48f44a5d8eedb343594c
+guid: 285d495b823438c4ab73510b8d4974f2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: node_id5
     400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Mesh
+    400002: node_id5
+    2100000: Material_60
+    2300000: node_id5
+    3300000: node_id5
+    4300000: node_id5
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -40,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 5000
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
