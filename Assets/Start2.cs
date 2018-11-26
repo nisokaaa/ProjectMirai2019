@@ -6,6 +6,7 @@ public class Start2 : StateMachineBehaviour {
     Animator animator;
     BossBattlePlayerStartPosition bossBattlePlayerStartPosition;
     CharacterVecRotation _characterVecRotation;
+    BossAI _bossAI;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -14,6 +15,7 @@ public class Start2 : StateMachineBehaviour {
         _characterVecRotation = GameObject.Find("BossModelAnimatorController").GetComponent<CharacterVecRotation>();
         _characterVecRotation.SetCharRot_Target();
         AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BOSS);
+        _bossAI = GameObject.Find("BossModelAnimatorController").GetComponent<BossAI>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -27,6 +29,8 @@ public class Start2 : StateMachineBehaviour {
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         bossBattlePlayerStartPosition.SetPlayerStart();
+        _bossAI.SetActive();
+
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
