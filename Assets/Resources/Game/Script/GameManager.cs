@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ゲームの進行状況を把握
+/// シナリオの再生などを行う
+/// </summary>
 public class GameManager : MonoBehaviour {
 
-    [SerializeField] string BGM;
+    GameObject _pauseCanvas;
+    Pausable _pausable;
 
-	// Use this for initialization
-	void Start () {
-        Sound.LoadBgm("GAME_BGM", BGM);
-        Sound.PlayBgm("GAME_BGM");
+    [SerializeField]
+    bool _bTutorial = false;
+
+    // Use this for initialization
+    void Start () {
+
     }
 	
 	// Update is called once per frame

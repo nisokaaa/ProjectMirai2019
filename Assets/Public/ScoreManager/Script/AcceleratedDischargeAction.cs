@@ -19,9 +19,20 @@ public class AcceleratedDischargeAction : MonoBehaviour {
     private List<Joycon> m_joycons;
     private Joycon m_joyconL;
     private Joycon m_joyconR;
+
+    int SeCnt = 0;
+    bool _se = false;
+
+    PlayerColliderCheck _playerColliderCheck;
+
+    bool _Acceleration = false;
+
     // Use this for initialization
     void Start () {
-        if(playerModelAnimatorController == null)
+        if(_playerColliderCheck == null)
+        _playerColliderCheck = GetComponent<PlayerColliderCheck>();
+
+        if (playerModelAnimatorController == null)
         {
             playerModelAnimatorController = GameObject.Find("PlayerModelAnimatorController").GetComponent<PlayerModelAnimatorController>();
         }
@@ -52,7 +63,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(elecBarControl.GetGageValue() <= 0.0f)
+        if (elecBarControl.GetGageValue() <= 0.0f)
         {
             particleSystem.SetActive(false);
             return;
@@ -60,6 +71,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.N)|| playerElecMode.GetMode() == true)
         {
+            _Acceleration = true;
             elecBarControl.Decrease();
             elecBarControl.Decrease();
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
@@ -77,13 +89,35 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             particleSystem.transform.position = transform.position;
             particleSystem.SetActive(true);
             playerModelAnimatorController.PlayerAtackControl(true);
+
+            if (SeCnt >= 10)
+            {
+                SeCnt = 0;
+                _se = false;
+            }
+
+            SeCnt++;
+            if (_se == false)
+            {
+                _se = true;
+                AudioManager.Instance.PlaySE(AUDIO.SE_ELECTRICAL);
+            }
+            
+            if(Input.GetKeyDown(KeyCode.Space) && _playerColliderCheck.GetCollisionEnterExit() == true)
+            {
+                AudioManager.Instance.PlaySE(AUDIO.SE_GAME_ELECTRICAL_JUMP);
+            }
         }
         else
         {
+            _Acceleration = false;
             particleSystem.SetActive(false);
             playerModelAnimatorController.PlayerAtackControl(false);
         }
     }
 
-    //加速アクション
+    public bool GetAcceleration()
+    {
+        return _Acceleration;
+    }
 }

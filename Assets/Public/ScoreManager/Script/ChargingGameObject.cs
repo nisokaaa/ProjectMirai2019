@@ -37,6 +37,7 @@ public class ChargingGameObject : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
+            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_GAUGE);
             timeCnt = 0;
             particleSystem.SetActive(false);
             bExecution = true;

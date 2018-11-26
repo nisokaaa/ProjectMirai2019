@@ -67,6 +67,12 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
             gameScript.enabled = false;
             resultScript.enabled = true;
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            #if UNITY_STANDALONE
+                Application.Quit();
+            #endif
+        }
         /*サンプルコード
 		if(Input.GetKeyDown(KeyCode.F1))
         {

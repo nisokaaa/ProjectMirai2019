@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Boss_Start0 : StateMachineBehaviour {
     Animator animator;
+    BossBattlePlayerStartPosition bossBattlePlayerStartPosition;
 
-	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         animator = GameObject.Find("Boss").GetComponent<Animator>();
-
+        bossBattlePlayerStartPosition = GameObject.Find("BossBattlePlayerStartPosition").GetComponent<BossBattlePlayerStartPosition>();
+        AudioManager.Instance.PlayBGM(AUDIO.BGM_GAME_BOSS);
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,8 +24,7 @@ public class Boss_Start0 : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        
-
+        bossBattlePlayerStartPosition.SetPlayerStop();
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

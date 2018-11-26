@@ -24,6 +24,9 @@ public class BossController : MonoBehaviour {
 
     BossBattleStart bossBattleStartScript;
     [SerializeField] int timeCnt;
+
+    [SerializeField] bool _bossControllerOff = false;
+    
     // Use this for initialization
     void Start () {
         if(m_target == null)
@@ -37,7 +40,7 @@ public class BossController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(bossBattleStartScript == null)
+        if(bossBattleStartScript == null || _bossControllerOff == true)
         {
             return;
         }
@@ -69,6 +72,16 @@ public class BossController : MonoBehaviour {
         }
     }
 
+    public void SetBossControllerOff()
+    {
+        _bossControllerOff = true;
+    }
+
+    public void SetBossControllerOn()
+    {
+        _bossControllerOff = false;
+    }
+
     //プレイヤーに追従する
     void FollowingPlayer()
     {
@@ -78,6 +91,10 @@ public class BossController : MonoBehaviour {
         }
         m_velocity += ((m_target.position - SeecPos) - transform.position) * m_speed;
         m_velocity *= m_attenuation;
+
+        //移動量にXの情報を省く
+        m_velocity.x = 0.0f;
+
         transform.position += m_velocity *= Time.deltaTime;
     }
 }

@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0f, 5000f)]
     int jumpPower = 100;
 
-    [SerializeField, Range(0f, 5000f)]
+    [SerializeField, Range(0f, 10000f)]
     int JumpElecPower = 500;
 
     int jumpPowerValue = 0;
@@ -85,6 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_DOWN))
             {
+                
                 jump = true;
             }
             transform.Rotate(new Vector3(0, 1, 0), m_joyconL.GetStick()[0]);
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             jump = true;
         }
         if (playerColliderCheck.GetCollisionEnterExit() == false)
@@ -146,12 +148,13 @@ public class PlayerController : MonoBehaviour
         moveVector = speedCurrent * transform.forward;
         
 
-        //重力処理
+        //加算重力処理
         if (playerColliderCheck.GetCollisionEnterExit() == false)
             moveVector.y -= gravity * Time.deltaTime; //マイナスのY方向（下向き）に重力を与える
 
         if (jump == true)
         {
+            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_JUMP_001);
             jump = false;
             rb.AddForce(Vector3.up * jumpPowerValue);
         }

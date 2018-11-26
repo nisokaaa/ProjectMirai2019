@@ -8,6 +8,7 @@ public class BossDefault : StateMachineBehaviour {
     public int BeamStartTime;
     public int TackleStartTime;
     public int MissileStartTime;
+    public bool bActive;
     public enum BOSS_PHASE
     {
         PHASE_NONE = 0,
@@ -15,7 +16,7 @@ public class BossDefault : StateMachineBehaviour {
         PHASE_TACKLE,
         PHASE_MISSILE,
     };
-    public BOSS_PHASE _fhase = BOSS_PHASE.PHASE_BEAM;
+    public BOSS_PHASE _fhase = BOSS_PHASE.PHASE_NONE;
 
     Animator animator;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -28,6 +29,10 @@ public class BossDefault : StateMachineBehaviour {
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         //_Beam.Stop();
+        if(bActive == false)
+        {
+            return;
+        }
         time++;
         if(BeamStartTime < time && _fhase == BOSS_PHASE.PHASE_BEAM)
         {
@@ -45,6 +50,11 @@ public class BossDefault : StateMachineBehaviour {
             animator.SetTrigger("Missile");
             _fhase = BOSS_PHASE.PHASE_BEAM;
         }
+    }
+
+    public void SetBossBattleStart()
+    {
+        _fhase = BOSS_PHASE.PHASE_BEAM;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

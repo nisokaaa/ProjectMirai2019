@@ -29,6 +29,8 @@ public class Title : MonoBehaviour {
     private Joycon m_joyconL;
     private Joycon m_joyconR;
 
+    bool _check = false;
+
     // Use this for initialization
     void Start () {
         string text = SceneManager.GetActiveScene().name;
@@ -60,6 +62,8 @@ public class Title : MonoBehaviour {
             return;
         }
 
+        bool _se = false;
+
         switch (title)
         {
             case WAVE.START:
@@ -70,6 +74,7 @@ public class Title : MonoBehaviour {
             case WAVE.PLAY:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    _se = true;
                     Debug.Log("ゲーム読み込み開始");
                     SceneChangeController.Instance.SetChangeScene("Game");
                     title = WAVE.END;
@@ -83,6 +88,7 @@ public class Title : MonoBehaviour {
                 {
                     if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
                     {
+                        _se = true;
                         SceneChangeController.Instance.SetChangeScene("Game");
                         title = WAVE.END;
                     }
@@ -93,6 +99,18 @@ public class Title : MonoBehaviour {
                 SceneChangeController.Instance.FadeIn();
                 title = WAVE.NONE;
                 break;
+        }
+
+        if (!(Input.anyKey))
+        {
+            _check = false;
+        }
+
+        if (_se == true && _check == false)
+        {
+            _se = false;
+            _check = true;
+            AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BUTTONPUSH);
         }
     }
 }

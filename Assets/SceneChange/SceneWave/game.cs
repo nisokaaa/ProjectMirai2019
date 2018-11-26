@@ -35,6 +35,11 @@ public class Game : MonoBehaviour
     [SerializeField]
     BossBattleEnd bossBattleEnd;
 
+    [SerializeField]
+    Pausable _pausable;
+
+    bool _check = false;
+
     // Use this for initialization
     void Start () {
         string text = SceneManager.GetActiveScene().name;
@@ -54,7 +59,7 @@ public class Game : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
-
+        
         //Debug.Log(text);
         //Debug.Log("やばいで！" + text);
 
@@ -68,6 +73,7 @@ public class Game : MonoBehaviour
         {
             return;
         }
+        
         //  Debug.Log("test");
         if (Input.GetKeyDown(KeyCode.F1))
         {
@@ -87,5 +93,6 @@ public class Game : MonoBehaviour
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
         }
-	}
+        
+    }
 }

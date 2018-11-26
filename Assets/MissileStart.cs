@@ -13,6 +13,7 @@ public class MissileStart : StateMachineBehaviour {
         _MissileCircle = GameObject.Find("Particle System Missile").GetComponent<ParticleSystem>();
         _MissileCircle.Play();
         _Missile.Play();
+        AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BOSS_MISSILE);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

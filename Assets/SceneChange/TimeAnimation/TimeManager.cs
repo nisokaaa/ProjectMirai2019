@@ -10,8 +10,10 @@ public class TimeManager : MonoBehaviour {
     //　時間を遅くしている時間
     [SerializeField]
     private float slowTime = 1f;
-    //　経過時間
+
+    [SerializeField]//　経過時間
     private float elapsedTime = 0f;
+
     //　時間を遅くしているかどうか
     private bool isSlowDown = false;
 
@@ -21,17 +23,26 @@ public class TimeManager : MonoBehaviour {
     [SerializeField]
     CapsuleCollider _playerCollider;
 
+    [SerializeField]
+    bool _bDebug = false;
+
     private void Start()
     {
     }
     void Update()
     {
+        if(_bDebug == true)
+        {
+            SlowDown();
+        }
+
         //　スローダウンフラグがtrueの時は時間計測
         if (isSlowDown)
         {
             elapsedTime += Time.unscaledDeltaTime;
             if (elapsedTime >= slowTime)
             {
+                _bDebug = false;
                 SetNormalTime();
             }
         }
@@ -39,18 +50,25 @@ public class TimeManager : MonoBehaviour {
     //　時間を遅らせる処理
     public void SlowDown()
     {
+        _bDebug = false;
         elapsedTime = 0f;
         Time.timeScale = timeScale;
         isSlowDown = true;
         _player.interpolation = RigidbodyInterpolation.Interpolate;
-        _playerCollider.enabled = false;
+        //_playerCollider.enabled = false;
     }
+
     //　時間を元に戻す処理
     public void SetNormalTime()
     {
         Time.timeScale = 1f;
         isSlowDown = false;
         _player.interpolation = RigidbodyInterpolation.None;
-        _playerCollider.enabled = true;
+        //_playerCollider.enabled = true;
+    }
+
+    public bool GetSlowFlag()
+    {
+        return isSlowDown;
     }
 }
