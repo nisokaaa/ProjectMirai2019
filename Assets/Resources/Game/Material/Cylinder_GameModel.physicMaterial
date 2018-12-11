@@ -7,7 +7,7 @@ PhysicMaterial:
   m_PrefabInternal: {fileID: 0}
   m_Name: Cylinder_GameModel
   dynamicFriction: 8.87
-  staticFriction: 5.76
+  staticFriction: 0
   bounciness: 1
   frictionCombine: 0
   bounceCombine: 3

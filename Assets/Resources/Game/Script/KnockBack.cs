@@ -56,7 +56,7 @@ public class KnockBack : MonoBehaviour {
         if(collision.gameObject.tag == "Obstacle")
         {
             Vector3 KnockBackVec;
-            KnockBackVec = (transform.position - collision.transform.position) * 5.5f;
+            KnockBackVec = (transform.position - collision.transform.position) * 10.5f;
 
             _move = new Vector3(KnockBackVec.x, 100.0f, KnockBackVec.z);
             _Rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
