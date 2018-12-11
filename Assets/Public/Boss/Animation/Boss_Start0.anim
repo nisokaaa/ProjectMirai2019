@@ -203,7 +203,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: _bossControllerOff
-    path: 
+    path: BossModelAnimatorController
     classID: 114
     script: {fileID: 11500000, guid: f28eef50c7db2414a8037654a705215e, type: 3}
   m_PPtrCurves: []
@@ -236,7 +236,7 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2391283365
       attribute: 2877044941
       script: {fileID: 11500000, guid: f28eef50c7db2414a8037654a705215e, type: 3}
       typeID: 114
@@ -785,7 +785,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: _bossControllerOff
-    path: 
+    path: BossModelAnimatorController
     classID: 114
     script: {fileID: 11500000, guid: f28eef50c7db2414a8037654a705215e, type: 3}
   m_EulerEditorCurves:

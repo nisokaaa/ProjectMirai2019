@@ -7,7 +7,7 @@ public class TackleStart : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         GameObject.Find("BossModelAnimatorController").GetComponent<TackleMoveObj>().SetStart();
-        GameObject.Find("Boss").GetComponent<BossController>().SetBossControllerOff();
+        GameObject.Find("BossModelAnimatorController    ").GetComponent<BossController>().SetBossControllerOff();
         //AudioManager.Instance.PlaySE(AUDIO.SE_GAME_BOSS);
     }
 
