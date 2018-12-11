@@ -49,9 +49,9 @@ public class HitStopDamage : MonoBehaviour {
     {
         if (col.gameObject.tag == "Obstacle")
         {
-            var damageParticle = GameObject.Instantiate(damagePrefab, transform.position, Quaternion.identity) as GameObject;
-            //　全体のタイムスケールを変更する
-            timeManager.SlowDown();
+            //var damageParticle = GameObject.Instantiate(damagePrefab, transform.position, Quaternion.identity) as GameObject;
+            ////　全体のタイムスケールを変更する
+            //timeManager.SlowDown();
         }
     }
 }
