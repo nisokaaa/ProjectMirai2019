@@ -483,11 +483,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 8ba42c985327f5f48a4b41573c21b222, type: 2}
     - target: {fileID: 4348008774063250, guid: c1a1576504f4a694fab983389af2e920, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1020
+      value: 1261
       objectReference: {fileID: 0}
     - target: {fileID: 4348008774063250, guid: c1a1576504f4a694fab983389af2e920, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9668
+      value: 9258
       objectReference: {fileID: 0}
     - target: {fileID: 4192001154736332, guid: c1a1576504f4a694fab983389af2e920, type: 2}
       propertyPath: m_LocalPosition.z
@@ -495,7 +495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4192001154736332, guid: c1a1576504f4a694fab983389af2e920, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 531
+      value: 772
       objectReference: {fileID: 0}
     - target: {fileID: 4561506056594344, guid: c1a1576504f4a694fab983389af2e920, type: 2}
       propertyPath: m_LocalRotation.y
@@ -512,6 +512,19 @@ Prefab:
     - target: {fileID: 4561506056594344, guid: c1a1576504f4a694fab983389af2e920, type: 2}
       propertyPath: m_LocalPosition.z
       value: 406
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966261612591094, guid: c1a1576504f4a694fab983389af2e920, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 386
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966261612591094, guid: c1a1576504f4a694fab983389af2e920, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 169
+      objectReference: {fileID: 0}
+    - target: {fileID: 23614948136705624, guid: c1a1576504f4a694fab983389af2e920,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1a1576504f4a694fab983389af2e920, type: 2}
@@ -25748,6 +25761,7 @@ GameObject:
   - component: {fileID: 1121736586}
   - component: {fileID: 1121736598}
   - component: {fileID: 1121736599}
+  - component: {fileID: 1121736600}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -25991,6 +26005,17 @@ MonoBehaviour:
   _ParticleSystem: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7,
     type: 2}
   _time: 0
+--- !u!114 &1121736600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1121736585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07724a7fbdd07804aa3b864938976f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1132463641
 GameObject:
   m_ObjectHideFlags: 0

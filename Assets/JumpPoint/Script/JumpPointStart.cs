@@ -25,13 +25,17 @@ public class JumpPointStart : MonoBehaviour {
         {
             AudioManager.Instance.PlaySE(AUDIO.SE_GAME_JUMPPOINT);
             JumpPoint jumpPoint = _parent.GetComponent<JumpPoint>();
-            jumpPoint.SetJump();
+            
 
             var rigidbody = other.GetComponent<Rigidbody>();
+            rigidbody.velocity = Vector3.zero;
+
             //GetComponent<CharacterController>().enabled = false;
             other.GetComponent<PlayerController>().enabled = false;
-            rigidbody.velocity = Vector3.zero;
+            other.GetComponent<PlayerLeftRightElecDash>().enabled = false;
             //other.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+
+            jumpPoint.SetJump();
         }
     }
 }

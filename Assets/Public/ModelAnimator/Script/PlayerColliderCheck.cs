@@ -26,7 +26,7 @@ public class PlayerColliderCheck : MonoBehaviour {
         if(_SE == true)
         {
             AudioManager.Instance.PlaySE(AUDIO.SE_GAME_JUMP_000);
-            _SE = false;
+            _SE = false;    
         }
 
     }

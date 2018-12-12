@@ -48,6 +48,7 @@ public class JumpPoint : MonoBehaviour {
         if (bJumpFlag == true && m_target != null)
         {
             bJumpFlag = false;
+            
 
             switch (shutType)
             {
@@ -313,7 +314,10 @@ public class JumpPoint : MonoBehaviour {
         //var rigidbody = m_shootObject.AddComponent<Rigidbody>();
         var rigidbody = m_shootObject.GetComponent<Rigidbody>();
         //GetComponent<CharacterController>().enabled = false;
+
         m_shootObject.GetComponent<PlayerController>().enabled = false;
+        m_shootObject.GetComponent<PlayerLeftRightElecDash>().enabled = false;
+        
         rigidbody.velocity = Vector3.zero;
         if (rigidbody == null)
         {

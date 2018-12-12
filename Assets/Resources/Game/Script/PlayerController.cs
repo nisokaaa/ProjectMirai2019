@@ -36,8 +36,7 @@ public class PlayerController : MonoBehaviour
 
     int jumpPowerValue = 0;
     bool jump = false;
-    bool _rightJump = false;
-    bool _leftJump = false;
+    
     PlayerElecMode playerElecMode;
 
     PlayerColliderCheck playerColliderCheck;            //bJumpアニメーション用スクリプト
@@ -47,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private Joycon m_joyconR;
     private CharacterController charaCon;       // キャラクターコンポーネント用の変数
     private NavMeshAgent agent;
+
     void Start()
     {
         if (playerElecMode == null)
@@ -92,10 +92,6 @@ public class PlayerController : MonoBehaviour
             }
             transform.Rotate(new Vector3(0, 1, 0), m_joyconL.GetStick()[0]);
 
-            if (m_joyconR.GetButtonDown(Joycon.Button.SHOULDER_1))
-            {
-                _rightJump = true;
-            }
         }
         
         if (Input.GetKeyDown(KeyCode.Space))
@@ -140,7 +136,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        Vector3 RLJump = new Vector3(0.0f,0.0f,0.0f);
 
         // アクセル押下してたら速度代入
         speedCurrent = bAccelerator ? speed : 0.0f;
@@ -154,7 +149,6 @@ public class PlayerController : MonoBehaviour
         }
         
         Vector3 moveVector = Vector3.zero;
-
         moveVector = speedCurrent * transform.forward;
         
 
@@ -168,21 +162,9 @@ public class PlayerController : MonoBehaviour
             jump = false;
             rb.AddForce(Vector3.up * jumpPowerValue);
         }
-        if (Input.GetKeyDown(KeyCode.Q) || _leftJump == true)
-        {
-            _leftJump = false;
-            rb.AddForce(transform.right * -30.0f, ForceMode.Impulse);
-            //RLJump = transform.right * -500.0f;
-        }
-        if (Input.GetKeyDown(KeyCode.E) || _rightJump == true)
-        {
-            _rightJump = false;
-            rb.AddForce(transform.right * 30.0f, ForceMode.Impulse);
-            //RLJump = transform.right * 500.0f;
-        }
 
         // ボタン非押下で勝手に速度減衰
-        rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity + RLJump));
+        rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity));
         // Rayが地面にあたってないときは速度減衰をやわらげよう・・・・
         //Debug.Log(rb.velocity);
     }

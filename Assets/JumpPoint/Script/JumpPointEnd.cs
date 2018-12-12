@@ -19,6 +19,8 @@ public class JumpPointEnd : MonoBehaviour {
         {
             Debug.Log("aaaaaaaaaaa");
             other.GetComponent<PlayerController>().enabled = true;
+            other.GetComponent<PlayerLeftRightElecDash>().enabled = true;
+            
             //Destroy(other.gameObject.GetComponent<Rigidbody>());
             //other.gameObject.GetComponent<CharacterController>().enabled = true;
             //other.gameObject.GetComponent<CapsuleCollider>().enabled = false;
