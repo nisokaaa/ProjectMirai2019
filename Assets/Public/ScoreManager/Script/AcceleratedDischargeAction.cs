@@ -27,9 +27,16 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 
     bool _Acceleration = false;
 
+    Rigidbody rb;
+
+    bool _RaipidFlag = false;
+    int _RaipidTime = 0;
+
     // Use this for initialization
     void Start () {
-        if(_playerColliderCheck == null)
+        rb = gameObject.GetComponent<Rigidbody>();
+
+        if (_playerColliderCheck == null)
         _playerColliderCheck = GetComponent<PlayerColliderCheck>();
 
         if (playerModelAnimatorController == null)
@@ -74,17 +81,22 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             _Acceleration = true;
             elecBarControl.Decrease();
             elecBarControl.Decrease();
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+
 
             //if (Input.GetKey(KeyCode.Space))
             //{
             //    rb.up *= 2.0f;
             //}
 
+            //急加速
+            RaipidAcceleration(4);
+
+            //加速処理
             AcceleratedSpeed = rb.velocity * AcceleratorSpeed;
             rb.AddForce(AcceleratedSpeed);
             scoreManager.AddScoreValue(1);
             AcceleratedSpeed *= AcceleratorLimit;
+
             //演出
             particleSystem.transform.position = transform.position;
             particleSystem.SetActive(true);
@@ -110,12 +122,38 @@ public class AcceleratedDischargeAction : MonoBehaviour {
         }
         else
         {
+            _RaipidFlag = false;
             _Acceleration = false;
             particleSystem.SetActive(false);
             playerModelAnimatorController.PlayerAtackControl(false);
         }
     }
 
+    /// <summary>
+    /// 急加速
+    /// </summary>
+    void RaipidAcceleration(int time)
+    {
+        if(_RaipidFlag == true)
+        {
+            return;
+        }
+
+        //急加速処理
+        rb.AddForce(rb.velocity * (AcceleratorSpeed * 50));
+        _RaipidTime++;
+
+        //加速解除
+        if (time < _RaipidTime)
+        {
+            _RaipidFlag = true;
+        }
+    }
+
+    /// <summary>
+    /// 加速状態の取得
+    /// </summary>
+    /// <returns></returns>
     public bool GetAcceleration()
     {
         return _Acceleration;
