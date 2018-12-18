@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
         if (playerElecMode.GetMode() == true)
         {
-            jumpPowerValue = JumpElecPower;
+            jumpPowerValue += JumpElecPower;
         }
         else
         {
