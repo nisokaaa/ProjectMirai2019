@@ -14,7 +14,6 @@ public class AcceleratedDischargeAction : MonoBehaviour {
     [SerializeField] Vector3 AcceleratedSpeed;
     [SerializeField, Range(1f, 2f)] float AcceleratorSpeed=1.1f;
     [SerializeField, Range(0f, 1f)] float AcceleratorLimit = 0.8f;
-    ScoreManager scoreManager;
 
     private List<Joycon> m_joycons;
     private Joycon m_joyconL;
@@ -50,10 +49,6 @@ public class AcceleratedDischargeAction : MonoBehaviour {
         if(playerElecMode == null)
         {
             playerElecMode = GetComponent<PlayerElecMode>();
-        }
-        if (scoreManager == null)
-        {
-            scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         }
 
         particleSystem = Instantiate(particleSystem, transform.position, Quaternion.identity)as GameObject;
@@ -94,7 +89,6 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             //加速処理
             AcceleratedSpeed = rb.velocity * AcceleratorSpeed;
             rb.AddForce(AcceleratedSpeed);
-            scoreManager.AddScoreValue(1);
             AcceleratedSpeed *= AcceleratorLimit;
 
             //演出

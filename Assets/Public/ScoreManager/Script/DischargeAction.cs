@@ -8,10 +8,9 @@ using UnityEngine;
 public class DischargeAction : MonoBehaviour {
 
     [SerializeField]GameObject particleSystem;
-    ScoreManager scoreManager;
     ElecBarControl elecBarControl;
 
-    enum ELEC_MODE
+    public enum ELEC_MODE
     {
         NONE = 0,
         START,
@@ -19,17 +18,12 @@ public class DischargeAction : MonoBehaviour {
         END
     }
     [SerializeField] ELEC_MODE mode = ELEC_MODE.NONE;
-    int addScoreCnt = 0;
 
     // Use this for initialization
     void Start () {
         particleSystem = Instantiate(particleSystem,transform.position,Quaternion.identity) as GameObject;
         particleSystem.SetActive(false);
 
-        if (scoreManager == null)
-        {
-            scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        }
         if (elecBarControl == null)
         {
             elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
@@ -72,13 +66,11 @@ public class DischargeAction : MonoBehaviour {
         //ゲージ減少処理
         elecBarControl.Decrease();
 
-        //スコア上昇処理
-        addScoreCnt++;
-        if(addScoreCnt > 60)
-        {
-            addScoreCnt = 0;
-            scoreManager.AddScoreValue(10);
-        }
         mode = ELEC_MODE.EXECUTION;
+    }
+
+    public ELEC_MODE GetPlayerMode()
+    {
+        return mode;
     }
 }

@@ -1,0 +1,699 @@
+fileFormatVersion: 2
+guid: 0d0bca9d29047ee4d8c2ecd81194d861
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: arm_g_L
+    100002: arm_g_R
+    100004: arm_ring
+    100006: arm_ring 1
+    100008: arm_ring_2
+    100010: arm_ring_2 1
+    100012: back_coil
+    100014: back_hair_1
+    100016: back_hair_2
+    100018: back_hair_3
+    100020: battery_g_L
+    100022: battery_g_R
+    100024: belt
+    100026: body_g
+    100028: body_L
+    100030: body_R
+    100032: Chest
+    100034: cloth
+    100036: cloth_g
+    100038: coil_L_g
+    100040: coil_R_g
+    100042: Distal_L
+    100044: Distal_L 1
+    100046: Distal_L 2
+    100048: Distal_L 3
+    100050: Distal_L 4
+    100052: Distal_R
+    100054: Distal_R 1
+    100056: Distal_R 2
+    100058: Distal_R 3
+    100060: Distal_R 4
+    100062: Eye_L
+    100064: eye_L
+    100066: eye_light_1
+    100068: eye_light_2
+    100070: eye_poly10
+    100072: eye_poly10 1
+    100074: eye_poly11
+    100076: eye_poly6
+    100078: Eye_R
+    100080: eye_R
+    100082: face
+    100084: Foot_L
+    100086: Foot_R
+    100088: front_hair_1
+    100090: front_hair_2
+    100092: front_hair_3
+    100094: fur
+    100096: Hair
+    100098: hair_g
+    100100: Hand_L
+    100102: Hand_R
+    100104: Head
+    100106: head_hair
+    100108: headphone
+    100110: headphone_ear_g_L
+    100112: headphone_ear_g_R
+    100114: Hip
+    100116: hutae_1
+    100118: hutae_1 1
+    100120: Index_L
+    100122: Index_R
+    100124: Intermediate_L
+    100126: Intermediate_L 1
+    100128: Intermediate_L 2
+    100130: Intermediate_L 3
+    100132: Intermediate_L 4
+    100134: Intermediate_R
+    100136: Intermediate_R 1
+    100138: Intermediate_R 2
+    100140: Intermediate_R 3
+    100142: Intermediate_R 4
+    100144: joint100
+    100146: joint101
+    100148: joint102
+    100150: joint103
+    100152: joint104
+    100154: joint105
+    100156: joint106
+    100158: joint121
+    100160: joint121_R
+    100162: joint122
+    100164: joint122_R
+    100166: joint123
+    100168: joint123_R
+    100170: joint124
+    100172: joint124_R
+    100174: joint125
+    100176: joint125_R
+    100178: joint128
+    100180: joint128_R
+    100182: joint61
+    100184: joint62
+    100186: joint63
+    100188: joint64
+    100190: joint65
+    100192: joint66
+    100194: joint67
+    100196: joint68
+    100198: joint69
+    100200: joint70
+    100202: joint71
+    100204: joint73
+    100206: joint74
+    100208: joint75
+    100210: joint76
+    100212: joint77
+    100214: joint85
+    100216: joint86
+    100218: joint87
+    100220: joint88
+    100222: joint89
+    100224: joint90
+    100226: joint91
+    100228: joint92
+    100230: joint93
+    100232: joint94
+    100234: joint95
+    100236: joint96
+    100238: joint97
+    100240: joint98
+    100242: joint99
+    100244: knee_L
+    100246: knee_R
+    100248: L_arm
+    100250: leg_item_L
+    100252: leg_item_R
+    100254: leg_L
+    100256: leg_R
+    100258: Little_L
+    100260: Little_R
+    100262: Low_matuge_L
+    100264: Low_matuge_R
+    100266: Lower_Arm_L
+    100268: Lower_Arm_R
+    100270: Lower_Leg_L
+    100272: Lower_Leg_R
+    100274: Lower_tooth
+    100276: Matuge_L
+    100278: Matuge_R
+    100280: Mayu_L
+    100282: mayu_L
+    100284: Mayu_R
+    100286: mayu_R
+    100288: Middle_L
+    100290: Middle_R
+    100292: model_g
+    100294: mouth
+    100296: Mouth_L
+    100298: Mouth_R
+    100300: Neck
+    100302: pant
+    100304: pCube2
+    100306: pCube28
+    100308: pCube3
+    100310: pCube3 1
+    100312: pCylinder1
+    100314: pCylinder1 1
+    100316: pCylinder2
+    100318: pCylinder2 1
+    100320: //RootNode
+    100322: polySurface11
+    100324: polySurface11 1
+    100326: polySurface13
+    100328: polySurface13 1
+    100330: polySurface15
+    100332: polySurface15 1
+    100334: polySurface17
+    100336: polySurface17 1
+    100338: polySurface3
+    100340: polySurface35
+    100342: polySurface35 1
+    100344: polySurface40
+    100346: polySurface5
+    100348: polySurface5 1
+    100350: polySurface9
+    100352: pPlane21
+    100354: pPlane4
+    100356: pPlane4 1
+    100358: pPlane7
+    100360: pPlane7 1
+    100362: pPlane8
+    100364: pPyramid2
+    100366: pPyramid2 1
+    100368: pPyramid3
+    100370: pPyramid3 1
+    100372: Proximal_L
+    100374: Proximal_L 1
+    100376: Proximal_L 2
+    100378: Proximal_L 3
+    100380: Proximal_L 4
+    100382: Proximal_R
+    100384: Proximal_R 1
+    100386: Proximal_R 2
+    100388: Proximal_R 3
+    100390: Proximal_R 4
+    100392: pSphere1
+    100394: pSphere1 1
+    100396: pTorus2
+    100398: pTorus2 1
+    100400: R_arm
+    100402: Ring_L
+    100404: Ring_R
+    100406: shoe_sole_L
+    100408: shoe_sole_R
+    100410: Shoulder_L
+    100412: Shoulder_R
+    100414: side_hair_1
+    100416: side_hair_2
+    100418: side_hair_3
+    100420: side_hair_4
+    100422: Spine_1
+    100424: Spine_2
+    100426: Thumb_L
+    100428: Thumb_R
+    100430: Toes_L
+    100432: Toes_R
+    100434: Upper_Arm_L
+    100436: Upper_Arm_R
+    100438: Upper_Leg_L
+    100440: Upper_Leg_R
+    100442: Upper_tooth
+    400000: arm_g_L
+    400002: arm_g_R
+    400004: arm_ring
+    400006: arm_ring 1
+    400008: arm_ring_2
+    400010: arm_ring_2 1
+    400012: back_coil
+    400014: back_hair_1
+    400016: back_hair_2
+    400018: back_hair_3
+    400020: battery_g_L
+    400022: battery_g_R
+    400024: belt
+    400026: body_g
+    400028: body_L
+    400030: body_R
+    400032: Chest
+    400034: cloth
+    400036: cloth_g
+    400038: coil_L_g
+    400040: coil_R_g
+    400042: Distal_L
+    400044: Distal_L 1
+    400046: Distal_L 2
+    400048: Distal_L 3
+    400050: Distal_L 4
+    400052: Distal_R
+    400054: Distal_R 1
+    400056: Distal_R 2
+    400058: Distal_R 3
+    400060: Distal_R 4
+    400062: Eye_L
+    400064: eye_L
+    400066: eye_light_1
+    400068: eye_light_2
+    400070: eye_poly10
+    400072: eye_poly10 1
+    400074: eye_poly11
+    400076: eye_poly6
+    400078: Eye_R
+    400080: eye_R
+    400082: face
+    400084: Foot_L
+    400086: Foot_R
+    400088: front_hair_1
+    400090: front_hair_2
+    400092: front_hair_3
+    400094: fur
+    400096: Hair
+    400098: hair_g
+    400100: Hand_L
+    400102: Hand_R
+    400104: Head
+    400106: head_hair
+    400108: headphone
+    400110: headphone_ear_g_L
+    400112: headphone_ear_g_R
+    400114: Hip
+    400116: hutae_1
+    400118: hutae_1 1
+    400120: Index_L
+    400122: Index_R
+    400124: Intermediate_L
+    400126: Intermediate_L 1
+    400128: Intermediate_L 2
+    400130: Intermediate_L 3
+    400132: Intermediate_L 4
+    400134: Intermediate_R
+    400136: Intermediate_R 1
+    400138: Intermediate_R 2
+    400140: Intermediate_R 3
+    400142: Intermediate_R 4
+    400144: joint100
+    400146: joint101
+    400148: joint102
+    400150: joint103
+    400152: joint104
+    400154: joint105
+    400156: joint106
+    400158: joint121
+    400160: joint121_R
+    400162: joint122
+    400164: joint122_R
+    400166: joint123
+    400168: joint123_R
+    400170: joint124
+    400172: joint124_R
+    400174: joint125
+    400176: joint125_R
+    400178: joint128
+    400180: joint128_R
+    400182: joint61
+    400184: joint62
+    400186: joint63
+    400188: joint64
+    400190: joint65
+    400192: joint66
+    400194: joint67
+    400196: joint68
+    400198: joint69
+    400200: joint70
+    400202: joint71
+    400204: joint73
+    400206: joint74
+    400208: joint75
+    400210: joint76
+    400212: joint77
+    400214: joint85
+    400216: joint86
+    400218: joint87
+    400220: joint88
+    400222: joint89
+    400224: joint90
+    400226: joint91
+    400228: joint92
+    400230: joint93
+    400232: joint94
+    400234: joint95
+    400236: joint96
+    400238: joint97
+    400240: joint98
+    400242: joint99
+    400244: knee_L
+    400246: knee_R
+    400248: L_arm
+    400250: leg_item_L
+    400252: leg_item_R
+    400254: leg_L
+    400256: leg_R
+    400258: Little_L
+    400260: Little_R
+    400262: Low_matuge_L
+    400264: Low_matuge_R
+    400266: Lower_Arm_L
+    400268: Lower_Arm_R
+    400270: Lower_Leg_L
+    400272: Lower_Leg_R
+    400274: Lower_tooth
+    400276: Matuge_L
+    400278: Matuge_R
+    400280: Mayu_L
+    400282: mayu_L
+    400284: Mayu_R
+    400286: mayu_R
+    400288: Middle_L
+    400290: Middle_R
+    400292: model_g
+    400294: mouth
+    400296: Mouth_L
+    400298: Mouth_R
+    400300: Neck
+    400302: pant
+    400304: pCube2
+    400306: pCube28
+    400308: pCube3
+    400310: pCube3 1
+    400312: pCylinder1
+    400314: pCylinder1 1
+    400316: pCylinder2
+    400318: pCylinder2 1
+    400320: //RootNode
+    400322: polySurface11
+    400324: polySurface11 1
+    400326: polySurface13
+    400328: polySurface13 1
+    400330: polySurface15
+    400332: polySurface15 1
+    400334: polySurface17
+    400336: polySurface17 1
+    400338: polySurface3
+    400340: polySurface35
+    400342: polySurface35 1
+    400344: polySurface40
+    400346: polySurface5
+    400348: polySurface5 1
+    400350: polySurface9
+    400352: pPlane21
+    400354: pPlane4
+    400356: pPlane4 1
+    400358: pPlane7
+    400360: pPlane7 1
+    400362: pPlane8
+    400364: pPyramid2
+    400366: pPyramid2 1
+    400368: pPyramid3
+    400370: pPyramid3 1
+    400372: Proximal_L
+    400374: Proximal_L 1
+    400376: Proximal_L 2
+    400378: Proximal_L 3
+    400380: Proximal_L 4
+    400382: Proximal_R
+    400384: Proximal_R 1
+    400386: Proximal_R 2
+    400388: Proximal_R 3
+    400390: Proximal_R 4
+    400392: pSphere1
+    400394: pSphere1 1
+    400396: pTorus2
+    400398: pTorus2 1
+    400400: R_arm
+    400402: Ring_L
+    400404: Ring_R
+    400406: shoe_sole_L
+    400408: shoe_sole_R
+    400410: Shoulder_L
+    400412: Shoulder_R
+    400414: side_hair_1
+    400416: side_hair_2
+    400418: side_hair_3
+    400420: side_hair_4
+    400422: Spine_1
+    400424: Spine_2
+    400426: Thumb_L
+    400428: Thumb_R
+    400430: Toes_L
+    400432: Toes_R
+    400434: Upper_Arm_L
+    400436: Upper_Arm_R
+    400438: Upper_Leg_L
+    400440: Upper_Leg_R
+    400442: Upper_tooth
+    2100000: tex_lambert
+    2100002: tex_surface
+    2100004: aiStandard1
+    4300000: eye_poly6
+    4300002: pSphere1
+    4300004: eye_poly10
+    4300006: eye_light_1
+    4300008: eye_poly11
+    4300010: pSphere1
+    4300012: eye_poly10
+    4300014: eye_light_2
+    4300016: pPlane7
+    4300018: pPlane4
+    4300020: hutae_1
+    4300022: pPlane21
+    4300024: pPlane7
+    4300026: pPlane4
+    4300028: pPlane8
+    4300030: hutae_1
+    4300032: face
+    4300034: mouth
+    4300036: Upper_tooth
+    4300038: Lower_tooth
+    4300040: body_L
+    4300042: body_R
+    4300044: cloth
+    4300046: pant
+    4300048: leg_L
+    4300050: leg_R
+    4300052: belt
+    4300054: shoe_sole_L
+    4300056: shoe_sole_R
+    4300058: L_arm
+    4300060: arm_ring
+    4300062: arm_ring_2
+    4300064: pTorus2
+    4300066: R_arm
+    4300068: arm_ring
+    4300070: arm_ring_2
+    4300072: pTorus2
+    4300074: leg_item_L
+    4300076: leg_item_R
+    4300078: knee_L
+    4300080: knee_R
+    4300082: head_hair
+    4300084: front_hair_1
+    4300086: front_hair_2
+    4300088: front_hair_3
+    4300090: side_hair_1
+    4300092: side_hair_2
+    4300094: side_hair_3
+    4300096: side_hair_4
+    4300098: back_hair_1
+    4300100: back_hair_2
+    4300102: back_hair_3
+    4300104: pCube2
+    4300106: pCube3
+    4300108: pCylinder1
+    4300110: pCylinder2
+    4300112: pCube3
+    4300114: pCylinder1
+    4300116: pCylinder2
+    4300118: pCube28
+    4300120: headphone
+    4300122: pPyramid2
+    4300124: pPyramid3
+    4300126: pPyramid2
+    4300128: pPyramid3
+    4300130: fur
+    4300132: polySurface3
+    4300134: polySurface9
+    4300136: polySurface35
+    4300138: polySurface5
+    4300140: polySurface13
+    4300142: polySurface11
+    4300144: polySurface17
+    4300146: polySurface15
+    4300148: polySurface35
+    4300150: polySurface5
+    4300152: polySurface13
+    4300154: polySurface11
+    4300156: polySurface17
+    4300158: polySurface15
+    4300160: polySurface40
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: arm_ring
+    13700002: arm_ring 1
+    13700004: arm_ring_2
+    13700006: arm_ring_2 1
+    13700008: back_hair_1
+    13700010: back_hair_2
+    13700012: back_hair_3
+    13700014: belt
+    13700016: body_L
+    13700018: body_R
+    13700020: cloth
+    13700022: eye_light_1
+    13700024: eye_light_2
+    13700026: eye_poly10
+    13700028: eye_poly10 1
+    13700030: eye_poly11
+    13700032: eye_poly6
+    13700034: face
+    13700036: front_hair_1
+    13700038: front_hair_2
+    13700040: front_hair_3
+    13700042: fur
+    13700044: head_hair
+    13700046: headphone
+    13700048: hutae_1
+    13700050: hutae_1 1
+    13700052: knee_L
+    13700054: knee_R
+    13700056: L_arm
+    13700058: leg_item_L
+    13700060: leg_item_R
+    13700062: leg_L
+    13700064: leg_R
+    13700066: Lower_tooth
+    13700068: mouth
+    13700070: pant
+    13700072: pCube2
+    13700074: pCube28
+    13700076: pCube3
+    13700078: pCube3 1
+    13700080: pCylinder1
+    13700082: pCylinder1 1
+    13700084: pCylinder2
+    13700086: pCylinder2 1
+    13700088: polySurface11
+    13700090: polySurface11 1
+    13700092: polySurface13
+    13700094: polySurface13 1
+    13700096: polySurface15
+    13700098: polySurface15 1
+    13700100: polySurface17
+    13700102: polySurface17 1
+    13700104: polySurface3
+    13700106: polySurface35
+    13700108: polySurface35 1
+    13700110: polySurface40
+    13700112: polySurface5
+    13700114: polySurface5 1
+    13700116: polySurface9
+    13700118: pPlane21
+    13700120: pPlane4
+    13700122: pPlane4 1
+    13700124: pPlane7
+    13700126: pPlane7 1
+    13700128: pPlane8
+    13700130: pPyramid2
+    13700132: pPyramid2 1
+    13700134: pPyramid3
+    13700136: pPyramid3 1
+    13700138: pSphere1
+    13700140: pSphere1 1
+    13700142: pTorus2
+    13700144: pTorus2 1
+    13700146: R_arm
+    13700148: shoe_sole_L
+    13700150: shoe_sole_R
+    13700152: side_hair_1
+    13700154: side_hair_2
+    13700156: side_hair_3
+    13700158: side_hair_4
+    13700160: Upper_tooth
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

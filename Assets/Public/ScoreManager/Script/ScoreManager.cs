@@ -20,16 +20,36 @@ public class ScoreManager : MonoBehaviour {
 
     [Header("デバック処理")]
     [SerializeField] bool debugScore;
-    
-    
+
+    //プレイヤー関連
+    PlayerElecMode _playerElecMode;
+    DischargeAction _playerDischargeAction;
+    int _addScoreCnt = 0;
 
     // Use this for initialization
     void Start () {
-		
-	}
+        _playerElecMode = GameObject.Find("Player").GetComponent<PlayerElecMode>();
+        _playerDischargeAction = GameObject.Find("Player").GetComponent<DischargeAction>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if(_playerElecMode.GetMode() == true)
+        {
+            AddScoreValue(1);
+        }
+        _addScoreCnt++;
+
+        if (_playerDischargeAction.GetPlayerMode() == DischargeAction.ELEC_MODE.EXECUTION)
+        {
+            if (_addScoreCnt > 60)
+            {
+                _addScoreCnt = 0;
+                AddScoreValue(10);
+            }
+             
+        }
         ValuePercentage = (scoreValue / maxLimitValue) * 100;
 
         DebugScoreValue();
