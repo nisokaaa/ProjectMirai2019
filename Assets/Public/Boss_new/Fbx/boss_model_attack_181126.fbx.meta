@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: 62957dc1a940c0d4382d4e7ba0c48d1f
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Back_Eye_L
+    100006: Back_Eye_R
+    100008: beam
+    100010: beard_1
+    100012: beard_1 1
+    100014: Beard_1_L
+    100016: Beard_1_R
+    100018: beard_2
+    100020: beard_2 1
+    100022: Beard_2_L
+    100024: Beard_2_R
+    100026: beard_3
+    100028: beard_3 1
+    100030: Beard_3_L
+    100032: Beard_3_R
+    100034: Beard_4_L
+    100036: Beard_4_R
+    100038: Beard_5_L
+    100040: Beard_5_R
+    100042: Beard_6_L
+    100044: Beard_6_R
+    100046: Beard_7_L
+    100048: Beard_7_R
+    100050: beard_g_L
+    100052: beard_g_R
+    100054: Beard_L
+    100056: Beard_R
+    100058: body
+    100060: //RootNode
+    100062: Chest
+    100064: cover_1
+    100066: cover_1 1
+    100068: cover_1 2
+    100070: cover_1 3
+    100072: Cover_1_L
+    100074: Cover_1_R
+    100076: cover_2
+    100078: cover_2 1
+    100080: cover_2 2
+    100082: cover_2 3
+    100084: Cover_2_L
+    100086: Cover_2_R
+    100088: Cover_3_L
+    100090: Cover_3_R
+    100092: Cover_4_L
+    100094: Cover_4_R
+    100096: eye_back
+    100098: eye_back 1
+    100100: eye_front
+    100102: eye_front 1
+    100104: eye_g_L
+    100106: eye_g_R
+    100108: face
+    100110: finger_1
+    100112: finger_1 1
+    100114: finger_2
+    100116: finger_2 1
+    100118: finger_3
+    100120: finger_3 1
+    100122: finger_4
+    100124: finger_4 1
+    100126: Front_Eye_L
+    100128: Front_Eye_R
+    100130: hand
+    100132: hand 1
+    100134: hand_g_L
+    100136: hand_g_R
+    100138: Hand_L
+    100140: Hand_R
+    100142: Head
+    100144: Index_L
+    100146: Index_R
+    100148: Little_L
+    100150: Little_R
+    100152: Low_Mouth_1
+    100154: Low_Mouth_2
+    100156: Middle_L
+    100158: Middle_R
+    100160: missile_g_back_L
+    100162: missile_g_back_R
+    100164: missile_g_front_L
+    100166: missile_g_front_R
+    100168: model_g
+    100170: mouth
+    100172: pCylinder1
+    100174: pCylinder1 1
+    100176: pCylinder1 2
+    100178: pCylinder1 3
+    100180: protct_1
+    100182: protect_2
+    100184: protect_3
+    100186: Ring_L
+    100188: Ring_R
+    100190: Root
+    100192: Shoulder_L
+    100194: Shoulder_R
+    100196: Spine_1
+    100198: spine_1
+    100200: Spine_2
+    100202: spine_2
+    100204: Spine_3
+    100206: tail
+    100208: Tail_1
+    100210: Tail_2
+    100212: Tail_3
+    100214: tmp_joint13
+    100216: tmp_joint13 1
+    100218: tmp_joint13 2
+    100220: tmp_joint13 3
+    100222: tmp_joint13 4
+    100224: tmp_joint13 5
+    100226: tmp_joint13 6
+    100228: tmp_joint13 7
+    100230: tmp_joint14
+    100232: tmp_joint14 1
+    100234: tmp_joint14 2
+    100236: tmp_joint14 3
+    100238: tmp_joint14 4
+    100240: tmp_joint14 5
+    100242: tmp_joint14 6
+    100244: tmp_joint14 7
+    100246: tmp_joint15
+    100248: tmp_joint15 1
+    100250: tmp_joint15 2
+    100252: tmp_joint15 3
+    100254: tmp_joint15 4
+    100256: tmp_joint15 5
+    100258: tmp_joint15 6
+    100260: tmp_joint15 7
+    100262: tmp_joint16
+    100264: tmp_joint16 1
+    100266: tmp_joint16 2
+    100268: tmp_joint16 3
+    100270: tmp_joint16 4
+    100272: tmp_joint16 5
+    100274: tmp_joint16 6
+    100276: tmp_joint16 7
+    100278: tmp_joint17
+    100280: tmp_joint17 1
+    100282: tmp_joint17 2
+    100284: tmp_joint17 3
+    100286: tmp_joint17 4
+    100288: tmp_joint17 5
+    100290: tmp_joint17 6
+    100292: tmp_joint17 7
+    100294: Upper_Mouth_1
+    100296: Upper_Mouth_2
+    400000: Arm_L
+    400002: Arm_R
+    400004: Back_Eye_L
+    400006: Back_Eye_R
+    400008: beam
+    400010: beard_1
+    400012: beard_1 1
+    400014: Beard_1_L
+    400016: Beard_1_R
+    400018: beard_2
+    400020: beard_2 1
+    400022: Beard_2_L
+    400024: Beard_2_R
+    400026: beard_3
+    400028: beard_3 1
+    400030: Beard_3_L
+    400032: Beard_3_R
+    400034: Beard_4_L
+    400036: Beard_4_R
+    400038: Beard_5_L
+    400040: Beard_5_R
+    400042: Beard_6_L
+    400044: Beard_6_R
+    400046: Beard_7_L
+    400048: Beard_7_R
+    400050: beard_g_L
+    400052: beard_g_R
+    400054: Beard_L
+    400056: Beard_R
+    400058: body
+    400060: //RootNode
+    400062: Chest
+    400064: cover_1
+    400066: cover_1 1
+    400068: cover_1 2
+    400070: cover_1 3
+    400072: Cover_1_L
+    400074: Cover_1_R
+    400076: cover_2
+    400078: cover_2 1
+    400080: cover_2 2
+    400082: cover_2 3
+    400084: Cover_2_L
+    400086: Cover_2_R
+    400088: Cover_3_L
+    400090: Cover_3_R
+    400092: Cover_4_L
+    400094: Cover_4_R
+    400096: eye_back
+    400098: eye_back 1
+    400100: eye_front
+    400102: eye_front 1
+    400104: eye_g_L
+    400106: eye_g_R
+    400108: face
+    400110: finger_1
+    400112: finger_1 1
+    400114: finger_2
+    400116: finger_2 1
+    400118: finger_3
+    400120: finger_3 1
+    400122: finger_4
+    400124: finger_4 1
+    400126: Front_Eye_L
+    400128: Front_Eye_R
+    400130: hand
+    400132: hand 1
+    400134: hand_g_L
+    400136: hand_g_R
+    400138: Hand_L
+    400140: Hand_R
+    400142: Head
+    400144: Index_L
+    400146: Index_R
+    400148: Little_L
+    400150: Little_R
+    400152: Low_Mouth_1
+    400154: Low_Mouth_2
+    400156: Middle_L
+    400158: Middle_R
+    400160: missile_g_back_L
+    400162: missile_g_back_R
+    400164: missile_g_front_L
+    400166: missile_g_front_R
+    400168: model_g
+    400170: mouth
+    400172: pCylinder1
+    400174: pCylinder1 1
+    400176: pCylinder1 2
+    400178: pCylinder1 3
+    400180: protct_1
+    400182: protect_2
+    400184: protect_3
+    400186: Ring_L
+    400188: Ring_R
+    400190: Root
+    400192: Shoulder_L
+    400194: Shoulder_R
+    400196: Spine_1
+    400198: spine_1
+    400200: Spine_2
+    400202: spine_2
+    400204: Spine_3
+    400206: tail
+    400208: Tail_1
+    400210: Tail_2
+    400212: Tail_3
+    400214: tmp_joint13
+    400216: tmp_joint13 1
+    400218: tmp_joint13 2
+    400220: tmp_joint13 3
+    400222: tmp_joint13 4
+    400224: tmp_joint13 5
+    400226: tmp_joint13 6
+    400228: tmp_joint13 7
+    400230: tmp_joint14
+    400232: tmp_joint14 1
+    400234: tmp_joint14 2
+    400236: tmp_joint14 3
+    400238: tmp_joint14 4
+    400240: tmp_joint14 5
+    400242: tmp_joint14 6
+    400244: tmp_joint14 7
+    400246: tmp_joint15
+    400248: tmp_joint15 1
+    400250: tmp_joint15 2
+    400252: tmp_joint15 3
+    400254: tmp_joint15 4
+    400256: tmp_joint15 5
+    400258: tmp_joint15 6
+    400260: tmp_joint15 7
+    400262: tmp_joint16
+    400264: tmp_joint16 1
+    400266: tmp_joint16 2
+    400268: tmp_joint16 3
+    400270: tmp_joint16 4
+    400272: tmp_joint16 5
+    400274: tmp_joint16 6
+    400276: tmp_joint16 7
+    400278: tmp_joint17
+    400280: tmp_joint17 1
+    400282: tmp_joint17 2
+    400284: tmp_joint17 3
+    400286: tmp_joint17 4
+    400288: tmp_joint17 5
+    400290: tmp_joint17 6
+    400292: tmp_joint17 7
+    400294: Upper_Mouth_1
+    400296: Upper_Mouth_2
+    2100000: emission_aiStandard
+    4300000: face
+    4300002: beam
+    4300004: mouth
+    4300006: eye_front
+    4300008: eye_back
+    4300010: eye_front
+    4300012: eye_back
+    4300014: beard_1
+    4300016: beard_2
+    4300018: beard_3
+    4300020: beard_1
+    4300022: beard_2
+    4300024: beard_3
+    4300026: body
+    4300028: tail
+    4300030: hand
+    4300032: finger_1
+    4300034: finger_2
+    4300036: finger_3
+    4300038: finger_4
+    4300040: hand
+    4300042: finger_1
+    4300044: finger_2
+    4300046: finger_3
+    4300048: finger_4
+    4300050: pCylinder1
+    4300052: cover_1
+    4300054: cover_2
+    4300056: pCylinder1
+    4300058: cover_1
+    4300060: cover_2
+    4300062: pCylinder1
+    4300064: cover_1
+    4300066: cover_2
+    4300068: pCylinder1
+    4300070: cover_1
+    4300072: cover_2
+    4300074: spine_1
+    4300076: spine_2
+    4300078: protct_1
+    4300080: protect_2
+    4300082: protect_3
+    7400000: Boss_Animation_Attack
+    9500000: //RootNode
+    13700000: beam
+    13700002: beard_1
+    13700004: beard_1 1
+    13700006: beard_2
+    13700008: beard_2 1
+    13700010: beard_3
+    13700012: beard_3 1
+    13700014: body
+    13700016: cover_1
+    13700018: cover_1 1
+    13700020: cover_1 2
+    13700022: cover_1 3
+    13700024: cover_2
+    13700026: cover_2 1
+    13700028: cover_2 2
+    13700030: cover_2 3
+    13700032: eye_back
+    13700034: eye_back 1
+    13700036: eye_front
+    13700038: eye_front 1
+    13700040: face
+    13700042: finger_1
+    13700044: finger_1 1
+    13700046: finger_2
+    13700048: finger_2 1
+    13700050: finger_3
+    13700052: finger_3 1
+    13700054: finger_4
+    13700056: finger_4 1
+    13700058: hand
+    13700060: hand 1
+    13700062: mouth
+    13700064: pCylinder1
+    13700066: pCylinder1 1
+    13700068: pCylinder1 2
+    13700070: pCylinder1 3
+    13700072: protct_1
+    13700074: protect_2
+    13700076: protect_3
+    13700078: spine_1
+    13700080: spine_2
+    13700082: tail
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Boss_Animation_Attack
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
