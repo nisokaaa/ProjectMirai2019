@@ -32,11 +32,7 @@ public class Game : MonoBehaviour
 
     WAVE game = WAVE.NONE;
 
-    [SerializeField]
     BossBattleEnd bossBattleEnd;
-
-    [SerializeField]
-    Pausable _pausable;
 
     bool _check = false;
 
@@ -49,7 +45,7 @@ public class Game : MonoBehaviour
             return;
         }
 
-        if (bossBattleEnd == null)
+        if (bossBattleEnd == null && text == "Game")
         {
             bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
         }
@@ -77,7 +73,7 @@ public class Game : MonoBehaviour
         //  Debug.Log("test");
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SceneChangeController.Instance.SetChangeScene("Result");
+            SceneChangeController.Instance.SetChangeScene("Ending");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
         }

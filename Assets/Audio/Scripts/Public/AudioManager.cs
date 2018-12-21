@@ -74,7 +74,6 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     //=================================================================================
     //初期化
     //=================================================================================
-
     private void Awake()
     {
         if (this != Instance)

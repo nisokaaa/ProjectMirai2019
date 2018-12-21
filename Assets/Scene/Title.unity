@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 3e206a2077a7f0c4ea17fcabe4ae8cca,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -607,6 +608,10 @@ Prefab:
     - target: {fileID: 4389465071137036, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866943989584326, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3728d90633ef6b3458f6596385a2f5a8, type: 2}
@@ -1213,8 +1218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45eccf280f85c4142acbdb0025fbc205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossBattleEnd: {fileID: 0}
-  _pausable: {fileID: 0}
 --- !u!1001 &1925889971
 Prefab:
   m_ObjectHideFlags: 0
@@ -1272,7 +1275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1600819035976254, guid: 9bcfdd98d29605342a31a197383939a1, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bcfdd98d29605342a31a197383939a1, type: 2}
