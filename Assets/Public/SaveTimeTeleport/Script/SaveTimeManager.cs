@@ -63,4 +63,9 @@ public class SaveTimeManager : MonoBehaviour {
             _setTexrNo++;
         }
 	}
+
+    public void SetTimeSave()
+    {
+        _SaveTime = true;
+    }
 }

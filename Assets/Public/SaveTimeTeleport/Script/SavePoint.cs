@@ -7,11 +7,12 @@ public class SavePoint : MonoBehaviour {
     public Animator _animator;
     bool _Activefalse = false;
     TeleportPlayer _teleportPlayer;
+    SaveTimeManager _saveTimeManager;
 
     // Use this for initialization
     void Start () {
         _teleportPlayer = GameObject.Find("SaveTimeTeleportSystem").GetComponent<TeleportPlayer>();
-
+        _saveTimeManager = GameObject.Find("TimeManager").GetComponent<SaveTimeManager>();
     }
 	
 	// Update is called once per frame
@@ -26,6 +27,7 @@ public class SavePoint : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
+            _saveTimeManager.SetTimeSave();
             _teleportPlayer.SetTeleportPosition(this.gameObject.transform.position);
             _Activefalse = true;
             _animator.SetTrigger("SavePoint");
