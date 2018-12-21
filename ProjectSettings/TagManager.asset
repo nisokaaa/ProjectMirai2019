@@ -20,7 +20,7 @@ TagManager:
   - ChargeObject
   - PostProcessing
   - Missile
-  - 
+  - CameraEffect
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: CameraEffect
+    uniqueID: 587021217
     locked: 0
