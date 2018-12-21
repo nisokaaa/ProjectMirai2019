@@ -34,4 +34,9 @@ public class TimerScript : MonoBehaviour
         }
         oldSeconds = seconds;
     }
+
+    public string GetTime()
+    {
+        return timerText.text;
+    }
 }
