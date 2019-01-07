@@ -7356,6 +7356,11 @@ Prefab:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 0d0bca9d29047ee4d8c2ecd81194d861, type: 3}
+    - target: {fileID: 114252500789315716, guid: e427ba89a84e59c4895bc8f8fa12a2c9,
+        type: 2}
+      propertyPath: AcceleratorLimit
+      value: 0.562
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e427ba89a84e59c4895bc8f8fa12a2c9, type: 2}
   m_IsPrefabAsset: 0

@@ -109,7 +109,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
         PlayerJump();
         PlayerRun();
         PlayerClimd();
-        PlayerAttack();
+        //PlayerAttack();
         PlayerRotCurve();
     }
 
@@ -274,7 +274,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
         if (!(m_joycons.Count <= 0 || m_joycons == null))
         {
             //しゃがみアクションのテストコード
-            if (m_joyconL.GetStick()[0] > 0.1f)
+            if (m_joyconL.GetStick()[0] > 0.7f)
             {
                 curveCnt++;
 
@@ -283,7 +283,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
                     animator.SetTrigger("curveTR");
                 }
             }
-            if (m_joyconL.GetStick()[0] > -0.1f)
+            if (m_joyconL.GetStick()[0] < -0.7f)
             {
                 curveCnt++;
 
@@ -293,7 +293,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
                 }
             }
         }
-        
+        Debug.Log("サンプル" + m_joyconL.GetStick()[0]);
         if (Input.GetKey(KeyCode.D))
         {
             curveCnt++;

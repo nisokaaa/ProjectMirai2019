@@ -30,7 +30,7 @@ public class PlayerElecMode : MonoBehaviour {
         if (!(m_joycons.Count <= 0 || m_joycons == null))
         {
             Debug.Log("デバイスチェックOK");
-            if (Input.GetKey(KeyCode.Joystick1Button15)|| m_joyconR.GetButton(Joycon.Button.SHOULDER_2))
+            if (Input.GetKey(KeyCode.Joystick1Button15)|| m_joyconR.GetButton(Joycon.Button.SHOULDER_1) || m_joyconL.GetButton(Joycon.Button.SHOULDER_1))
             {
                 playerElecMode = true;
                 ElecModeEffect.SetActive(true);
