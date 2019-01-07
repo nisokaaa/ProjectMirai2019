@@ -59,7 +59,7 @@ public class Example : MonoBehaviour
             m_joyconR.SetRumble(160, 320, 0.6f, 200);
         }
     }
-
+    /*
     private void OnGUI()
     {
         var style = GUI.skin.GetStyle("label");
@@ -109,7 +109,7 @@ public class Example : MonoBehaviour
 
         GUILayout.EndHorizontal();
     }
-
+    */
     //サンプルコード
     void SampleChord()
     {

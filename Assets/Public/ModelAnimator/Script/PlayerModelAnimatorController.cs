@@ -55,6 +55,8 @@ public class PlayerModelAnimatorController : MonoBehaviour
     private Joycon m_joyconL;
     private Joycon m_joyconR;
 
+    int curveCnt = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -108,7 +110,7 @@ public class PlayerModelAnimatorController : MonoBehaviour
         PlayerRun();
         PlayerClimd();
         PlayerAttack();
-
+        PlayerRotCurve();
     }
 
     void initParameter()
@@ -265,4 +267,59 @@ public class PlayerModelAnimatorController : MonoBehaviour
     {
 
     }
+
+    void PlayerRotCurve()
+    {
+
+        if (!(m_joycons.Count <= 0 || m_joycons == null))
+        {
+            //しゃがみアクションのテストコード
+            if (m_joyconL.GetStick()[0] > 0.1f)
+            {
+                curveCnt++;
+
+                if (curveCnt > 30)
+                {
+                    animator.SetTrigger("curveTR");
+                }
+            }
+            if (m_joyconL.GetStick()[0] > -0.1f)
+            {
+                curveCnt++;
+
+                if (curveCnt > 30)
+                {
+                    animator.SetTrigger("curveTL");
+                }
+            }
+        }
+        
+        if (Input.GetKey(KeyCode.D))
+        {
+            curveCnt++;
+
+            if (curveCnt > 30)
+            {
+                animator.SetTrigger("curveTR");
+            }
+        }
+
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            curveCnt++;
+
+            if (curveCnt > 30)
+            {
+                animator.SetTrigger("curveTL");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
+        {
+            curveCnt = 0;
+        }
+    }
+
+
 }
