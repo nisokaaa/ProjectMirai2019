@@ -19,6 +19,7 @@ public class GameManager_Start : StateMachineBehaviour {
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         //_Canvas_GameManager_Start.SetActive(false);
+        GameObject.Find("GameManager").GetComponent<GameManager>().SetTutorialOn();
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

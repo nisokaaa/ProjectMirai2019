@@ -30,6 +30,7 @@ public class CanvasTutorial : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
         _animator = GetComponent<Animator>();
 
         //ジョイコンのインスタンスを取得する
@@ -50,19 +51,19 @@ public class CanvasTutorial : MonoBehaviour {
                 if (_setStartCnt < _startCnt)
                 {
                     _phase++;
-                    _animator.SetInteger("Tutorial", _phase);
+                    //_animator.SetInteger("Tutorial", _phase);
                     _startCnt = 0;
                     
                 }
                 break;
             case 1://チュートリアル表示中
                 _startCnt++;
-                if (Input.anyKey || _setStartCnt < _startCnt)
+                if (Input.anyKey || _setStartCnt < _startCnt*3)
                 {
                     _startCnt = 0;
                     _phase++;
-                    _animator.SetInteger("Tutorial", _phase);
-                    _animator.SetTrigger("TutorialChange");
+                    //_animator.SetInteger("Tutorial", _phase);
+                    //_animator.SetTrigger("TutorialChange");
                 }
                 break;
             case 2://基本操作について表示 //移動とジャンプが出来たら次に飛ぶ
@@ -195,4 +196,9 @@ public class CanvasTutorial : MonoBehaviour {
 
         
 	}
+
+    public void SetFuse(int value)
+    {
+        _phase = value;
+    }
 }

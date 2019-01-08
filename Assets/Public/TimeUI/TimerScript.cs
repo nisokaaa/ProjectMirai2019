@@ -12,6 +12,9 @@ public class TimerScript : MonoBehaviour
     private float oldSeconds;
     //　タイマー表示用テキスト
     private Text timerText;
+
+    [SerializeField]
+    bool _Active = false;
     void Start()
     {
         minute = 0;
@@ -21,6 +24,7 @@ public class TimerScript : MonoBehaviour
     }
     void Update()
     {
+        if (_Active == false) { return; }
         seconds += Time.deltaTime;
         if (seconds >= 60f)
         {
@@ -38,5 +42,10 @@ public class TimerScript : MonoBehaviour
     public string GetTime()
     {
         return timerText.text;
+    }
+
+    public void SetActiveOn()
+    {
+        _Active = true;
     }
 }

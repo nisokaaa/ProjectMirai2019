@@ -26,6 +26,9 @@ public class ScoreManager : MonoBehaviour {
     DischargeAction _playerDischargeAction;
     int _addScoreCnt = 0;
 
+    [SerializeField]
+    bool _Active = false;
+
     // Use this for initialization
     void Start () {
         _playerElecMode = GameObject.Find("Player").GetComponent<PlayerElecMode>();
@@ -35,6 +38,8 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (_Active == false) { return; }
+
         if(_playerElecMode.GetMode() == true)
         {
             AddScoreValue(1);
@@ -97,4 +102,10 @@ public class ScoreManager : MonoBehaviour {
             AddScoreValue(10);
         }
     }
+
+    public void SetActiveOn()
+    {
+        _Active = true;
+    }
+
 }

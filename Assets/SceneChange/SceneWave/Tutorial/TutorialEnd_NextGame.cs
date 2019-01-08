@@ -67,6 +67,7 @@ public class TutorialEnd_NextGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().SetGameStart();
             GameStartUI.SetActive(true);
             fade = FADE.START;
         }
