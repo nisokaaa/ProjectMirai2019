@@ -47,8 +47,12 @@ public class PlayerController : MonoBehaviour
     private CharacterController charaCon;       // キャラクターコンポーネント用の変数
     private NavMeshAgent agent;
 
+    public bool PlayerControlOff = false;
+    PlayerModelAnimatorController playerModelAnimatorController;
+
     void Start()
     {
+        playerModelAnimatorController = GameObject.Find("PlayerModelAnimatorController").GetComponent<PlayerModelAnimatorController>();
         if (playerElecMode == null)
         {
             playerElecMode = GetComponent<PlayerElecMode>();
@@ -73,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
         void Update()
     {
+        if (PlayerControlOff == true) { return; }
         // アクセルボタンInput
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
         bAccelerator = Input.GetKey(KeyCode.W) ? true : false;
@@ -96,7 +101,6 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
             jump = true;
         }
 
@@ -142,9 +146,12 @@ public class PlayerController : MonoBehaviour
         if(!bAccelerator) speedCurrent = bBack ? -speed : 0.0f;     //アクセルが押されてないとき
         if(!(m_joycons.Count <= 0 || m_joycons== null))
         {
-            if (m_joyconL.GetStick()[1] > 0.3f)
+            if (PlayerControlOff == false)
             {
-                speedCurrent = speed * m_joyconL.GetStick()[1];
+                if (m_joyconL.GetStick()[1] > 0.3f)
+                {
+                    speedCurrent = speed * m_joyconL.GetStick()[1];
+                }
             }
         }
         
@@ -167,5 +174,19 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(moveForceMultiplier * (moveVector - rb.velocity));
         // Rayが地面にあたってないときは速度減衰をやわらげよう・・・・
         //Debug.Log(rb.velocity);
+    }
+
+    public void SetPlayerControlOff()
+    {
+        PlayerControlOff = true; 
+    }
+    public void SetPlayerControlOn()
+    {
+        playerModelAnimatorController.SetAnimLockOff();
+        PlayerControlOff = false;
+    }
+    public bool GetPlayerControl()
+    {
+        return PlayerControlOff;
     }
 }

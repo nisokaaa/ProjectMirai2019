@@ -67,4 +67,9 @@ public class KnockBack : MonoBehaviour {
             _KnockBack = true;
         }
     }
+
+    public bool GetDamageflag()
+    {
+        return _KnockBack;
+    }
 }

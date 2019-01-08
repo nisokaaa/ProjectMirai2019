@@ -10,7 +10,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
     ElecBarControl elecBarControl;
     PlayerElecMode playerElecMode;
     public GameObject particleSystem;
-
+    PlayerController _playerController;
     [SerializeField] Vector3 AcceleratedSpeed;
     [SerializeField, Range(1f, 2f)] float AcceleratorSpeed=1.1f;
     [SerializeField, Range(0f, 1f)] float AcceleratorLimit = 0.8f;
@@ -33,6 +33,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        _playerController = GetComponent<PlayerController>();
         rb = gameObject.GetComponent<Rigidbody>();
 
         if (_playerColliderCheck == null)
@@ -70,7 +71,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             particleSystem.SetActive(false);
             return;
         }
-
+        if(_playerController.GetPlayerControl() == true) { return; }
 		if(Input.GetKey(KeyCode.N)|| playerElecMode.GetMode() == true)
         {
             _Acceleration = true;

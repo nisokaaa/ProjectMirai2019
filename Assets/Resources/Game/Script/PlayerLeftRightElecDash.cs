@@ -21,8 +21,10 @@ public class PlayerLeftRightElecDash : MonoBehaviour {
     private Joycon m_joyconL;
     private Joycon m_joyconR;
 
+    PlayerController _playerController;
     // Use this for initialization
     void Start () {
+        _playerController = GetComponent<PlayerController>();
         if (elecBarControl == null)
         {
             elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
@@ -39,6 +41,7 @@ public class PlayerLeftRightElecDash : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (_playerController.GetPlayerControl() == true) { return; }
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
 
         if (elecBarControl.GetGageValue() <= 0.0f)

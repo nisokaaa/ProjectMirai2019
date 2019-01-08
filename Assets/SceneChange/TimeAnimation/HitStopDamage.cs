@@ -14,11 +14,21 @@ public class HitStopDamage : MonoBehaviour {
 
     bool bStop = false;
     int Timecnt;
-
+    private List<Joycon> m_joycons;
+    private Joycon m_joyconL;
+    private Joycon m_joyconR;
     private void Start()
     {
         bStop = false;
-        
+
+        //joycon
+        //ジョイコンのインスタンスを取得する
+        m_joycons = JoyconManager.Instance.j;
+
+        if (m_joycons == null || m_joycons.Count <= 0) return;
+
+        m_joyconL = m_joycons.Find(c => c.isLeft);      //ジョイコンL　緑
+        m_joyconR = m_joycons.Find(c => !c.isLeft);     //ジョイコンR・赤
     }
 
     private void Update()
@@ -26,6 +36,14 @@ public class HitStopDamage : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.M))
         {
             timeManager.SlowDown();
+        }
+
+        if (!(m_joycons.Count <= 0 || m_joycons == null))
+        {
+            if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_LEFT))
+            {
+                timeManager.SlowDown();
+            }
         }
 
         //if(bStop == true)

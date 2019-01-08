@@ -57,6 +57,8 @@ public class PlayerModelAnimatorController : MonoBehaviour
 
     int curveCnt = 0;
 
+    KnockBack _knockBack;
+    bool _bDamageAnimLock = false;
     // Use this for initialization
     void Start()
     {
@@ -76,6 +78,9 @@ public class PlayerModelAnimatorController : MonoBehaviour
         {
             playerColliderCheck = player.GetComponent<PlayerColliderCheck>();
         }
+
+        _knockBack = GameObject.Find("Player").GetComponent<KnockBack>();
+
         //ジョイコンのインスタンスを取得する
         m_joycons = JoyconManager.Instance.j;
 
@@ -104,7 +109,9 @@ public class PlayerModelAnimatorController : MonoBehaviour
             DebugTestController();
         }
         //アニメーション監視
-        
+
+        Damage();
+        if(_bDamageAnimLock == true) { return; }
         //PlayerJumpAttack();
         PlayerJump();
         PlayerRun();
@@ -292,8 +299,9 @@ public class PlayerModelAnimatorController : MonoBehaviour
                     animator.SetTrigger("curveTL");
                 }
             }
+            Debug.Log("サンプル" + m_joyconL.GetStick()[0]);
         }
-        Debug.Log("サンプル" + m_joyconL.GetStick()[0]);
+        
         if (Input.GetKey(KeyCode.D))
         {
             curveCnt++;
@@ -321,5 +329,26 @@ public class PlayerModelAnimatorController : MonoBehaviour
         }
     }
 
+    void Damage()
+    {
+        if (_knockBack.GetDamageflag() == true)
+        {
+            if (_bDamageAnimLock == false)
+            {
+                animator.SetBool("damageB", true);
+                animator.SetTrigger("damage");
+                _bDamageAnimLock = true;
+            }
+        }
 
+        if (playerColliderCheck.GetCollisionEnterExit())
+        {
+            animator.SetBool("damageB", false);
+        }
+    }
+
+    public void SetAnimLockOff()
+    {
+        _bDamageAnimLock = false;
+    }
 }
