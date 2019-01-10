@@ -31,9 +31,11 @@ public class SaveTimeManager : MonoBehaviour {
 
     int _setTexrNo = 0;
 
+    Animator _animator;
+
     // Use this for initialization
     void Start () {
-		
+        _animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -45,18 +47,23 @@ public class SaveTimeManager : MonoBehaviour {
             {
                 case 0:
                     _text00.text = _timerScript.GetTime();
+                    _animator.SetTrigger("SavePoint001");
                     break;
                 case 1:
                     _text01.text = _timerScript.GetTime();
+                    _animator.SetTrigger("SavePoint002");
                     break;
                 case 2:
                     _text02.text = _timerScript.GetTime();
+                    _animator.SetTrigger("SavePoint003");
                     break;
                 case 3:
                     _text03.text = _timerScript.GetTime();
+                    _animator.SetTrigger("SavePoint004");
                     break;
                 case 4:
                     _text04.text = _timerScript.GetTime();
+                    _animator.SetTrigger("SavePoint005");
                     _setTexrNo = -1;
                     break;
             }

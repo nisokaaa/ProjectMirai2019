@@ -23,6 +23,9 @@ public class TeleportPlayer : MonoBehaviour {
 
     Vector3 _RevivalPoint;
 
+    [SerializeField]
+    bool _act = false;
+
     // Use this for initialization
     void Start () {
 		
@@ -56,8 +59,9 @@ public class TeleportPlayer : MonoBehaviour {
             _bTeleport5 = false;
         }
 
-        if(_player.transform.position.y < -1)
+        if(_act == true)
         {
+            _act = false;
             _player.transform.position = _RevivalPoint;
         }
     }
@@ -65,5 +69,10 @@ public class TeleportPlayer : MonoBehaviour {
     public void SetTeleportPosition(Vector3 transform)
     {
         _RevivalPoint = transform;
+    }
+
+    public void SetAct()
+    {
+        _act = true;
     }
 }
