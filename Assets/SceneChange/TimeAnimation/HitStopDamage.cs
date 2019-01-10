@@ -17,10 +17,14 @@ public class HitStopDamage : MonoBehaviour {
     private List<Joycon> m_joycons;
     private Joycon m_joyconL;
     private Joycon m_joyconR;
+    PlayerColliderCheck _colliderCheck;
+    ElecBarControl _elecBarControl;
+
     private void Start()
     {
         bStop = false;
-
+        _elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
+        _colliderCheck = GameObject.Find("Player").GetComponent<PlayerColliderCheck>();
         //joycon
         //ジョイコンのインスタンスを取得する
         m_joycons = JoyconManager.Instance.j;
@@ -33,6 +37,9 @@ public class HitStopDamage : MonoBehaviour {
 
     private void Update()
     {
+        if(_colliderCheck.GetCollisionEnterExit() == false) { return; }
+        if(_elecBarControl.GetGageValue() <= 0) { return; }
+
         if(Input.GetKeyDown(KeyCode.M))
         {
             timeManager.SlowDown();

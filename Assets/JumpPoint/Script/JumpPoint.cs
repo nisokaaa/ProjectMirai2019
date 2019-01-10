@@ -35,12 +35,20 @@ public class JumpPoint : MonoBehaviour {
     [SerializeField]
     SHUT_TYPE shutType;
 
-
-    private bool bJumpFlag;
     
+    private bool bJumpFlag;
+
+    int _test = 0;
+    GameObject _player;
+
     public void SetJump()
     {
         bJumpFlag = true;
+    }
+
+    private void Start()
+    {
+        _player = GameObject.Find("Player");
     }
 
     private void Update()
@@ -65,6 +73,8 @@ public class JumpPoint : MonoBehaviour {
                     ShootSpeed(m_target.position);
                     break;
             }
+
+            
 
         }
     }

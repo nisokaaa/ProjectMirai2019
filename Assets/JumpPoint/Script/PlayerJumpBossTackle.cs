@@ -23,8 +23,11 @@ public class PlayerJumpBossTackle : MonoBehaviour {
     private Joycon m_joyconL;
     private Joycon m_joyconR;
     PlayerController _playerController;
+    PlayerColliderCheck _playerColliderCheck;
+
     // Use this for initialization
     void Start () {
+        _playerColliderCheck = GameObject.Find("Player").GetComponent<PlayerColliderCheck>();
         _JumpPointObject = Instantiate(_JumpPointObject, transform.position, Quaternion.identity)as GameObject;
         _JumpPointObject.SetActive(false);
         _playerController = GetComponent<PlayerController>();
@@ -45,10 +48,13 @@ public class PlayerJumpBossTackle : MonoBehaviour {
         //    _Jump = true;
         //}
         if (_playerController.GetPlayerControl() == true) { return; }
+        if (_playerColliderCheck.GetCollisionEnterExit() == false) { return; }
 
         if ((timeManager.GetSlowFlag() == true) && Input.GetKeyDown(KeyCode.Space))
         {
             _JumpPointObject.transform.position = transform.position;
+            _JumpPointObject.transform.localRotation = transform.localRotation;
+
             _JumpPointObject.SetActive(true);
             _Jump = false;
             timeManager.SetNormalTime();
@@ -58,6 +64,7 @@ public class PlayerJumpBossTackle : MonoBehaviour {
             if ((timeManager.GetSlowFlag() == true) && m_joyconR.GetButtonDown(Joycon.Button.DPAD_DOWN))
             {
                 _JumpPointObject.transform.position = transform.position;
+                _JumpPointObject.transform.localRotation = transform.localRotation;
                 _JumpPointObject.SetActive(true);
                 _Jump = false;
                 timeManager.SetNormalTime();

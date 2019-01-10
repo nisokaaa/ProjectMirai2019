@@ -48,6 +48,8 @@ public class PlayerColliderCheck : MonoBehaviour {
             _SE = true;
             tagPlane_CollisionEnter = true;
         }
+        gameObject.GetComponent<PlayerController>().enabled = true;
+        gameObject.GetComponent<PlayerLeftRightElecDash>().enabled = true;
     }
 
     //離れた時
