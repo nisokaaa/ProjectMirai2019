@@ -56,7 +56,7 @@ public class TeleportPlayer : MonoBehaviour {
             _bTeleport5 = false;
         }
 
-        if(_player.transform.position.y < 0)
+        if(_player.transform.position.y < -1)
         {
             _player.transform.position = _RevivalPoint;
         }

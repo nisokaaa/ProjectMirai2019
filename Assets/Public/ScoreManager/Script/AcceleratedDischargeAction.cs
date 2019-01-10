@@ -84,9 +84,9 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             //    rb.up *= 2.0f;
             //}
 
-            //急加速
-            RaipidAcceleration(4);
 
+
+            AcceleratedSpeed *= 0.8f;
             //加速処理
             AcceleratedSpeed = rb.velocity * AcceleratorSpeed;
             rb.AddForce(AcceleratedSpeed);
@@ -123,6 +123,18 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             playerModelAnimatorController.PlayerAtackControl(false);
         }
     }
+    /// <summary>
+    /// 物理的な挙動のため，FixedUpdateを使う．
+    /// </summary>
+    private void FixedUpdate()
+    {
+        if (_Acceleration == false)
+        {
+            return;
+        }
+        //急加速
+        RaipidAcceleration(10);
+    }
 
     /// <summary>
     /// 急加速
@@ -135,7 +147,8 @@ public class AcceleratedDischargeAction : MonoBehaviour {
         }
 
         //急加速処理
-        rb.AddForce(rb.velocity * (AcceleratorSpeed * 50));
+        //rb.AddForce(rb.velocity * (AcceleratorSpeed));
+        //rb.AddForce(rb.velocity);
         _RaipidTime++;
 
         //加速解除
