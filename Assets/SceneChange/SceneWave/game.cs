@@ -36,11 +36,14 @@ public class Game : MonoBehaviour
 
     bool _check = false;
 
+    [SerializeField]
+    string text;
+
     // Use this for initialization
     void Start () {
-        string text = SceneManager.GetActiveScene().name;
+        text = SceneManager.GetActiveScene().name;
 
-        if (text != "Game" || text != "GameSim")
+        if (text != "Game")
         {
             return;
         }
@@ -54,7 +57,7 @@ public class Game : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        string text = SceneManager.GetActiveScene().name;
+        text = SceneManager.GetActiveScene().name;
         
         //Debug.Log(text);
         //Debug.Log("やばいで！" + text);
@@ -70,12 +73,15 @@ public class Game : MonoBehaviour
             return;
         }
         
-        //  Debug.Log("test");
+        
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            Debug.Log("Endingに移行します");
+            SceneChangeController.Instance.SetTime(1);
             SceneChangeController.Instance.SetChangeScene("Ending");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
+            //SceneChangeController.Instance.SetTime(400);
         }
 
         if (bossBattleEnd.GetBossBattleFlag() == false)
@@ -85,6 +91,7 @@ public class Game : MonoBehaviour
 
         if(Input.anyKeyDown)
         {
+            Debug.Log("Endingに移行します");
             SceneChangeController.Instance.SetChangeScene("Result");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();

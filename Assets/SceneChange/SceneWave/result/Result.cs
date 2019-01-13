@@ -34,7 +34,7 @@ public class Result : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         string text = SceneManager.GetActiveScene().name;
-        if (text != "Result")
+        if (text != "Ending")
         {
             return;
         }
@@ -48,6 +48,7 @@ public class Result : MonoBehaviour {
                 if (Input.anyKey)
                 {
                     //Debug.Log("まじで？");
+                    SceneChangeController.Instance.SetTime(400);
                     SceneChangeController.Instance.SetChangeScene("Title");
                     result = WAVE.END;
                 }

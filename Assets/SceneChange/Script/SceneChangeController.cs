@@ -173,4 +173,9 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
     {
         _fade.FadeOut(_fadeTime);
     }
+
+    public void SetTime(int time)
+    {
+        _SceneChangeTimeStop = time;
+    }
 }
