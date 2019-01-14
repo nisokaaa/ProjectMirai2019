@@ -59,11 +59,19 @@ public class PlayerModelAnimatorController : MonoBehaviour
 
     KnockBack _knockBack;
     bool _bDamageAnimLock = false;
+
+    [SerializeField]
+    GameObject curveEffectL;
+
+    [SerializeField]
+    GameObject curveEffectR;
+
     // Use this for initialization
     void Start()
     {
         playerVecCharacterPos = player.transform.position;
-
+        curveEffectL.SetActive(false);
+        curveEffectR.SetActive(false);
         if (animator == null)
         {
             animator = GetComponent<Animator>();
@@ -350,5 +358,14 @@ public class PlayerModelAnimatorController : MonoBehaviour
     public void SetAnimLockOff()
     {
         _bDamageAnimLock = false;
+    }
+
+    public void SetCurveEffectL(bool flag)
+    {
+        curveEffectL.SetActive(flag);
+    }
+    public void SetCurveEffectR(bool flag)
+    {
+        curveEffectR.SetActive(flag);
     }
 }
