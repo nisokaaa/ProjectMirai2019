@@ -21,8 +21,8 @@ public class MoveObj : MonoBehaviour
     [SerializeField]
     bool bActive = false;
 
-    [SerializeField]
-    Animator BossAnimator;
+    //[SerializeField]
+    //Animator BossAnimator;
 
     void Start()
     {
@@ -58,7 +58,7 @@ public class MoveObj : MonoBehaviour
                 if (nowTime > moveTime)
                 {
                     nowTime = buf;
-                    BossAnimator.SetTrigger("Start2");
+                    //BossAnimator.SetTrigger("Start2");
                 }
             }
 

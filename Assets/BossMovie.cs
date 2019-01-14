@@ -20,6 +20,7 @@ public class BossMovie : StateMachineBehaviour {
     //ステートから出た時
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         //GameObject.Find("Boss").GetComponent<Animator>().SetTrigger("Start0");
+        GameObject.Find("BossMove").GetComponent<BossMove>().PlayTimeline();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
