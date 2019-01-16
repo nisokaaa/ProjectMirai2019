@@ -16,6 +16,10 @@ public class ElecBarControl : MonoBehaviour {
     [SerializeField, Range(0f, 1f)]
     public float fadeDuration = 0.5f;
 
+    [SerializeField]
+    GameObject _particleSystem;
+
+    bool _efect = false;
     void Start()
     {
         // スライダーを取得する
@@ -26,15 +30,37 @@ public class ElecBarControl : MonoBehaviour {
 
         // スライダーゲージ
         elecBarFill = GameObject.Find("ElecBarFill").GetComponent<Image>();
+
+        _particleSystem.SetActive(false);
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.Return))
         {
+            _particleSystem.SetActive(true);
+
+            Increase();
+            Increase();
             Increase();
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.Return))
+        {
+            _particleSystem.SetActive(false);
+        }
+            if (Input.GetKey(KeyCode.UpArrow))
+        {
+            Increase();
+            Increase();
+            Increase();
+            _particleSystem.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            _particleSystem.SetActive(false);
+        }
+
+            if (Input.GetKey(KeyCode.DownArrow))
         {
             Decrease();
         }
@@ -83,5 +109,13 @@ public class ElecBarControl : MonoBehaviour {
     public float GetGageValue()
     {
         return slider.value;
+    }
+    public void SetEffectOn()
+    {
+        _particleSystem.SetActive(true);
+    }
+    public void SetEffectOff()
+    {
+        _particleSystem.SetActive(false);
     }
 }

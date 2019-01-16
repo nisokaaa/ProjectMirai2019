@@ -49,9 +49,12 @@ public class PlayerController : MonoBehaviour
 
     public bool PlayerControlOff = false;
     PlayerModelAnimatorController playerModelAnimatorController;
-
+    int _ChargeCnt = 0;
+    bool _ElecCharge = false;
+    ElecBarControl _elecBarControl;
     void Start()
     {
+        _elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
         playerModelAnimatorController = GameObject.Find("PlayerModelAnimatorController").GetComponent<PlayerModelAnimatorController>();
         if (playerElecMode == null)
         {
@@ -78,6 +81,33 @@ public class PlayerController : MonoBehaviour
         void Update()
     {
         if (PlayerControlOff == true) { return; }
+
+        //充電処理
+        if (!(m_joycons.Count <= 0 || m_joycons == null))
+        {
+            if ((m_joyconL.GetGyro().x > 3 || m_joyconL.GetGyro().x < -3) && (m_joyconR.GetGyro().x > 3 || m_joyconR.GetGyro().x < -3))
+            {
+                if (_ElecCharge == false)
+                {
+                    m_joyconL.SetRumble(160, 320, 0.6f, 200);
+                    m_joyconR.SetRumble(160, 320, 0.6f, 200);
+                    _ElecCharge = true;
+                    _elecBarControl.SetEffectOn();
+                }
+            }
+            if (_ElecCharge == true)
+            {
+                _ChargeCnt++;
+                _elecBarControl.Increase();
+                _elecBarControl.Increase();
+                if (_ChargeCnt > 60)
+                {
+                    _elecBarControl.SetEffectOff();
+                    _ChargeCnt = 0;
+                    _ElecCharge = false;
+                }
+            }
+        }
         // アクセルボタンInput
         bAccelerator = Input.GetKey("joystick button 5") ? true : false;
         bAccelerator = Input.GetKey(KeyCode.W) ? true : false;
