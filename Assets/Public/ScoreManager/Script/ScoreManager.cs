@@ -13,10 +13,10 @@ using UnityEngine;
 /// </summary>
 public class ScoreManager : MonoBehaviour {
 
-    [SerializeField] float maxLimitValue;
-    [SerializeField] float minLimitValue;
-    [SerializeField] float ValuePercentage;
-    public float scoreValue;    //現在のデータ保存
+    [SerializeField] int maxLimitValue;
+    [SerializeField] int minLimitValue;
+    [SerializeField] int ValuePercentage;
+    public int scoreValue;    //現在のデータ保存
 
     [Header("デバック処理")]
     [SerializeField] bool debugScore;
@@ -61,25 +61,25 @@ public class ScoreManager : MonoBehaviour {
     }
 
     //加算
-    public void AddScoreValue(float value)
+    public void AddScoreValue(int value)
     {
         scoreValue += value;
     }
 
     //減算
-    public void SubScoreValue(float value)
+    public void SubScoreValue(int value)
     {
         scoreValue -= value;
     }
 
     //取得
-    public float GetScoreValue()
+    public int GetScoreValue()
     {
         return scoreValue;
     }
 
     //設定
-    public void SetScoreValue(float value)
+    public void SetScoreValue(int value)
     {
         scoreValue = value;
     }

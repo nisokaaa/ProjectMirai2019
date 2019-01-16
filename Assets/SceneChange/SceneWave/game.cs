@@ -39,6 +39,10 @@ public class Game : MonoBehaviour
     [SerializeField]
     string text;
 
+    [SerializeField]
+    Ranking _ranking;
+
+    ScoreManager _scoreManager;
     // Use this for initialization
     void Start () {
         text = SceneManager.GetActiveScene().name;
@@ -53,6 +57,10 @@ public class Game : MonoBehaviour
             bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
         }
         SceneChangeController.Instance.FadeOut();
+
+        _ranking = GameObject.Find("Ranking").GetComponent<Ranking>();
+        _scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+
     }
 	
 	// Update is called once per frame
@@ -76,6 +84,9 @@ public class Game : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            //ランキング登録
+            _ranking.SetRanking(_scoreManager.GetScoreValue());
+
             Debug.Log("Endingに移行します");
             SceneChangeController.Instance.SetTime(1);
             SceneChangeController.Instance.SetChangeScene("Ending");
@@ -91,8 +102,12 @@ public class Game : MonoBehaviour
 
         if(Input.anyKeyDown)
         {
+            //ランキング登録
+            _ranking.SetRanking(_scoreManager.GetScoreValue());
+
             Debug.Log("Endingに移行します");
-            SceneChangeController.Instance.SetChangeScene("Result");
+            SceneChangeController.Instance.SetTime(1);
+            SceneChangeController.Instance.SetChangeScene("Ending");
             SceneChangeController.Instance.SetChangeSceneExecution();
             SceneChangeController.Instance.FadeIn();
         }
