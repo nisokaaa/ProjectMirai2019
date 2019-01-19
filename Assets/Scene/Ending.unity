@@ -6278,6 +6278,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 546700fa8dec1d446a439bab36cc043f, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1001 &1760026535
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 40.65635
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 237.7185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 56.886826
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193046548565808, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c55a2cdbde2ba1340bc941a20f991416, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &1789823023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 285d495b823438c4ab73510b8d4974f2,
@@ -7949,6 +7991,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2010066579
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 40.65635
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 237.7185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 56.886826
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451141528036486, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80f57449b1f19004cbddd90e2ca80e43, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &2048145159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 285d495b823438c4ab73510b8d4974f2,

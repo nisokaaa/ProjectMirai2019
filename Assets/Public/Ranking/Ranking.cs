@@ -10,6 +10,8 @@ public class Ranking : SingletonMonoBehaviour<Ranking> {
     List<int> _ranking = new List<int>();
     int _myScore = 0;
     int cnt = -1;
+    Animator _animator;
+    
 
     public void Awake()
     {
@@ -24,11 +26,7 @@ public class Ranking : SingletonMonoBehaviour<Ranking> {
 
     // Use this for initialization
     void Start () {
-        
-        
-        
-        
-        
+        _animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -80,5 +78,10 @@ public class Ranking : SingletonMonoBehaviour<Ranking> {
         _ranking.Sort((a, b) => b - a);
 
         return _ranking[rankingVal];
+    }
+
+    public void SetStart()
+    {
+        _animator.SetTrigger("Start");
     }
 }

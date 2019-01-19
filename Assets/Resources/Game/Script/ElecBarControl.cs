@@ -43,6 +43,8 @@ public class ElecBarControl : MonoBehaviour {
             Increase();
             Increase();
             Increase();
+            Increase();
+            Increase();
         }
         if (Input.GetKeyUp(KeyCode.Return))
         {

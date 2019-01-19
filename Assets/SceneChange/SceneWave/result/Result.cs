@@ -19,6 +19,7 @@ public class Result : MonoBehaviour {
         NONE = 0,
         START,
         PLAY,
+        PLAY_RANKING,
         END,
         MAX
     };
@@ -27,11 +28,14 @@ public class Result : MonoBehaviour {
 
     LedController _ledController;
     public bool _bRanking = false;
+    Ranking _ranking;
+
     // Use this for initialization
     void Start () {
         result = WAVE.START;
         SceneChangeController.Instance.FadeOut();
         _ledController = GameObject.Find("ledController").GetComponent<LedController>();
+        _ranking = GameObject.Find("Ranking").GetComponent<Ranking>();
     }
 	
 	// Update is called once per frame
@@ -55,7 +59,14 @@ public class Result : MonoBehaviour {
                 result = WAVE.PLAY;
                 break;
             case WAVE.PLAY:
-                if (Input.anyKey)
+                if (Input.anyKeyDown)
+                {
+                    _ranking.SetStart();
+                    result = WAVE.PLAY_RANKING;
+                }
+                    break;
+            case WAVE.PLAY_RANKING:
+                if (Input.anyKeyDown)
                 {
                     //Debug.Log("まじで？");
                     SceneChangeController.Instance.SetTime(400);

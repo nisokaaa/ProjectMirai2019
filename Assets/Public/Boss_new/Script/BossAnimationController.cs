@@ -18,10 +18,17 @@ public class BossAnimationController : MonoBehaviour {
     bool _DebugBeam = false;
 
     [SerializeField]
+    bool _DebugDefault = false;
+
+    [SerializeField]
     bool _Debug = false;
+
+    //[SerializeField]
+    //GameObject _DefaultEffect;
 
     // Use this for initialization
     void Start () {
+        //_DefaultEffect.SetActive(false);
         _animator = GetComponent<Animator>();
     }
 	
@@ -33,6 +40,9 @@ public class BossAnimationController : MonoBehaviour {
     void Debug()
     {
         if (_Debug == false) return;
+        if(_DebugDefault)
+        {
+        }
         if (_DebugAttack) _animator.SetTrigger("Attack");
         if (_DebugBeam) _animator.SetTrigger("Beam");
         if (_DebugMissile) _animator.SetTrigger("Missile");
