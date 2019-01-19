@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: 
   _ranking: {fileID: 0}
+  _bBossMove: 0
 --- !u!114 &114488236155081204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   result: 0
+  _bRanking: 0
 --- !u!114 &114854753840394446
 MonoBehaviour:
   m_ObjectHideFlags: 1

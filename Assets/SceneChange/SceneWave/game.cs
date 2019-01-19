@@ -43,6 +43,10 @@ public class Game : MonoBehaviour
     Ranking _ranking;
 
     ScoreManager _scoreManager;
+    LedController _ledController;
+
+    public bool _bBossMove = false;
+
     // Use this for initialization
     void Start () {
         text = SceneManager.GetActiveScene().name;
@@ -56,6 +60,7 @@ public class Game : MonoBehaviour
         {
             bossBattleEnd = GameObject.Find("BossBattleEnd").GetComponent<BossBattleEnd>();
         }
+        _ledController = GameObject.Find("ledController").GetComponent<LedController>();
         SceneChangeController.Instance.FadeOut();
 
         _ranking = GameObject.Find("Ranking").GetComponent<Ranking>();
@@ -80,8 +85,18 @@ public class Game : MonoBehaviour
         {
             return;
         }
+
+        if(_bBossMove == false)
+        {
+            _ledController.SetGameMode();
+        }
+        else
+        {
+            _ledController.SetBossBattleStart();
+        }
         
-        
+
+
         if (Input.GetKeyDown(KeyCode.F1))
         {
             //ランキング登録

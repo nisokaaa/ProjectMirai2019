@@ -25,10 +25,13 @@ public class Result : MonoBehaviour {
 
     [SerializeField] WAVE result = WAVE.NONE;
 
+    LedController _ledController;
+    public bool _bRanking = false;
     // Use this for initialization
     void Start () {
         result = WAVE.START;
         SceneChangeController.Instance.FadeOut();
+        _ledController = GameObject.Find("ledController").GetComponent<LedController>();
     }
 	
 	// Update is called once per frame
@@ -38,7 +41,14 @@ public class Result : MonoBehaviour {
         {
             return;
         }
-
+        if(_bRanking == true)
+        {
+            _ledController.SetRankingMode();
+        }
+        else
+        {
+            _ledController.SetEnding();
+        }
         switch (result)
         {
             case WAVE.START:

@@ -30,6 +30,7 @@ public class Title : MonoBehaviour {
     private Joycon m_joyconR;
 
     bool _check = false;
+    LedController _ledController;
 
     // Use this for initialization
     void Start () {
@@ -38,7 +39,7 @@ public class Title : MonoBehaviour {
         {
             return;
         }
-
+        _ledController = GameObject.Find("ledController").GetComponent<LedController>();
         title = WAVE.START;
 
         if (canvasSelect == null)
@@ -63,6 +64,8 @@ public class Title : MonoBehaviour {
         }
 
         bool _se = false;
+
+        _ledController.SetTitle();
 
         switch (title)
         {
