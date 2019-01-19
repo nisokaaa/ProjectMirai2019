@@ -13,8 +13,15 @@ using UnityEngine;
 /// </summary>
 public class PlayerLeftRightElecDash : MonoBehaviour {
 
+    [SerializeField]
     bool _rightJump = false;
+
+    [SerializeField]
     bool _leftJump = false;
+
+    [SerializeField]
+    int _timeMax = 60;
+
     ElecBarControl elecBarControl;
 
     private List<Joycon> m_joycons;
@@ -22,6 +29,8 @@ public class PlayerLeftRightElecDash : MonoBehaviour {
     private Joycon m_joyconR;
 
     PlayerController _playerController;
+
+    int _dashCnt = 0;
     // Use this for initialization
     void Start () {
         _playerController = GetComponent<PlayerController>();
@@ -51,40 +60,63 @@ public class PlayerLeftRightElecDash : MonoBehaviour {
         if (!(m_joycons.Count <= 0 || m_joycons == null))
         {
             //ジャンプチェック
-            if (m_joyconR.GetButton(Joycon.Button.SHOULDER_2))
+            if (m_joyconR.GetButtonDown(Joycon.Button.SHOULDER_2))
             {
-                elecBarControl.Decrease();
-                elecBarControl.Decrease();
-                elecBarControl.Decrease();
-                elecBarControl.Decrease();
-                rb.AddForce(transform.right * 1500.0f);
+                _rightJump = true;
             }
-            if (m_joyconL.GetButton(Joycon.Button.SHOULDER_2))
+            if (m_joyconL.GetButtonDown(Joycon.Button.SHOULDER_2))
             {
-                elecBarControl.Decrease();
-                elecBarControl.Decrease();
-                elecBarControl.Decrease();
-                elecBarControl.Decrease();
-                rb.AddForce(transform.right * -1500.0f);
+                _leftJump = true;
             }
         }
 
         //キーボード
-        if (Input.GetKey(KeyCode.Q) || _leftJump == true)
+        if (Input.GetKeyDown(KeyCode.Q) || _leftJump == true)
         {
-            elecBarControl.Decrease();
-            elecBarControl.Decrease();
-            elecBarControl.Decrease();
-            elecBarControl.Decrease();
-            rb.AddForce(transform.right * -1500.0f);
+            _leftJump = true;
         }
-        if (Input.GetKey(KeyCode.E) || _rightJump == true)
+        if (Input.GetKeyDown(KeyCode.E) || _rightJump == true)
         {
-            elecBarControl.Decrease();
-            elecBarControl.Decrease();
-            elecBarControl.Decrease();
+            _rightJump = true;
+        }
+
+        //右加速
+        if(_rightJump == true && _leftJump == false)
+        {
+            _dashCnt++;
             elecBarControl.Decrease();
             rb.AddForce(transform.right * 1500.0f);
+
+            if (_dashCnt > _timeMax)
+            {
+                
+                rb.velocity = Vector3.zero;
+                _dashCnt = 0;
+                _rightJump = false;
+                rb.AddForce(transform.forward * 500);
+            }
+        }
+
+        //左加速
+        if(_leftJump == true && _rightJump == false)
+        {
+            _dashCnt++;
+            elecBarControl.Decrease();
+            rb.AddForce(transform.right * -1500.0f);
+            if (_dashCnt > _timeMax)
+            {
+                rb.velocity = Vector3.zero;
+                _dashCnt = 0;
+                _leftJump = false;
+                rb.AddForce(transform.forward * 500);
+            }
+        }
+
+        if(_leftJump == true && _rightJump == true)
+        {
+            _dashCnt = 0;
+            _leftJump = false;
+            _rightJump = false;
         }
     }
 }
