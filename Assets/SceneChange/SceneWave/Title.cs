@@ -65,12 +65,13 @@ public class Title : MonoBehaviour {
 
         bool _se = false;
 
-        _ledController.SetTitle();
+        
 
         switch (title)
         {
             case WAVE.START:
                 //SceneChangeController.Instance.FadeOut();
+                _ledController.SetTitle();
                 title = WAVE.PLAY;
                 Debug.Log("テストスタート");
                 break;

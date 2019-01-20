@@ -46,6 +46,8 @@ public class Game : MonoBehaviour
     LedController _ledController;
 
     public bool _bBossMove = false;
+    bool _Lock1 = false;
+    bool _Lock2 = false;
 
     // Use this for initialization
     void Start () {
@@ -65,7 +67,8 @@ public class Game : MonoBehaviour
 
         _ranking = GameObject.Find("Ranking").GetComponent<Ranking>();
         _scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-
+        _Lock1 = false;
+        _Lock2 = false;
     }
 	
 	// Update is called once per frame
@@ -88,11 +91,20 @@ public class Game : MonoBehaviour
 
         if(_bBossMove == false)
         {
-            _ledController.SetGameMode();
+            if(_Lock1 == false)
+            {
+                _Lock1 = true;
+                _ledController.SetGameMode();
+            }
         }
         else
         {
-            _ledController.SetBossBattleStart();
+            if (_Lock2 == false)
+            {
+                _Lock2 = true;
+                _ledController.SetBossBattleStart();
+            }
+            
         }
         
 

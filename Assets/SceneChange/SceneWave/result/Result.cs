@@ -30,12 +30,17 @@ public class Result : MonoBehaviour {
     public bool _bRanking = false;
     Ranking _ranking;
 
+    bool _Lock1 = false;
+    bool _Lock2 = false;
+
     // Use this for initialization
     void Start () {
         result = WAVE.START;
         SceneChangeController.Instance.FadeOut();
         _ledController = GameObject.Find("ledController").GetComponent<LedController>();
         _ranking = GameObject.Find("Ranking").GetComponent<Ranking>();
+        _Lock1 = false;
+        _Lock2 = false;
     }
 	
 	// Update is called once per frame
@@ -47,11 +52,20 @@ public class Result : MonoBehaviour {
         }
         if(_bRanking == true)
         {
-            _ledController.SetRankingMode();
+            if(_Lock1 == false)
+            {
+                _ledController.SetRankingMode();
+                _Lock1 = true;
+            }
+            
         }
         else
         {
-            _ledController.SetEnding();
+            if (_Lock2 == false)
+            {
+                _ledController.SetEnding();
+                _Lock2 = true;
+            }
         }
         switch (result)
         {

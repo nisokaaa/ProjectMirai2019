@@ -35,6 +35,10 @@ public class LedController : MonoBehaviour
 
     SerialHandler _serialHandler;
 
+    bool _Lock1 = false;
+    bool _Lock2= false;
+    int _Lick = 0;
+
     private void Start()
     {
         _serialHandler = GameObject.Find("serialHandler").GetComponent<SerialHandler>();
@@ -54,6 +58,14 @@ public class LedController : MonoBehaviour
     }
 
     /// <summary>
+    /// ゲームの状態の時実行する
+    /// </summary>
+    public void SetGameMode()
+    {
+        SetLED(GAME_MODE);
+    }
+
+    /// <summary>
     /// ランキング状態の時実行する
     /// </summary>
     public void SetRankingMode()
@@ -61,13 +73,7 @@ public class LedController : MonoBehaviour
         SetLED(RANKING_MODE);
     }
 
-    /// <summary>
-    /// ゲームの状態の時実行する
-    /// </summary>
-    public  void SetGameMode()
-    {
-        SetLED(GAME_MODE);
-    }
+    
 
     /// <summary>
     /// ボスが登場したとき実行する
@@ -96,12 +102,12 @@ public class LedController : MonoBehaviour
     //サンプル用の関数
     void Sample()
     {
-        if (Input.GetKey(KeyCode.Alpha1)) { serialHandler.Write(TITLE);}
-        if (Input.GetKey(KeyCode.Alpha2)) { serialHandler.Write(RANKING_MODE); }
-        if (Input.GetKey(KeyCode.Alpha3)) { serialHandler.Write(GAME_MODE); }
-        if (Input.GetKey(KeyCode.Alpha4)) { serialHandler.Write(BOSS_BATTLE_START); }
-        if (Input.GetKey(KeyCode.Alpha5)) { serialHandler.Write(ENDING); }
-        if (Input.GetKey(KeyCode.Alpha6)) { serialHandler.Write(PLAYER_ACTION); }
+        if (Input.GetKeyDown(KeyCode.Alpha1)) { serialHandler.Write(TITLE);}
+        if (Input.GetKeyDown(KeyCode.Alpha2)) { serialHandler.Write(RANKING_MODE); }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) { serialHandler.Write(GAME_MODE); }
+        if (Input.GetKeyDown(KeyCode.Alpha4)) { serialHandler.Write(BOSS_BATTLE_START); }
+        if (Input.GetKeyDown(KeyCode.Alpha5)) { serialHandler.Write(ENDING); }
+        if (Input.GetKeyDown(KeyCode.Alpha6)) { serialHandler.Write(PLAYER_ACTION); }
     }
 
     // string型なので"num"といった形の引数
