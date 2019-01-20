@@ -13,6 +13,7 @@ public class PlayerUIGoalSpan : MonoBehaviour {
     float span = 0;
     bool check = false;
     Text text;
+    float dis = 0.0f;
 
     // Use this for initialization
     void Start () {
@@ -37,10 +38,15 @@ public class PlayerUIGoalSpan : MonoBehaviour {
         Apos = objA.transform.position;
         Bpos = objB.transform.position;
         
-        float dis = Vector3.Distance(Apos, Bpos);
+        dis = Vector3.Distance(Apos, Bpos);
         dis = dis / span * 100;
 
 
         text.text = dis.ToString("f1");
+    }
+
+    public float GetSpanVal()
+    {
+        return dis;
     }
 }

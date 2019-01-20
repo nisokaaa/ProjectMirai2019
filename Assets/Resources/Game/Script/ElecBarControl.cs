@@ -20,8 +20,13 @@ public class ElecBarControl : MonoBehaviour {
     GameObject _particleSystem;
 
     bool _efect = false;
+
+    PlayerElecEffect playerElecEffect;
+    GameObject _player;
     void Start()
     {
+        _player = GameObject.Find("Player");
+        playerElecEffect = GameObject.Find("PlayerElecEffect").GetComponent<PlayerElecEffect>();
         // スライダーを取得する
         slider = GameObject.Find("ElecBar").GetComponent<Slider>();
 
@@ -39,7 +44,7 @@ public class ElecBarControl : MonoBehaviour {
         if (Input.GetKey(KeyCode.Return))
         {
             _particleSystem.SetActive(true);
-
+            playerElecEffect.SetElecPosition(_player);
             Increase();
             Increase();
             Increase();

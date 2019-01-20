@@ -52,8 +52,10 @@ public class PlayerController : MonoBehaviour
     int _ChargeCnt = 0;
     bool _ElecCharge = false;
     ElecBarControl _elecBarControl;
+    PlayerElecEffect playerElecEffect;
     void Start()
     {
+        playerElecEffect = GameObject.Find("PlayerElecEffect").GetComponent<PlayerElecEffect>();
         _elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
         playerModelAnimatorController = GameObject.Find("PlayerModelAnimatorController").GetComponent<PlayerModelAnimatorController>();
         if (playerElecMode == null)
@@ -89,6 +91,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (_ElecCharge == false)
                 {
+                    playerElecEffect.SetElecPosition(this.gameObject);
                     m_joyconL.SetRumble(160, 320, 0.6f, 200);
                     m_joyconR.SetRumble(160, 320, 0.6f, 200);
                     _ElecCharge = true;

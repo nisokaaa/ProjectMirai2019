@@ -25,8 +25,11 @@ public class KnockBack : MonoBehaviour {
 
     Vector3 _move;
 
+    Animator _animator;
+
     // Use this for initialization
     void Start () {
+        _animator = GameObject.Find("PlayerUI2").GetComponent<Animator>();
         _Rigidbody = GetComponent<Rigidbody>();
         _ParticleSystem = Instantiate(_ParticleSystem, transform.position, Quaternion.identity);
     }
@@ -47,6 +50,7 @@ public class KnockBack : MonoBehaviour {
             _time = 0;
             _ParticleSystem.SetActive(false);
             _KnockBack = false;
+            _animator.SetTrigger("UI000");
         }
         
     }
