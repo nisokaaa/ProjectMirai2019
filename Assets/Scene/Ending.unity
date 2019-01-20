@@ -379,7 +379,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151551666}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &151551669
 Camera:
   m_ObjectHideFlags: 0
@@ -837,7 +837,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228767116}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &228767118
 Camera:
   m_ObjectHideFlags: 0
@@ -1574,7 +1574,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 498977525}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &498977528
 Camera:
   m_ObjectHideFlags: 0
@@ -2111,24 +2111,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1387960706510856, guid: bba6dda0915469748878638de7054be5,
     type: 2}
   m_PrefabInternal: {fileID: 1531126391}
---- !u!95 &678798250
+--- !u!95 &678798250 stripped
 Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 678798249}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e65f8f41ca2348b4dbdf529d08d56370, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_CorrespondingSourceObject: {fileID: 95081676899690428, guid: bba6dda0915469748878638de7054be5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1531126391}
 --- !u!4 &687489699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e19fcfd41d01f12438c2aaf04c7bba0a,
@@ -5935,66 +5922,6 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224099471925788390, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -167.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 224099471925788390, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 50.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 224099471925788390, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 673.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 224099471925788390, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 153.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 224230257191032614, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -233.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 224230257191032614, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -67.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 224230257191032614, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 334.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 224230257191032614, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 158.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 224572168982967488, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -106.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 224572168982967488, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 280.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 224572168982967488, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -17.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 224572168982967488, guid: bba6dda0915469748878638de7054be5,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 153.75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bba6dda0915469748878638de7054be5, type: 2}
   m_IsPrefabAsset: 0
@@ -8062,7 +7989,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2055812907}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2055812909
 Camera:
   m_ObjectHideFlags: 0

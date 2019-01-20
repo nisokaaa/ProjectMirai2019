@@ -21,7 +21,8 @@ public class PlayerElecEffect : MonoBehaviour {
         _elecGameObject.SetActive(false);
         _gameObjectAPosPlayer.SetActive(false);
         _gameObjectBPosObject.SetActive(false);
-        _ElecSpher.SetActive(false);
+
+        SetElecPosition(_player);
     }
 	
 	// Update is called once per frame

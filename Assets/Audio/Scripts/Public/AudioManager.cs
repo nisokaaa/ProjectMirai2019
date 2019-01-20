@@ -78,6 +78,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         if (this != Instance)
         {
+            Destroy(this.gameObject);
             Destroy(this);
             return;
         }

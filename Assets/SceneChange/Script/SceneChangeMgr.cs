@@ -17,6 +17,7 @@ public class SceneChangeMgr : SingletonMonoBehaviour<SceneChangeMgr>
     {
         if (this != Instance)
         {
+            Destroy(this.gameObject);
             Destroy(this);
             return;
         }

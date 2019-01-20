@@ -82,6 +82,7 @@ public class Result : MonoBehaviour {
             case WAVE.PLAY_RANKING:
                 if (Input.anyKeyDown)
                 {
+                    _ranking.SetEnd();
                     //Debug.Log("まじで？");
                     SceneChangeController.Instance.SetTime(400);
                     SceneChangeController.Instance.SetChangeScene("Title");

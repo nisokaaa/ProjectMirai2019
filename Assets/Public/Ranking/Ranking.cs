@@ -84,4 +84,9 @@ public class Ranking : SingletonMonoBehaviour<Ranking> {
     {
         _animator.SetTrigger("Start");
     }
+
+    public void SetEnd()
+    {
+        _animator.SetTrigger("End");
+    }
 }

@@ -29,10 +29,11 @@ public class TutorialEnd_NextGame : MonoBehaviour
     [SerializeField] FADE fade = FADE.NONE;
     [SerializeField] int endTutorialTime;
     int time= 0;
-
+    ElecBarControl _elecBarControl;
     // Use this for initialization
     void Start()
     {
+        _elecBarControl = GameObject.Find("ElecBarController").GetComponent<ElecBarControl>();
         fade = FADE.NONE;
         GameStartUI.SetActive(false);
         time = 0;
@@ -44,6 +45,12 @@ public class TutorialEnd_NextGame : MonoBehaviour
     {
         switch (fade)
         {
+            case FADE.NONE:
+                _elecBarControl.Increase();
+                _elecBarControl.Increase();
+                _elecBarControl.Increase();
+                _elecBarControl.Increase();
+                break;
             case FADE.START:
                 fade = FADE.PLAY;
                 GameStartUI.SetActive(true);

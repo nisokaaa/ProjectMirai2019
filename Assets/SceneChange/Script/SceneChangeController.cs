@@ -161,7 +161,7 @@ public class SceneChangeController : SingletonMonoBehaviour<SceneChangeControlle
     //シーンを切り替えるフラグを立てる
     public void SetChangeSceneExecution()
     {
-        
+        _loadObject.SetActive(false);
         bChangeSceneFlag = true;
     }
 
