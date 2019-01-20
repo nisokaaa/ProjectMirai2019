@@ -82,7 +82,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _outline_tint: 0.46
+    - _outline_tint: 0.427
     - _outline_width: 0.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

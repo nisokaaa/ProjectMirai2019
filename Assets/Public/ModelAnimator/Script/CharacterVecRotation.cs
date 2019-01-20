@@ -27,6 +27,7 @@ public class CharacterVecRotation : MonoBehaviour {
 
     [SerializeField]
     public GameObject targetBlack;
+    GameObject _SubTargetBlack;
 
     public enum MODE
     {
@@ -41,6 +42,7 @@ public class CharacterVecRotation : MonoBehaviour {
     void Start () {
         //ベクトルの起点
         playerVecCharacterPos = player.transform.position;
+        _SubTargetBlack = targetBlack;
     }
 	
 	// Update is called once per frame
@@ -65,6 +67,16 @@ public class CharacterVecRotation : MonoBehaviour {
                 break;
         }
 	}
+
+    public void SetTargetChange(GameObject gameObject)
+    {
+        targetBlack = gameObject;
+    }
+
+    public void SetTargetChangeReset()
+    {
+        targetBlack = _SubTargetBlack;
+    }
 
     public void SetCharRot_Vec()
     {

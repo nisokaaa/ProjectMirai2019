@@ -42,10 +42,20 @@ public class BossAnimationController : MonoBehaviour {
         if (_Debug == false) return;
         if(_DebugDefault)
         {
+            
         }
-        if (_DebugAttack) _animator.SetTrigger("Attack");
-        if (_DebugBeam) _animator.SetTrigger("Beam");
-        if (_DebugMissile) _animator.SetTrigger("Missile");
+        if (_DebugAttack)
+        {
+            _animator.SetTrigger("Attack");
+        }
+        if (_DebugBeam)
+        {
+            _animator.SetTrigger("Beam");
+        }
+        if (_DebugMissile)
+        {
+            _animator.SetTrigger("Missile");
+        }
     }
 
     public void SetAttack()

@@ -24,9 +24,12 @@ public class CameraChaseDelay : MonoBehaviour {
 
     public float HeightM = 1.2f;            // 注視点の高さ[m]
     public GameObject targetObject; // 注視したいオブジェクトをInspectorから入れておく
-
+    public GameObject targetGoleObject; // 注視したいオブジェクトをInspectorから入れておく
     public bool _bBossPosRot = false;
     CameraRotateDelay _cameraRotateDelay;
+    [SerializeField]
+    bool _gole = false;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -44,6 +47,22 @@ public class CameraChaseDelay : MonoBehaviour {
         var desiredPos = player.position - player.forward * baseDistance + Vector3.up * baseHeight;
 
         cam.position = Vector3.Lerp(cam.position, desiredPos, Time.deltaTime * chaseSpeed);
+
+        if(_gole == true)
+        {
+            _cameraRotateDelay.enabled = false;
+            // 補完スピードを決める
+            float speed = 0.1f;
+            // ターゲット方向のベクトルを取得
+            Vector3 relativePos = targetGoleObject.transform.position - this.transform.position;
+            // 方向を、回転情報に変換
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
+            // 現在の回転情報と、ターゲット方向の回転情報を補完する
+            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, speed);
+
+            return;
+        }
+
 
         if (_bBossPosRot == true)
         {
@@ -72,5 +91,10 @@ public class CameraChaseDelay : MonoBehaviour {
     public void SetBossBattle()
     {
         _bBossPosRot = true;
+    }
+
+    public void SetGoal()
+    {
+        _gole = true;
     }
 }

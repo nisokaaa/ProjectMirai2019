@@ -133,7 +133,7 @@ public class AcceleratedDischargeAction : MonoBehaviour {
             return;
         }
         //急加速
-        RaipidAcceleration(10);
+        //RaipidAcceleration(5);
     }
 
     /// <summary>

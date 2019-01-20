@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// アニメーターで制御する
+/// </summary>
 public class BossBattleController : MonoBehaviour {
 
     public Transform m_target = null;
@@ -13,6 +16,15 @@ public class BossBattleController : MonoBehaviour {
     CameraChaseDelay _cameraChaseDelay;
     int cnt = 0;
     bool _bCameraBoss = false;
+
+    [SerializeField] bool _bMissile = false;
+    [SerializeField] bool _bBeam = false;
+    [SerializeField] bool _bAttack = false;
+
+    BossMissileSystem _bossMissileSystem;
+    [SerializeField]
+    Animator _modelanimator;
+
     // Use this for initialization
     void Start () {
 
@@ -21,7 +33,7 @@ public class BossBattleController : MonoBehaviour {
             m_target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
         _cameraChaseDelay = Camera.main.GetComponent<CameraChaseDelay>();
-
+        _bossMissileSystem = GameObject.Find("BattleMissileSystem").GetComponent<BossMissileSystem>();
     }
 	
 	// Update is called once per frame
@@ -34,21 +46,33 @@ public class BossBattleController : MonoBehaviour {
         //追従処理
         FollowingPlayer();
 
+        if (_bAttack == true) {
+            _bAttack = false;
+        }
+        if (_bBeam == true) {
+            _bBeam = false;
+        }
+        if (_bMissile == true)
+        {
+            _bossMissileSystem.SetMissileAction();
+            _modelanimator.SetTrigger("Missile");
+            _bMissile = false;
+        }
     }
 
-    void Attack()
+    public void SetAttack()
     {
-
+        _bAttack = true;
     }
 
-    void Beam()
+    public void SetBeam()
     {
-
+        _bBeam = true;
     }
 
-    void Missile()
+    public void SetMissile()
     {
-
+        _bMissile = true;
     }
 
     //プレイヤーに追従する
@@ -65,5 +89,10 @@ public class BossBattleController : MonoBehaviour {
         m_velocity.x = 0.0f;
 
         transform.position += m_velocity *= Time.deltaTime;
+    }
+
+    public void SetCameraGole()
+    {
+        Camera.main.GetComponent<CameraChaseDelay>().SetGoal();
     }
 }

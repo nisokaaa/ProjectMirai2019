@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissileTargetSphere : MonoBehaviour {
+public class 
+    TargetSphere : MonoBehaviour {
 
     [SerializeField]
     GameObject _Effect; //爆発
