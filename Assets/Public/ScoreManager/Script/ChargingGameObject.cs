@@ -11,11 +11,14 @@ public class ChargingGameObject : MonoBehaviour {
     bool bExecution = false;
     int timeCnt = 0;
     [SerializeField] int timeCntMax;
+    PlayerElecEffect _playerElecEffect;
+
     // Use this for initialization
     void Start () {
         particleSystem = Instantiate(particleSystem, transform.position, Quaternion.identity) as GameObject;
         particleSystem.SetActive(false);
         bExecution = false;
+        _playerElecEffect = GameObject.Find("PlayerElecEffect").GetComponent<PlayerElecEffect>();
     }
 	
 	// Update is called once per frame
@@ -41,6 +44,7 @@ public class ChargingGameObject : MonoBehaviour {
             timeCnt = 0;
             particleSystem.SetActive(false);
             bExecution = true;
+            _playerElecEffect.SetElecPosition(this.gameObject);
         }
     }
 }
