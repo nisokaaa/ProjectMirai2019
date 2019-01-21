@@ -71,7 +71,22 @@ public class KnockBack : MonoBehaviour {
             _KnockBack = true;
         }
     }
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Vector3 KnockBackVec;
+            KnockBackVec = (transform.position - other.transform.position) * 10.5f;
 
+            _move = new Vector3(KnockBackVec.x, 100.0f, KnockBackVec.z);
+            _Rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+            Vector3 force = _move * _Rigidbody.mass;
+
+            _Rigidbody.AddForce(force, ForceMode.Impulse);
+            _KnockBack = true;
+        }
+    }
     public bool GetDamageflag()
     {
         return _KnockBack;
